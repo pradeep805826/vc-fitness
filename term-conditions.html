@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Term Conditions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Roboto Slab", serif;
+    }
+    
+
+    /* header styles */
+
+    .navbar-custom {
+      background: linear-gradient(to bottom, #FEE7DC, #FEF5F0);
+      padding: 10px 12px;
+      overflow: visible;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .btn-contact {
+      background-color: #9E6449;
+      color: #fff;
+      border: none;
+      padding: 6px 16px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .btn-contact:hover {
+      background-color: #703926 !important;
+      color: #fff;
+
+    }
+    
+    /* Mobile Top Bar Layout */
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .mobile-header .navbar-logo-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-93%);
+      z-index: 1;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #000;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    /* .navbar-nav .nav-link.active {
+      color: #9E6449;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    } */
+    .navbar-nav .nav-link:hover {
+      color: #703926 !important;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #9E6449;
+      /* underline color */
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #9E6449;
+      /* active text color */
+    }
+
+    .navbar-nav .nav-link.active::after,
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+    
+
+     /* .nav-dropdown-border{
+      padding: 5px;
+    } */
+
+    .nav-dropdown-border:hover{
+      border-left: 4px solid #9E6449;
+      background: linear-gradient(to bottom, #FEE7DC, #FEF5F0) !important;
+    }
+    
+    .dropdown-color:hover{
+     background: linear-gradient(to bottom, #FEE7DC, #FEF5F0) !important;
+    }
+
+
+    /* Base dropdown styles */
+.custom-dropdown {
+  position: relative;
+}
+
+.custom-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 30px; /* buffer zone under About Us */
+}
+
+.custom-dropdown .dropdown-menu {
+  position: absolute;
+  top: 156%;
+  left: 0;
+  display: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-width: 220px;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown:hover .dropdown-menu,
+.custom-dropdown .dropdown-menu:hover {
+  display: block;
+}
+
+/* Optional: smooth transition */
+.custom-dropdown .dropdown-menu li {
+  list-style: none;
+}
+
+.custom-dropdown .dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.custom-dropdown .dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+    
+    /* Desktop layout */
+    @media (min-width: 992px) {
+      .mobile-header {
+        display: none;
+      }
+
+      .navbar-collapse {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .navbar-nav {
+        flex: 2;
+        justify-content: center;
+        display: flex;
+      }
+
+      .navbar-brand {
+        position: static !important;
+        transform: none !important;
+      }
+
+      .navbar-brand img {
+        height: 55px;
+      }
+    }
+
+   body,
+    html {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+
+    .terms-color p span, ul li{
+      color: grey;
+    }
+    
+    .terms-color strong{
+      letter-spacing: 2px;
+    }
+    /* footer styles */
+
+    .footer-custom {
+      border-radius: 50px;
+      background-color: #000;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .footer-custom .arrow-left,
+    .footer-custom .arrow-right {
+      position: absolute;
+      top: 0px;
+      width: 115px;
+      height: 147px;
+    }
+
+    .footer-custom .arrow-left {
+      left: 0px;
+    }
+
+    .footer-custom .arrow-right {
+      right: 0px;
+    }
+
+    .footer-custom .triangle-arrow-left,
+    .footer-custom .triangle-arrow-right {
+      position: absolute;
+      top: 78px;
+      width: 40px;
+      height: 40px;
+    }
+
+
+    .footer-custom .triangle-arrow-left {
+      left: 20vw;
+    }
+
+    .footer-custom .triangle-arrow-right {
+      right: 20vw
+    }
+
+    .footer-custom input[type="email"] {
+      background-color: #333;
+      border: none;
+      color: #fff;
+      padding-right: 140px !important;
+
+    }
+
+
+    .gmail-section-line {
+      color: #ffffff !important;
+    }
+
+    .gmail-section {
+      padding-right: 2rem !important;
+      padding-left: 2rem !important;
+      color: #ffffff;
+    }
+
+    .gmail-section::placeholder {
+      color: #ffffff;
+
+    }
+
+    .justify-content-center.gap_11 {
+      gap: 1.5rem !important;
+    }
+
+    .footer-custom .d-flex a {
+      color: #aaa;
+      transition: color 0.3s ease;
+    }
+
+    .footer-custom .d-flex a:hover {
+      color: #fff !important;
+      /* 👈 Highlight in white on hover */
+    }
+
+    .border-line-secondary {
+      opacity: 1 !important;
+    }
+
+
+    .top-padding {
+      padding-top: 2rem;
+    }
+
+    .footer-content {
+      max-width: 100%;
+      padding: 1% 5%;
+    }
+    
+    .useful-links li a:hover{
+      color: white !important;
+    }
+    @media (min-width: 767px) {
+
+
+      .col-md-3.mobile-col-md-1,
+      .col-md-3.mobile-col-md-31,
+      .col-md-3.mobile-col-md-21,
+      .mobile-col-md {
+        display: none;
+      }
+
+
+    }
+
+
+    @media (max-width: 767px) {
+
+      .footer-custom .triangle-arrow-right {
+        right: 5vw;
+      }
+
+      .footer-custom .triangle-arrow-left {
+        left: 5vw;
+      }
+
+      .gmail-section-line {
+        display: none;
+      }
+
+      .justify-content-center.gap_11 {
+        gap: 0rem !important;
+      }
+
+      .footer-custom input[type="email"] {
+
+        padding-right: 0px !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        padding-left: 1rem !important;
+        font-size: 3vw;
+
+      }
+
+
+      .btn-primary.rounded-pill.gmail-section {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        font-size: 3vw;
+
+      }
+
+      .Newsletter-h4
+       {
+        font-size: calc(1rem + 0.3vw);
+      }
+
+    
+
+      .newsletter-padding {
+        padding-top: 5rem;
+      }
+
+      .mobile-col-md-4 {
+        display: none;
+      }
+
+      .d-flex.gap-3.mt-2.mobile-link {
+        justify-content: center;
+        padding: 8% 0 4% 0;
+
+      }
+
+      .col-md-3.mobile-col-md-12,
+      .col-md-3.mobile-col-md-2,
+      .col-md-3.mobile-col-md-3,
+      .mobile-col-md-4 {
+        display: none;
+      }
+
+
+      .top-padding {
+        padding-top: 0rem !important;
+      }
+
+      .col-md-3.mobile-col-md-1 {
+        --bs-gutter-y: 0rem !important;
+      }
+
+      .footer-content {
+        max-width: 97%;
+        padding: 2%
+      }
+
+
+      .accordion-header-custom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding-bottom: 0.5rem;
+
+      }
+
+      .accordion-header-custom h6 {
+        margin: 0;
+      }
+
+      .footer-toggle-icon {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .accordion-body-custom {
+        display: none;
+        padding-bottom: 1rem;
+        /* border-bottom: 1px solid #6c757d; */
+      }
+
+      .accordion-body-custom.active {
+        display: block;
+      }
+
+      .buttom-border {
+        border-bottom: 1px solid #6c757d;
+
+      }
+
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+
+      <!-- Mobile: Toggler | Centered Logo | Contact Button -->
+      <div class="mobile-header d-lg-none w-100">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Centered Logo -->
+        <a class="navbar-brand navbar-logo-center" href="#">
+          <img src="./images-compress/VC Fitness Logo.webp" alt="VC Fitness Logo">
+        </a>
+
+        <a href="#" class="btn btn-contact">Contact Us</a>
+      </div>
+
+      <!-- Desktop View -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <!-- Left Logo -->
+        <a class="navbar-brand d-none d-lg-block" href="#">
+          <img src="./images-compress/VC Fitness Logo.webp" alt="VC Fitness Logo">
+        </a>
+
+        <!-- Menu Center -->
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item custom-dropdown">
+          <a class="nav-link" href="./service-page.html">Services</a>
+          <ul class="dropdown-menu">
+          <li class="nav-dropdown-border"><a href="./service-page.html#one-to-one-section" class="dropdown-color">1-On-1 Training</a></li>
+          <li class="nav-dropdown-border"><a href="./service-page.html#online-programs" class="dropdown-color">Online Programs</a></li>
+         </ul>
+         </li>
+          <li class="nav-item custom-dropdown">
+          <a class="nav-link" href="./About-Us-page.html">About Us</a>
+          <ul class="dropdown-menu">
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/meet.html" class="dropdown-color">Meet Vinod Channa</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/vinod channa story.html" class="dropdown-color">Vinod Channa Story</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/mantra.html" class="dropdown-color">Vinod Channa's Mantra</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/awards.html" class="dropdown-color">Awards</a></li>
+         </ul>
+         </li>
+          <li class="nav-item"><a class="nav-link" href="./blog-page.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="./Media-page.html">Media</a></li>
+           <li class="nav-item"><a class="nav-link" href="https://pages.razorpay.com/vinodchanna">Online Payment</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Log In/Sign Up</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#">Store</a></li> -->
+        </ul>
+
+        <!-- Contact Us Desktop -->
+        <div class="d-none d-lg-block">
+          <a href="./Contact-Us.html" class="btn btn-contact">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+          // Remove 'active' class from all links
+          navLinks.forEach(l => l.classList.remove("active"));
+          // Add 'active' class to the clicked link
+          this.classList.add("active");
+        });
+      });
+    });
+  </script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      const currentPage = decodeURIComponent(window.location.pathname.split('/').pop());
+
+      navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href').split('/').pop();
+        if (linkHref === currentPage || (currentPage === "" && linkHref === "index.html")) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+  
+<!-- Term Conditions Body -->
+
+	
+	<div id="main" class="site-main page__top-shadow visible" style="margin-top:80px; margin-bottom:50px;">
+
+<div id="main-content" class="main-content">
+
+
+<div class="block-content">
+	<div class="container">
+		<div class="panel row">
+
+			<div class="panel-center col-xs-12">
+				<article id="post-24456" class="post-24456 page type-page status-publish">
+
+					<div class="entry-content post-content">
+						
+						
+							
+						
+						<div class="wpb-content-wrapper"><div id="vc_row-686ce9a62e96e" class="vc_row wpb_row vc_row-fluid thegem-custom-686ce9a62e9437759"><div class="wpb_column vc_column_container vc_col-sm-12 thegem-custom-686ce9a62ed0a7956" ><div class="vc_column-inner thegem-custom-inner-686ce9a62ed0b "><div class="wpb_wrapper thegem-custom-686ce9a62ed0a7956">
+	
+		<div class="wpb_text_column wpb_content_element  thegem-vc-text thegem-custom-686ce9a62eed57590"  >
+			<div class="wpb_wrapper" style="text-align: justify;">
+        <div class="terms-color">
+				<p><strong>These terms and conditions are entered into by and between VC Fitness, Mumbai, India and you (hereinafter: “the member”).</strong></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+           <p><strong>Services: </strong><span> The membership entitles the usage of the VC Fitness facilities and the equipment &amp; services available therein.</span></p>
+        </div> 
+
+        <hr>
+        
+        <div class="terms-color">
+            <p><strong>Age Limit: </strong><span> The member confirms that he/she is 18 years old or older. For person younger are allowed to use the services rendered for kids/ otherwise based on a written parental consent.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+           <p><strong>Activation of Membership: </strong><span> The Membership is automatically activated the next day as per the date payment of membership fees unless specified by the member on sign up. The club cannot hold the membership starting date more than 30 days.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+            <p><strong>Transfer: </strong><span> Transfer of a membership is permitted to a nonmember i.e. to a person who has not been a member with the VC fitness Gym. Transfer fees of 1000+ taxes per transfer is applicable.</span></p>
+        </div>
+
+        <hr>
+        
+        <div class="terms-color">
+            <p><strong>Extension: </strong><span> WE DO NOT extend membership. Extension is only given in one to one training on a medical basis for submission of an application &amp; all relevant medical documents. The extension will be given up to 2 weeks depending upon the medical condition. In case of Group training there will be no extension in any case.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+            <p><strong>Cancellation / Refund: </strong><span> No refund shall be made for membership dues paid, except as follows:</span></p>
+            <p><span> If the reason of death or permanent disability, the member is unable to use the services or facilities of the gym. The term “Disability’’ means a condition which the member is unable to use facility &amp; and “Permanent’’ means more than six months. No refund will be given for temporary basis.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+            <p><strong>DECLARATION: </strong><span> You declare that you are in a physically sound state of health and are not suffering from any condition, impairment, disease, infirmity or other illness that would prevent your participation or use of equipment or machinery in the gym. You also give consent to the Trainer having to touch you during spotting and carrying out certain exercise moves.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+            <p><strong>Use of the Facilities:</strong><span> The facility shall be used for training purposes only. No other activity will be allowed, and violation will be sanctioned. For example, sleeping and lingering are not allowed. Consumption of alcohol, tobacco or illegal substances is not allowed. Working out under influence is not allowed. Conducting business or paid services is not allowed.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+            <p><strong>Code of Conduct:</strong><span> The member shall respect the behavioral and operating principles and follow them on all the occasions. This includes, but not limited to:</span></p>
+            <ul>
+              <li>Wearing appropriate and clean clothes and shoes.</li>
+              <li>Using towel at every workout and leaving machines and surfaces clean after usage.</li>
+               <li>Behaving in a friendly and respectful manner towards the other members in the gym as well as the staff.</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+            <p><strong>Lockers for Personal Belongings:</strong><span> Lockers are available for members while working out in the facility. Each member needs to empty the locker and keep the keys while leaving the facility. VC Fitness may empty lockers if member is not in the facility.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+            <p><strong>Lost Property or Theft:</strong><span> VC Fitness does not take responsibility for the loss or theft of any personal belongings, even if locked in a locker.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+            <p><strong> Suspension/Termination of Membership:</strong><span> If a member behaves in a way that breaches the code of conduct, interferes or disturbs other members or staff, or that management considers inappropriate the membership can be suspended or terminated at management’s sole discretion. If management does not pay membership fees, the membership can be suspended or terminated at management’s sole discretion.</span></p>
+            <p><strong>Price Changes </strong><span>All the prices are fixed for the duration of the contract. A price change can be implemented by the management from time to time and will be updated on the brochure of the gym. In case of price change, member has to pay the revised price on renewal of the contract.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+           <p><strong>Insurance:</strong><span> The Member confirms that he/she holds the necessary insurances to cover any accident or training incident. VC Fitness shall not be subject to any claim, demand or injury whatsoever with regard to the assessment of the Members health condition or for any injury arising out of Members disability, impairment or ailment.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+           <p><strong>Liability:</strong><span> Each member of VC Fitness shall be liable for any property damage and/ or personal damage and/or personal injury caused by the member at VC Fitness gym premises. It shall be the obligation of the member to pay for any costs involved upon presentation of a statement thereof.</span></p>
+        </div>
+
+        <hr>
+
+        <div class="terms-color">
+            <p><strong>WAIVER OF LIABILITY:</strong><span> Any and all use of the VC Fitness gym shall be at member’s own risk at all times.The member shall not utilize the machines unless he/ she knows the correct usage of the training device. VC Fitness shall not be liable for any injuries, physical impact or damages to the members or the property of the members or be subject to any claim arising out of the use of the premises and/or of the machines made available to the users. By clicking on you agree terms and conditions, you acknowledge receipt of fully completed copy of the membership agreement executed by you and the club &amp; the copy of the rules and the regulation. You agree to be bound by the terms and condition contained herein.</span></p>
+        </div>
+
+			</div>
+			<style>@media screen and (max-width: 1023px) {.thegem-vc-text.thegem-custom-686ce9a62eed57590{display: block!important;}}@media screen and (max-width: 767px) {.thegem-vc-text.thegem-custom-686ce9a62eed57590{display: block!important;}}@media screen and (max-width: 1023px) {.thegem-vc-text.thegem-custom-686ce9a62eed57590{position: relative !important;}}@media screen and (max-width: 767px) {.thegem-vc-text.thegem-custom-686ce9a62eed57590{position: relative !important;}}</style>
+		</div>
+	
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- .entry-content -->
+
+					
+					
+					
+					
+					
+				</article><!-- #post-## -->
+
+			</div>
+
+			
+		</div>
+
+	</div>
+</div><!-- .block-content -->
+
+</div><!-- #main-content -->
+
+
+		</div><!-- #main -->
+		<div id="lazy-loading-point"></div>
+
+
+
+
+
+  <!-- footer section -->
+  <footer class="footer-custom text-white pt-5 pb-4">
+    <!-- Arrows -->
+    <img src="./images-compress/arrow-left.webp" class="arrow-left" alt="Arrow" />
+    <img src="./images-compress/arrow-right.webp" class="arrow-right" alt="arrow-right" />
+
+    <img src="./images-compress/triangle-arrow-left.webp" class="triangle-arrow-left" alt="triangle-Arrow-left" />
+    <img src="./images-compress/triangle-arrow-right.webp" class="triangle-arrow-right" alt="triangle-arrow-right" />
+
+    <!-- Newsletter -->
+    <div class="container text-center mb-5 newsletter-padding">
+      <h4 class="fw-bold text-uppercase Newsletter-h4">Subscribe to<br>Our Newsletter</h4>
+      <p class="text-muted small gmail-section-line">To Make Your Stay Special And Even More Memorable</p>
+      <div class="d-flex justify-content-center gap_11 flex-wrap mt-3">
+        <input type="email" class="form-control rounded-pill gmail-section py-2 w-auto" placeholder="Email Address" id="emailInput"/>
+        <button class="btn btn-primary rounded-pill gmail-section" onclick="subscribe()">Subscribe</button>
+      </div>
+      <script>
+  function subscribe() {
+    const email = document.getElementById('emailInput').value;
+
+    if (!email) {
+      alert("Please enter your email address.");
+      return;
+    }
+
+    // Simple email validation
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Simulate sending email to backend
+    console.log("Subscribed email:", email);
+
+    // Optionally show a success message
+    alert("Thank you for subscribing!");
+  }
+</script>
+    </div>
+    <hr class="border-line-secondary">
+
+    <!-- Main Footer Content -->
+    <div class="container footer-content">
+      <div class="row gy-4 text-start">
+        <!-- About Us  for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md">
+          <h6 class="fw-bold">About Us</h6>
+          <p class="small text-white-50" style="text-align: justify;">
+            VC Fitness is owned by a celebrity trainer Mr. Vinod Channa. He is also a personal trainer to business
+            tycoons namely Anant Ambani, Nita Ambani, Kumar Mangalam Birla, Ananya Birla etc and many Bollywood
+            celebrities namely John Abraham, Shilpa Shetty Kundra, Harshvardhan Rane, Vivek Oberoi, Arjun Rampal to name
+            a few.
+          </p>
+        </div>
+        <!-- Contact  for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md-1">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small text-white-50">
+            Pinnacle House, 5th Floor, 15th Road, P D Hinduja Junction,<br>
+            Bandra West Mumbai, Maharashtra - 400050
+          </p>
+          <p class="small text-white-50">📞 91 9870406617<br>📧 Channa.Vinod@Gmail.Com<br>🌐
+            https://vinodchannafitness.com</p>
+        </div>
+        <!-- Contact -->
+        <div class="col-md-3 top-padding mobile-col-md-12">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small text-white-50 lh-base">
+            Pinnacle House, 5th Floor, 15th Road, P D Hinduja Junction,<br>
+            Bandra West Mumbai, Maharashtra - 400050
+          </p>
+          <div class="d-flex gap-3 mt-2">
+           <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- Useful Links -->
+        <div class="col-md-3 top-padding mobile-col-md-2">
+          <h6 class="fw-bold">Useful Links</h6>
+          <ul class="list-unstyled small text-white-50 useful-links">
+            <li class="pt-2"><a href="index.html" class="text-white-50 text-decoration-none">VC Fitness</a></li>
+            <li class="pt-2"><a href="./service-page.html" class="text-white-50 text-decoration-none">Vinod Channa Fitness Service</a></li>
+            <li class="pt-2"><a href="index.html" class="text-white-50 text-decoration-none">Vinod Channa Story</a></li>
+            <li class="pt-2"><a href="Contact-Us.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+            <li class="pt-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+            <li class="pt-2"><a href="#" class="text-white-50 text-decoration-none">Term Conditions</a></li>
+            <li class="pt-2"><a href="./Media-page.html" class="text-white-50 text-decoration-none">Press Releases</a></li>
+          </ul>
+        </div>
+        <!-- Key Highlights -->
+        <div class="col-md-3 top-padding mobile-col-md-3">
+          <h6 class="fw-bold">Key Highlights</h6>
+          <ul class="list-unstyled small text-white-50 ">
+            <li class="pt-2">Best Celebrity Trainer</li>
+            <li class="pt-2">Vinod Channa Fitness</li>
+            <li class="pt-2">Celebrity Trainer</li>
+            <li class="pt-2">Gym In Bandra</li>
+            <li class="pt-2">Online Coaching Body Transformation</li>
+            <li class="pt-2">Buyback & Exchange Policy</li>
+          </ul>
+        </div>
+        <!-- Useful Links for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md-21 mobile-accordion-section">
+          <div class="buttom-border">
+            <div class="accordion-header-custom" onclick="toggleAccordion(this)">
+              <h6 class="fw-bold mb-0">Useful Links</h6>
+              <span class="footer-toggle-icon">+</span>
+            </div>
+            <div class="accordion-body-custom">
+              <ul class="list-unstyled small text-white-50 mb-0 useful-links">
+                <li class="pt-2"><a href="index.html" class="text-white-50 text-decoration-none">VC Fitness</a></li>
+                <li class="pt-2"><a href="./service-page.html" class="text-white-50 text-decoration-none">Vinod Channa Fitness Service</a></li>
+                <li class="pt-2"><a href="index.html" class="text-white-50 text-decoration-none">Vinod Channa Story</a></li>
+                <li class="pt-2"><a href="Contact-Us.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                <li class="pt-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                <li class="pt-2"><a href="term-conditions.html" class="text-white-50 text-decoration-none">Term Conditions</a></li>
+                <li class="pt-2"><a href="./Media-page.html" class="text-white-50 text-decoration-none">Press Releases</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Key Highlights for mobile -->
+        <div class="col-md-3 top-padding mobile-col-md-31 mobile-accordion-section">
+          <div class="buttom-border">
+            <div class="accordion-header-custom" onclick="toggleAccordion(this)">
+              <h6 class="fw-bold mb-0">Key Highlights</h6><span class="footer-toggle-icon">+</span>
+            </div>
+            <div class="accordion-body-custom">
+              <ul class="list-unstyled small text-white-50 mb-0">
+                <li class="pt-2">Best Celebrity Trainer</li>
+                <li class="pt-2">Vinod Channa Fitness</li>
+                <li class="pt-2">Celebrity Trainer</li>
+                <li class="pt-2">Gym In Bandra</li>
+                <li class="pt-2">Online Coaching Body Transformation</li>
+                <li class="pt-2">Buyback & Exchange Policy</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mt-2 mobile-link">
+
+            <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- About Us-->
+        <div class="col-md-3 top-padding mobile-col-md-4">
+          <h6 class="fw-bold">About Us</h6>
+          <p class="small text-white-50 lh-base">
+            VC Fitness is owned by a celebrity trainer Mr. Vinod Channa. He is also a personal trainer to business
+            tycoons namely Anant Ambani, Nita Ambani, Kumar Mangalam Birla, Ananya Birla etc and many Bollywood
+            celebrities namely John Abraham, Shilpa Shetty Kundra, Harshvardhan Rane, Vivek Oberoi, Arjun Rampal to name
+            a few.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="border-line-secondary mt-4">
+
+    <!-- Bottom Bar -->
+    <div class="container d-flex flex-wrap justify-content-between align-items-center small text-white-50">
+      <p class="mb-0">&copy; 2025 VC Fitness All Rights Reserved</p>
+      <div>
+        <a href="privacy-policy.html" class="text-white-50 text-decoration-none me-3">Privacy Policy</a>
+        <a href="term-conditions.html" class="text-white-50 text-decoration-none">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleAccordion(header) {
+      const icon = header.querySelector('.footer-toggle-icon');
+      const body = header.nextElementSibling;
+      const isOpen = body.classList.contains('active');
+
+      // Close all open sections (optional)
+      document.querySelectorAll('.accordion-body-custom').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.footer-toggle-icon').forEach(el => el.innerText = '+');
+
+      // Open the clicked section if it was closed
+      if (!isOpen) {
+        body.classList.add('active');
+        icon.innerText = '-';
+      }
+    }
+  </script>
+</body>
+</html>

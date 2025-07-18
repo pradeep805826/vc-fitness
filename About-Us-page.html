@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto Slab", serif;
+
+        }
+
+        h1,
+        .programs-section h2,
+        .section-wrapper h2,
+        .testimonial-title,
+        .instagram-center-content h2,
+        .fw-bold.text-uppercase {
+            font-family: "Oswald", sans-serif;
+        }
+
+        .highlight-section-line {
+            margin: 0px !important;
+            color: #9E6449 !important;
+            border: 1px solid;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .navbar-custom {
+      background: linear-gradient(to bottom, #FEE7DC, #FEF5F0);
+      padding: 10px 12px;
+      overflow: visible;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .btn-contact {
+      background-color: #9E6449;
+      color: #fff;
+      border: none;
+      padding: 6px 16px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .btn-contact:hover {
+      background-color: #703926 !important;
+      color: #fff;
+
+    }
+    
+    /* Mobile Top Bar Layout */
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .mobile-header .navbar-logo-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-93%);
+      z-index: 1;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #000;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    /* .navbar-nav .nav-link.active {
+      color: #9E6449;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    } */
+    .navbar-nav .nav-link:hover {
+      color: #703926 !important;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #9E6449;
+      /* underline color */
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #9E6449;
+      /* active text color */
+    }
+
+    .navbar-nav .nav-link.active::after,
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+    
+
+     /* .nav-dropdown-border{
+      padding: 5px;
+    } */
+
+    .nav-dropdown-border:hover{
+      border-left: 4px solid #9E6449;
+      background: linear-gradient(to bottom, #FEE7DC, #FEF5F0) !important;
+    }
+    
+    .dropdown-color:hover{
+     background: linear-gradient(to bottom, #FEE7DC, #FEF5F0) !important;
+    }
+
+
+    /* Base dropdown styles */
+.custom-dropdown {
+  position: relative;
+}
+
+.custom-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 30px; /* buffer zone under About Us */
+}
+
+.custom-dropdown .dropdown-menu {
+  position: absolute;
+  top: 156%;
+  left: 0;
+  display: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-width: 220px;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown:hover .dropdown-menu,
+.custom-dropdown .dropdown-menu:hover {
+  display: block;
+}
+
+/* Optional: smooth transition */
+.custom-dropdown .dropdown-menu li {
+  list-style: none;
+}
+
+.custom-dropdown .dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.custom-dropdown .dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+    
+    /* Desktop layout */
+    @media (min-width: 992px) {
+      .mobile-header {
+        display: none;
+      }
+
+      .navbar-collapse {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .navbar-nav {
+        flex: 2;
+        justify-content: center;
+        display: flex;
+      }
+
+      .navbar-brand {
+        position: static !important;
+        transform: none !important;
+      }
+
+      .navbar-brand img {
+        height: 55px;
+      }
+    }
+
+
+
+
+
+        /* about-us-Banner */
+        .about-us-Banner {
+            position: relative;
+            width: 100%;
+            padding: 0;
+        }
+
+        .about-us-Banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-us-Banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #000 2%, transparent 35%);
+            pointer-events: none;
+            /* so links remain clickable */
+            z-index: 1;
+        }
+
+        .about-us-Banner .about-us-wrapper {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            padding: 0 1rem;
+            /* so content doesn't touch screen edges on mobile */
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .about-us-Banner h1 {
+            font-size: clamp(0.6rem, 4vw, 2.5rem);
+            /* responsive scaling */
+            font-weight: bold;
+            color: white;
+            margin: 0;
+        }
+
+        .about-us-breadcrumb {
+            background: white;
+            color: black;
+            padding: 8px 20px;
+            border-radius: 4px;
+            margin-top: 0.8rem;
+            font-size: clamp(0.3rem, 1.5vw, 0.9rem);
+            /* responsive scaling */
+            display: inline-block;
+        }
+         .about-us-breadcrumb:hover{
+    color: #703926;
+  }
+
+        /* Optional fine-tuning at smaller sizes */
+        @media (max-width: 480px) {
+            .about-us-breadcrumb {
+                padding: 1.5vw 2vw;
+                margin-top: 1.5vw;
+            }
+        }
+
+        /* about-section */
+
+
+        .about-section {
+            padding: 3rem 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .about-container {
+            max-width: 1090px;
+            margin: 0 auto;
+        }
+
+        .about-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.4;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive font scaling */
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 1.5rem;
+            }
+
+            .about-text {
+                font-size: 0.95rem;
+                text-align: justify;
+            }
+        }
+
+        /* vc-section */
+
+        .vc-section {
+            display: flex;
+            flex-wrap: wrap;
+            /* max-width: 1200px; */
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            gap: 2rem;
+            flex: 1 1 100%;
+            font-family: 'Roboto Slab', serif;
+            line-height: 1.6;
+        }
+
+        .vc-images-wrapper {
+            position: relative;
+            width: 100%;
+            /* max-width: 1000px; */
+            margin: auto;
+            /* background: #f9f9f9; */
+            /* padding: 20px; */
+            flex: 1 1 45%;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .vc-left-large {
+            width: 45%;
+            border-radius: 16px;
+            overflow: hidden;
+
+        }
+
+        .vc-right-small {
+            position: absolute;
+            top: 10%;
+            left: 52%;
+            width: 33%;
+            max-width: 300px;
+            border-radius: 16px;
+            overflow: hidden;
+
+        }
+
+        .vc-bottom-overlap {
+            position: absolute;
+            top: 80%;
+            left: 38%;
+            width: 32%;
+            max-width: 300px;
+            z-index: 2;
+            border-radius: 16px;
+            overflow: hidden;
+
+        }
+
+        .vc-images-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .vc-content {
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .vc-content h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            /* font-size: 2vw; */
+            font-weight: 700;
+        }
+
+        .vc-content h3 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            /* font-size: 2vw; */
+            font-weight: bold;
+        }
+
+        .vc-content p {
+            font-size: clamp(0.95rem, 2vw, 1rem);
+            /* font-size: 1vw; */
+            color: #333;
+        }
+
+        .vc-link {
+            color: #9b4b3d;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .vc-link:hover {
+            text-decoration: underline;
+            color: #6c3227;
+        }
+
+        
+
+
+        @media (max-width: 768px) {
+            .vc-section {
+                flex-direction: column;
+                padding: 2rem;
+            }
+
+            .vc-content h2 {
+                text-align: center;
+            }
+
+            .vc-images-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .vc-left-large,
+            .vc-right-small,
+            .vc-bottom-overlap {
+                position: static;
+                width: 90%;
+                margin: 10px 0;
+
+            }
+
+            .vc-bottom-overlap {
+                z-index: 0;
+            }
+
+        }
+
+
+/* about vc-mantra-section */
+
+
+.mb-0.text-muted.small {
+            color: #000 !important;
+        }
+
+        .p-4-mobile {
+            padding: 2.5rem;
+        }
+
+
+
+
+        /* awards-section */
+
+        .awards-section {
+            background: linear-gradient(to bottom right, #e7ecf1, #f6f8fa);
+            padding: 3rem 1rem;
+        }
+
+        .award-card {
+            background: #fff;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        .award-title {
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .award-text {
+            font-size: 0.875rem;
+            color: #555;
+            text-align: center;
+        }
+
+        .award-link {
+            color: #9b4b3d;
+            text-align: center;
+            margin-top: 1rem;
+            display: block;
+            font-weight: 600;
+        }
+
+       
+
+
+        .text-muted.mx-auto.mb-5 {
+            color: #000 !important;
+        }
+
+        /* @media (min-width: 0px) {
+
+            .container,
+            .container-md,
+            .container-sm {
+                max-width: 100%;
+            }
+        } */
+
+
+
+
+
+
+        .text-danger-color {
+            color: #9b4b3d;
+        }
+
+
+
+
+
+
+       .footer-custom {
+      border-radius: 50px;
+      background-color: #000;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .footer-custom .arrow-left,
+    .footer-custom .arrow-right {
+      position: absolute;
+      top: 0px;
+      width: 115px;
+      height: 147px;
+    }
+
+    .footer-custom .arrow-left {
+      left: 0px;
+    }
+
+    .footer-custom .arrow-right {
+      right: 0px;
+    }
+
+    .footer-custom .triangle-arrow-left,
+    .footer-custom .triangle-arrow-right {
+      position: absolute;
+      top: 78px;
+      width: 40px;
+      height: 40px;
+    }
+
+
+    .footer-custom .triangle-arrow-left {
+      left: 20vw;
+    }
+
+    .footer-custom .triangle-arrow-right {
+      right: 20vw
+    }
+
+    .footer-custom input[type="email"] {
+      background-color: #333;
+      border: none;
+      color: #fff;
+      padding-right: 140px !important;
+
+    }
+
+
+    .gmail-section-line {
+      color: #ffffff !important;
+    }
+
+    .gmail-section {
+      padding-right: 2rem !important;
+      padding-left: 2rem !important;
+      color: #ffffff;
+    }
+
+    .gmail-section::placeholder {
+      color: #ffffff;
+
+    }
+
+    .justify-content-center.gap_11 {
+      gap: 1.5rem !important;
+    }
+
+    .footer-custom .d-flex a {
+      color: #aaa;
+      transition: color 0.3s ease;
+    }
+
+    .footer-custom .d-flex a:hover {
+      color: #fff !important;
+      /* 👈 Highlight in white on hover */
+    }
+
+    .border-line-secondary {
+      opacity: 1 !important;
+    }
+
+
+    .top-padding {
+      padding-top: 2rem;
+    }
+
+    .footer-content {
+      max-width: 100%;
+      padding: 1% 5%;
+    }
+    
+    .useful-links li a:hover{
+      color:white !important;
+    }
+
+    @media (min-width: 767px) {
+
+
+      .col-md-3.mobile-col-md-1,
+      .col-md-3.mobile-col-md-31,
+      .col-md-3.mobile-col-md-21,
+      .mobile-col-md {
+        display: none;
+      }
+
+
+    }
+
+
+    @media (max-width: 767px) {
+
+      .footer-custom .triangle-arrow-right {
+        right: 5vw;
+      }
+
+      .footer-custom .triangle-arrow-left {
+        left: 5vw;
+      }
+
+      .gmail-section-line {
+        display: none;
+      }
+
+      .justify-content-center.gap_11 {
+        gap: 0rem !important;
+      }
+
+      .footer-custom input[type="email"] {
+
+        padding-right: 0px !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        padding-left: 1rem !important;
+        font-size: 3vw;
+
+      }
+
+
+      .btn-primary.rounded-pill.gmail-section {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        font-size: 3vw;
+
+      }
+
+      .Newsletter-h4
+       {
+        font-size: calc(1rem + 0.3vw);
+      }
+
+    
+
+      .newsletter-padding {
+        padding-top: 5rem;
+      }
+
+      .mobile-col-md-4 {
+        display: none;
+      }
+
+      .d-flex.gap-3.mt-2.mobile-link {
+        justify-content: center;
+        padding: 8% 0 4% 0;
+
+      }
+
+      .col-md-3.mobile-col-md-12,
+      .col-md-3.mobile-col-md-2,
+      .col-md-3.mobile-col-md-3,
+      .mobile-col-md-4 {
+        display: none;
+      }
+
+
+      .top-padding {
+        padding-top: 0rem !important;
+      }
+
+      .col-md-3.mobile-col-md-1 {
+        --bs-gutter-y: 0rem !important;
+      }
+
+      .footer-content {
+        max-width: 97%;
+        padding: 2%
+      }
+
+
+      .accordion-header-custom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding-bottom: 0.5rem;
+
+      }
+
+      .accordion-header-custom h6 {
+        margin: 0;
+      }
+
+      .footer-toggle-icon {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .accordion-body-custom {
+        display: none;
+        padding-bottom: 1rem;
+        /* border-bottom: 1px solid #6c757d; */
+      }
+
+      .accordion-body-custom.active {
+        display: block;
+      }
+
+      .buttom-border {
+        border-bottom: 1px solid #6c757d;
+
+      }
+
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+
+      <!-- Mobile: Toggler | Centered Logo | Contact Button -->
+      <div class="mobile-header d-lg-none w-100">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Centered Logo -->
+        <a class="navbar-brand navbar-logo-center" href="#">
+          <img src="./images-compress/VC Fitness Logo.webp" alt="VC Fitness Logo">
+        </a>
+
+        <a href="#" class="btn btn-contact">Contact Us</a>
+      </div>
+
+      <!-- Desktop View -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <!-- Left Logo -->
+        <a class="navbar-brand d-none d-lg-block" href="#">
+          <img src="./images-compress/VC Fitness Logo.webp" alt="VC Fitness Logo">
+        </a>
+
+        <!-- Menu Center -->
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item custom-dropdown">
+          <a class="nav-link" href="./service-page.html">Services</a>
+          <ul class="dropdown-menu">
+          <li class="nav-dropdown-border"><a href="./service-page.html#one-to-one-section" class="dropdown-color">1-On-1 Training</a></li>
+          <li class="nav-dropdown-border"><a href="./service-page.html#online-programs" class="dropdown-color">Online Programs</a></li>
+         </ul>
+         </li>
+          <li class="nav-item custom-dropdown">
+          <a class="nav-link" href="./About-Us-page.html">About Us</a>
+          <ul class="dropdown-menu">
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/meet.html" class="dropdown-color">Meet Vinod Channa</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/vinod channa story.html" class="dropdown-color">Vinod Channa Story</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/mantra.html" class="dropdown-color">Vinod Channa's Mantra</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/awards.html" class="dropdown-color">Awards</a></li>
+         </ul>
+         </li>
+          <li class="nav-item"><a class="nav-link" href="./blog-page.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="./Media-page.html">Media</a></li>
+           <li class="nav-item"><a class="nav-link" href="https://pages.razorpay.com/vinodchanna">Online Payment</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Log In/Sign Up</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#">Store</a></li> -->
+        </ul>
+
+        <!-- Contact Us Desktop -->
+        <div class="d-none d-lg-block">
+          <a href="./Contact-Us.html" class="btn btn-contact">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+          // Remove 'active' class from all links
+          navLinks.forEach(l => l.classList.remove("active"));
+          // Add 'active' class to the clicked link
+          this.classList.add("active");
+        });
+      });
+    });
+  </script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      const currentPage = decodeURIComponent(window.location.pathname.split('/').pop());
+
+      navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href').split('/').pop();
+        if (linkHref === currentPage || (currentPage === "" && linkHref === "index.html")) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+    <!-- About-us-Banner -->
+
+    <section class="about-us-Banner">
+        <img src="./images-compress/about us banner.webp" alt="About Us Banner" class="about-us-Banner-img" />
+        <div class="about-us-wrapper">
+            <h1>ABOUT US</h1>
+            <a href="#" class="home-about-us-btn">
+                <div class="about-us-breadcrumb">Home / About Us</div>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- about-section -->
+
+    <section class="about-section">
+        <div class="about-container">
+            <h2 class="about-title">About Vinod Channa</h2>
+            <p class="about-text">
+                Vinod Channa is one of the most preferred celebrity trainer and recognized fitness consultant for varied
+                health aspects such as weight training, body transformation, diet management, nutritional guidance,
+                health issues or injury and any related guidance on personal strength and energy. His gym is located in
+                the vicinity of Bandra and is better known as his personal studio as it has a selected set of
+                personalized trainers who work closely under his guidance to help achieve their client’s health
+                requirements.
+            </p>
+            <p class="about-text">
+                Vinod Channa’s forte is his inherent ability to adapt and learn new techniques of exercises such as
+                Animal Flow workout, CrossFit training, functional training, combination workouts and many others listed
+                under ‘Fitness Techniques’ section and applying these aptly to suit each of his client’s body structure,
+                motivation/tolerance level, willingness, lifestyle, threshold capacity and fitness regimen. This
+                customized training approach associated with dietary guidance, experience, nutritional tips, awareness
+                and inspirational environment has always provided desired results to his clients and earned him
+                accolades more often.
+            </p>
+        </div>
+    </section>
+
+    <!-- vc-section -->
+
+    <section class="vc-section">
+
+        <div class="vc-images-wrapper">
+            <div class="vc-left-large">
+                <img src="./images-compress/vc-trainer-image1.webp" alt="Top Left Large Image" />
+            </div>
+            <div class="vc-right-small">
+                <img src="./images-compress/vc-trainer-image 2.webp" alt="Top Right Small Image" />
+            </div>
+            <div class="vc-bottom-overlap">
+                <img src="./images-compress/vc-trainer-image 3.webp" alt="Bottom Overlapping Image" />
+            </div>
+        </div>
+
+
+        <div class="vc-content">
+            <h2>Empowering You To Achieve Your Fitness Goals With Vinod Channa</h2>
+            <p>We believe fitness is more than just a workout—it's a lifestyle. With top-of-the-line facilities,
+                certified trainers, and a supportive community, we're here to inspire and guide you every step of the
+                way.</p>
+
+            <div>
+                <h3>One Of The Most Preferred Celebrity Trainer</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum</p>
+                <a href="#" class="vc-link">Read More →</a>
+            </div>
+
+            <div>
+                <h3>Vinod Channa’s Strength</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum</p>
+                <a href="#" class="vc-link">Read More →</a>
+            </div>
+
+            <div>
+                <h3>The Result-Driven Fitness Mentor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum</p>
+                <a href="#" class="vc-link">Read More →</a>
+            </div>
+        </div>
+
+    </section>
+<hr class="highlight-section-line">
+ 
+
+
+<!-- about vc-mantra-section -->
+    <section class="container py-5">
+        <!-- Heading -->
+        <h2 class="text-center fw-bold mb-3 display-6">VINOD CHANNA FITNESS MANTRA’S</h2>
+        <p class="text-center mx-auto mb-5" style="max-width: 800px;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+
+        <!-- Flex Row -->
+        <div class="row gx-5 align-items-stretch">
+            <!-- Left Image -->
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="rounded-4 overflow-hidden h-100">
+                    <img src="./images-compress/Mantra Main Image.webp" alt="Main Image"
+                        class="img-fluid h-100 w-100 object-fit-cover" />
+                </div>
+            </div>
+
+            <!-- Right Cards -->
+            <div class="col-lg-6 d-flex flex-column gap-4 overflow-auto pe-lg-5 justify-content-between"
+                style="max-height: 100%;">
+                <!-- Card 1 -->
+                <div class="d-flex gap-4 p-4-mobile rounded shadow-sm"
+                    style="background: linear-gradient(to bottom, #FFF1EB, #E3F1EF);">
+                    <img src="images-compress/Mantra icon 1.webp" alt="Icon" class="rounded"
+                        style="width: 56px; height: 56px; object-fit: cover;" />
+                    <div>
+                        <h5 class="mb-1 fw-semibold">FAT KA DUSHMAN</h5>
+                        <p class="mb-0 text-muted small">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, provident, tempore natus nisi,
+                            nostrum aut dicta nihil eveniet laudantium excepturi molestiae voluptate blanditiis
+                            inventore dolorem et sint eius animi vitae.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="d-flex gap-4 p-4-mobile rounded shadow-sm"
+                    style="background: linear-gradient(to bottom, #FFF1EB, #E3F1EF);">
+                    <img src="./images-compress/Mantra icon 2.webp" alt="Icon" class="rounded"
+                        style="width: 56px; height: 56px; object-fit: cover;" />
+                    <div>
+                        <h5 class="mb-1 fw-semibold">EFFECTIVENESS MATTERS</h5>
+                        <p class="mb-0 text-muted small">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam totam cum rerum iure
+                            maxime assumenda quia, ipsam autem tempora iste nam quae veritatis laborum. Accusamus
+                            voluptatem doloribus commodi similique.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="d-flex gap-4 p-4-mobile rounded shadow-sm"
+                    style="background: linear-gradient(to bottom, #FFF1EB, #E3F1EF);">
+                    <img src="./images-compress/Mantra icon 3.webp" alt="Icon" class="rounded"
+                        style="width: 56px; height: 56px; object-fit: cover;" />
+                    <div>
+                        <h5 class="mb-1 fw-semibold">RESULT-ORIENTED</h5>
+                        <p class="mb-0 text-muted small">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus expedita veritatis quo
+                            officiis aperiam minus! Fugit, possimus error. Deserunt aperiam beatae perferendis ipsa.
+                            Accusamus, nesciunt! Harum fugit excepturi fuga in?
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="d-flex gap-4 p-4-mobile rounded shadow-sm"
+                    style="background: linear-gradient(to bottom, #FFF1EB, #E3F1EF);">
+                    <img src="./images-compress/Mantra icon 4.webp" alt="Icon" class="rounded"
+                        style="width: 56px; height: 56px; object-fit: cover;" />
+                    <div>
+                        <h5 class="mb-1 fw-semibold">EXACT SCIENCE</h5>
+                        <p class="mb-0 text-muted small">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste animi recusandae minus porro,
+                            numquam error architecto quo officiis laborum repudiandae rem maxime tempora doloremque qui
+                            itaque. Architecto debitis doloremque corrupti!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="highlight-section-line">
+
+
+    <!-- awards-section -->
+
+    <section class="awards-section text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-3">AWARDS AND ACCOLADES</h2>
+            <p class="text-muted mx-auto mb-5" style="max-width: 800px;">
+                Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et
+                Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip
+                Ex Ea Commodo Consequat.
+            </p>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="award-card h-100">
+                        <h5 class="award-title">Mr. Jogeshwari Champion Of Champion</h5>
+                        <p class="award-text">Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod
+                            Tempor Incididunt Ut Labore.</p>
+                        <a href="#" class="award-link">Read More</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="award-card h-100">
+                        <h5 class="award-title">Mr. Girgaon Champion Of Champion</h5>
+                        <p class="award-text">Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod
+                            Tempor Incididunt Ut Labore.</p>
+                        <a href="#" class="award-link">Read More</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="award-card h-100">
+                        <h5 class="award-title">Kamgar Shree Champion Of Champion</h5>
+                        <p class="award-text">Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod
+                            Tempor Incididunt Ut Labore.</p>
+                        <a href="#" class="award-link">Read More</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="award-card h-100">
+                        <h5 class="award-title">R. M. Bhat College Champion Of Champion</h5>
+                        <p class="award-text">Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod
+                            Tempor Incididunt Ut Labore.</p>
+                        <a href="#" class="award-link">Read More</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="award-card h-100">
+                        <h5 class="award-title">Mr. Mumbai Gold Medal 2008</h5>
+                        <p class="award-text">Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod
+                            Tempor Incididunt Ut Labore.</p>
+                        <a href="#" class="award-link">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section>
+        <div class="container py-5">
+            <div class="row g-4 align-items-start">
+
+                <!-- Left Column with 2 stacked images -->
+                <div class="col-12 col-md-4">
+                    <img src="./images-compress/Award 1.webp" alt="Award 1" class="img-fluid w-100 mb-3 rounded" />
+                    <img src="./images-compress/Award 2.webp" alt="Award 2" class="img-fluid w-100 rounded" />
+                </div>
+
+                <!-- Right Column with 1 big image and content -->
+                <div class="col-12 col-md-8">
+                    <img src="./images-compress/Award Jury.webp" alt="Award Jury"
+                        class="img-fluid w-100 rounded mb-3" />
+                    <p class="mb-2" style="font-size: 0.95rem;">
+                        Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut
+                        Labore Et Dolore Magna Aliqua.
+                        Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip Ex Ea Commodo
+                        Consequat. Duis Aute Irure
+                        Dolor In Reprehenderit In Voluptate Velit Esse Cillum Dolore Eu Fugiat Nulla Pariatur. Excepteur
+                        Sint Occaecat Cupidatat
+                        Non Proident, Sunt In Culpa Qui Officia Deserunt Mollit Anim Id Est Laborum.
+                    </p>
+                    <a href="#" class="fw-bold text-danger-color text-decoration-none">Read More</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer section -->
+  <footer class="footer-custom text-white pt-5 pb-4">
+    <!-- Arrows -->
+    <img src="./images-compress/arrow-left.webp" class="arrow-left" alt="Arrow" />
+    <img src="./images-compress/arrow-right.webp" class="arrow-right" alt="arrow-right" />
+
+    <img src="./images-compress/triangle-arrow-left.webp" class="triangle-arrow-left" alt="triangle-Arrow-left" />
+    <img src="./images-compress/triangle-arrow-right.webp" class="triangle-arrow-right" alt="triangle-arrow-right" />
+
+    <!-- Newsletter -->
+    <div class="container text-center mb-5 newsletter-padding">
+      <h4 class="fw-bold text-uppercase Newsletter-h4">Subscribe to Our Newsletter</h4>
+      <p class="text-muted small gmail-section-line">To Make Your Stay Special And Even More Memorable</p>
+      <div class="d-flex justify-content-center gap_11 flex-wrap mt-3">
+        <input type="email" class="form-control rounded-pill gmail-section py-2 w-auto" placeholder="Email Address" id="emailInput"/>
+        <button class="btn btn-primary rounded-pill gmail-section" onclick="subscribe()">Subscribe</button>
+      </div>
+      <script>
+  function subscribe() {
+    const email = document.getElementById('emailInput').value;
+
+    if (!email) {
+      alert("Please enter your email address.");
+      return;
+    }
+
+    // Simple email validation
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Simulate sending email to backend
+    console.log("Subscribed email:", email);
+
+    // Optionally show a success message
+    alert("Thank you for subscribing!");
+  }
+</script>
+    </div>
+    <hr class="border-line-secondary">
+
+    <!-- Main Footer Content -->
+    <div class="container footer-content">
+      <div class="row gy-4 text-start">
+        <!-- About Us  for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md">
+          <h6 class="fw-bold">About Us</h6>
+          <p class="small text-white-50" style="text-align: justify;">
+            VC Fitness is owned by a celebrity trainer Mr. Vinod Channa. He is also a personal trainer to business
+            tycoons namely Anant Ambani, Nita Ambani, Kumar Mangalam Birla, Ananya Birla etc and many Bollywood
+            celebrities namely John Abraham, Shilpa Shetty Kundra, Harshvardhan Rane, Vivek Oberoi, Arjun Rampal to name
+            a few.
+          </p>
+        </div>
+        <!-- Contact  for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md-1">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small text-white-50">
+            Pinnacle House, 5th Floor, 15th Road, P D Hinduja Junction,<br>
+            Bandra West Mumbai, Maharashtra - 400050
+          </p>
+          <p class="small text-white-50">📞 91 9870406617<br>📧 Channa.Vinod@Gmail.Com<br>🌐
+            https://vinodchannafitness.com</p>
+        </div>
+        <!-- Contact -->
+        <div class="col-md-3 top-padding mobile-col-md-12">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small text-white-50 lh-base">
+            Pinnacle House, 5th Floor, 15th Road, P D Hinduja Junction,<br>
+            Bandra West Mumbai, Maharashtra - 400050
+          </p>
+          <div class="d-flex gap-3 mt-2">
+            <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- Useful Links -->
+        <div class="col-md-3 top-padding mobile-col-md-2">
+          <h6 class="fw-bold">Useful Links</h6>
+          <ul class="list-unstyled small text-white-50 useful-links">
+            <li class="pt-2"><a href="./index.html" class="text-white-50 text-decoration-none">VC Fitness</a></li>
+            <li class="pt-2"><a href="./service-page.html" class="text-white-50 text-decoration-none">Vinod Channa Fitness Service</a></li>
+            <li class="pt-2"><a href="#" class="text-white-50 text-decoration-none">Vinod Channa Story</a></li>
+            <li class="pt-2"><a href="Contact-Us.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+            <li class="pt-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+            <li class="pt-2"><a href="term-conditions.html" class="text-white-50 text-decoration-none">Term Conditions</a></li>
+            <li class="pt-2"><a href="./Media-page.html" class="text-white-50 text-decoration-none">Press Releases</a></li>
+          </ul>
+        </div>
+        <!-- Key Highlights -->
+        <div class="col-md-3 top-padding mobile-col-md-3">
+          <h6 class="fw-bold">Key Highlights</h6>
+          <ul class="list-unstyled small text-white-50 ">
+            <li class="pt-2">Best Celebrity Trainer</li>
+            <li class="pt-2">Vinod Channa Fitness</li>
+            <li class="pt-2">Celebrity Trainer</li>
+            <li class="pt-2">Gym In Bandra</li>
+            <li class="pt-2">Online Coaching Body Transformation</li>
+            <li class="pt-2">Buyback & Exchange Policy</li>
+          </ul>
+        </div>
+        <!-- Useful Links for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md-21 mobile-accordion-section">
+          <div class="buttom-border">
+            <div class="accordion-header-custom" onclick="toggleAccordion(this)">
+              <h6 class="fw-bold mb-0">Useful Links</h6>
+              <span class="footer-toggle-icon">+</span>
+            </div>
+            <div class="accordion-body-custom">
+              <ul class="list-unstyled small text-white-50 mb-0 useful-links">
+                <li class="pt-2"><a href="./index.html" class="text-white-50 text-decoration-none">VC Fitness</a></li>
+                <li class="pt-2"><a href="./service-page.html" class="text-white-50 text-decoration-none">Vinod Channa Fitness Service</a></li>
+                <li class="pt-2"><a href="#" class="text-white-50 text-decoration-none">Vinod Channa Story</a></li>
+                <li class="pt-2"><a href="Contact-Us.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                <li class="pt-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                <li class="pt-2"><a href="term-conditions.html" class="text-white-50 text-decoration-none">Term Conditions</a></li>
+                <li class="pt-2"><a href="./Media-page.html" class="text-white-50 text-decoration-none">Press Releases</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Key Highlights for mobile -->
+        <div class="col-md-3 top-padding mobile-col-md-31 mobile-accordion-section">
+          <div class="buttom-border">
+            <div class="accordion-header-custom" onclick="toggleAccordion(this)">
+              <h6 class="fw-bold mb-0">Key Highlights</h6><span class="footer-toggle-icon">+</span>
+            </div>
+            <div class="accordion-body-custom">
+              <ul class="list-unstyled small text-white-50 mb-0">
+                <li class="pt-2">Best Celebrity Trainer</li>
+                <li class="pt-2">Vinod Channa Fitness</li>
+                <li class="pt-2">Celebrity Trainer</li>
+                <li class="pt-2">Gym In Bandra</li>
+                <li class="pt-2">Online Coaching Body Transformation</li>
+                <li class="pt-2">Buyback & Exchange Policy</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mt-2 mobile-link">
+
+           <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- About Us-->
+        <div class="col-md-3 top-padding mobile-col-md-4">
+          <h6 class="fw-bold">About Us</h6>
+          <p class="small text-white-50 lh-base">
+            VC Fitness is owned by a celebrity trainer Mr. Vinod Channa. He is also a personal trainer to business
+            tycoons namely Anant Ambani, Nita Ambani, Kumar Mangalam Birla, Ananya Birla etc and many Bollywood
+            celebrities namely John Abraham, Shilpa Shetty Kundra, Harshvardhan Rane, Vivek Oberoi, Arjun Rampal to name
+            a few.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="border-line-secondary mt-4">
+
+    <!-- Bottom Bar -->
+    <div class="container d-flex flex-wrap justify-content-between align-items-center small text-white-50">
+      <p class="mb-0">&copy; 2025 VC Fitness All Rights Reserved</p>
+      <div>
+        <a href="privacy-policy.html" class="text-white-50 text-decoration-none me-3">Privacy Policy</a>
+        <a href="term-conditions.html" class="text-white-50 text-decoration-none">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleAccordion(header) {
+      const icon = header.querySelector('.footer-toggle-icon');
+      const body = header.nextElementSibling;
+      const isOpen = body.classList.contains('active');
+
+      // Close all open sections (optional)
+      document.querySelectorAll('.accordion-body-custom').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.footer-toggle-icon').forEach(el => el.innerText = '+');
+
+      // Open the clicked section if it was closed
+      if (!isOpen) {
+        body.classList.add('active');
+        icon.innerText = '-';
+      }
+    }
+  </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+   <link rel="stylesheet" href="bootstrap.css">
+  <style>
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto Slab", serif;
+
+    }
+
+    h1,
+    .programs-section h2,
+    .section-wrapper h2,
+    .testimonial-title,
+    .instagram-center-content h2,
+    .fw-bold.text-uppercase {
+      font-family: "Oswald", sans-serif;
+    }
+
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+
+
+    .navbar-custom {
+      background: linear-gradient(to bottom, #FEE7DC, #FEF5F0);
+      padding: 10px 12px;
+      overflow: visible;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .btn-contact {
+      background-color: #9E6449;
+      color: #fff;
+      border: none;
+      padding: 6px 16px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .btn-contact:hover {
+      background-color: #703926 !important;
+      color: #fff;
+
+    }
+    
+    /* Mobile Top Bar Layout */
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .mobile-header .navbar-logo-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-93%);
+      z-index: 1;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #000;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    /* .navbar-nav .nav-link.active {
+      color: #9E6449;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    } */
+    .navbar-nav .nav-link:hover {
+      color: #703926 !important;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #9E6449;
+      /* underline color */
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #9E6449;
+      /* active text color */
+    }
+
+    .navbar-nav .nav-link.active::after,
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+    
+
+     /* .nav-dropdown-border{
+      padding: 5px;
+    } */
+
+    .nav-dropdown-border:hover{
+      border-left: 4px solid #9E6449;
+      background: linear-gradient(to bottom, #FEE7DC, #FEF5F0) !important;
+    }
+    
+    .dropdown-color:hover{
+     background: linear-gradient(to bottom, #FEE7DC, #FEF5F0) !important;
+    }
+
+
+    /* Base dropdown styles */
+.custom-dropdown {
+  position: relative;
+}
+
+.custom-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 30px; /* buffer zone under About Us */
+}
+
+.custom-dropdown .dropdown-menu {
+  position: absolute;
+  top: 156%;
+  left: 0;
+  display: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-width: 220px;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown:hover .dropdown-menu,
+.custom-dropdown .dropdown-menu:hover {
+  display: block;
+}
+
+/* Optional: smooth transition */
+.custom-dropdown .dropdown-menu li {
+  list-style: none;
+}
+
+.custom-dropdown .dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.custom-dropdown .dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+    
+    /* Desktop layout */
+    @media (min-width: 992px) {
+      .mobile-header {
+        display: none;
+      }
+
+      .navbar-collapse {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .navbar-nav {
+        flex: 2;
+        justify-content: center;
+        display: flex;
+      }
+
+      .navbar-brand {
+        position: static !important;
+        transform: none !important;
+      }
+
+      .navbar-brand img {
+        height: 55px;
+      }
+    }
+/* contact-section */
+
+    .contact-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+      background: linear-gradient(to bottom, #FFFFFF,#fff3ec, #e1f0ee);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .contact-breadcrumb {
+      background-color: #935f40;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    /* Decorative Circles */
+    .contact-circle {
+      position: absolute;
+      border: 1px solid #935f40;
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+
+    .contact-circle.top-left {
+      top: -100px;
+      left: -100px;
+      width: 250px;
+      height: 250px;
+    }
+
+    .contact-circle.bottom-center {
+      bottom: -135px;
+      left: 25%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
+    }
+
+    .contact-circle.top-right {
+      top: -100px;
+      right: -100px;
+      width: 250px;
+      height: 250px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-section h1 {
+        font-size: 2rem;
+      }
+
+      .contact-breadcrumb {
+        font-size: 13px;
+        padding: 8px 16px;
+      }
+
+      .contact-circle {
+        width: 150px !important;
+        height: 150px !important;
+      }
+
+      .contact-circle.top-left,
+      .contact-circle.top-right {
+         top: -40px;
+      }
+
+      .contact-circle.bottom-center {
+        bottom: -100px;
+      }
+    }
+
+
+/* contact-us-form-section */
+
+    .contact-us-form-section {
+      background-color: #fafaf7;
+      padding: 40px 20px;
+    
+    }
+
+    .form-info-card {
+      border: 1.5px solid #C7C7C7;
+      border-radius: 10px;
+      padding: 25px;
+      height: 100%;
+    }
+
+    .form-icon-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #ffe6db;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #935f40;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .form-section {
+      background: #fef4f1;
+      border-radius: 10px;
+      padding: 30px 3rem;
+      border: 1px solid #ddd;
+    }
+
+    .form-btn-brown {
+      background-color: #935f40;
+      color: white;
+      border: none;
+    }
+
+    .form-btn-brown:hover {
+      background-color: #7c4e35;
+    }
+
+    .col-md-6 label {
+      font-weight: 600;
+      padding-bottom: 1rem;
+    }
+
+    .row.g-4 {
+      --bs-gutter-y: 2rem;
+    }
+
+
+    .form-social-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .form-social-icon:hover {
+      transform: scale(0.85);
+      /* zoom-out effect */
+    }
+
+    .form-social-icon i {
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    /* Icon hover colors */
+    .form-social-icon:hover i.bi-instagram {
+      color: #E1306C;
+    }
+
+    .form-social-icon:hover i.bi-youtube {
+      color: #FF0000;
+    }
+
+    .form-social-icon:hover i.bi-twitter-x {
+      color: #000000;
+    }
+
+    .form-social-icon:hover i.bi-linkedin {
+      color: #0077B5;
+    }
+
+    @media (min-width: 992px) {
+      .col-12.col-lg-6.desktop {
+
+        padding-top: 8rem !important;
+      }
+    }
+
+
+
+
+    /* contact-us-video */
+   .contact-Banner {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .contact-Banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+   
+   .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .play-button::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 20px solid #000;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .play-button {
+        width: 50px;
+        height: 50px;
+      }
+
+      .play-button::before {
+        border-left: 14px solid #000;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+      }
+    }
+
+
+
+
+
+    .footer-custom {
+      border-radius: 50px;
+      background-color: #000;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .footer-custom .arrow-left,
+    .footer-custom .arrow-right {
+      position: absolute;
+      top: 0px;
+      width: 115px;
+      height: 147px;
+    }
+
+    .footer-custom .arrow-left {
+      left: 0px;
+    }
+
+    .footer-custom .arrow-right {
+      right: 0px;
+    }
+
+    .footer-custom .triangle-arrow-left,
+    .footer-custom .triangle-arrow-right {
+      position: absolute;
+      top: 78px;
+      width: 40px;
+      height: 40px;
+    }
+
+
+    .footer-custom .triangle-arrow-left {
+      left: 20vw;
+    }
+
+    .footer-custom .triangle-arrow-right {
+      right: 20vw
+    }
+
+    .footer-custom input[type="email"] {
+      background-color: #333;
+      border: none;
+      color: #fff;
+      padding-right: 140px !important;
+
+    }
+
+
+    .gmail-section-line {
+      color: #ffffff !important;
+    }
+
+    .gmail-section {
+      padding-right: 2rem !important;
+      padding-left: 2rem !important;
+      color: #ffffff;
+    }
+
+    .gmail-section::placeholder {
+      color: #ffffff;
+
+    }
+
+    .justify-content-center.gap_11 {
+      gap: 1.5rem !important;
+    }
+
+    .footer-custom .d-flex a {
+      color: #aaa;
+      transition: color 0.3s ease;
+    }
+
+    .footer-custom .d-flex a:hover {
+      color: #fff !important;
+      /* 👈 Highlight in white on hover */
+    }
+
+    .border-line-secondary {
+      opacity: 1 !important;
+    }
+
+
+    .top-padding {
+      padding-top: 2rem;
+    }
+
+    .footer-content {
+      max-width: 100%;
+      padding: 1% 5%;
+    }
+    
+    .useful-links li a:hover{
+      color:white !important;
+    }
+
+    @media (min-width: 767px) {
+
+
+      .col-md-3.mobile-col-md-1,
+      .col-md-3.mobile-col-md-31,
+      .col-md-3.mobile-col-md-21,
+      .mobile-col-md {
+        display: none;
+      }
+
+
+    }
+
+
+    @media (max-width: 767px) {
+
+      .footer-custom .triangle-arrow-right {
+        right: 5vw;
+      }
+
+      .footer-custom .triangle-arrow-left {
+        left: 5vw;
+      }
+
+      .gmail-section-line {
+        display: none;
+      }
+
+      .justify-content-center.gap_11 {
+        gap: 0rem !important;
+      }
+
+      .footer-custom input[type="email"] {
+
+        padding-right: 0px !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        padding-left: 1rem !important;
+        font-size: 3vw;
+
+      }
+
+
+      .btn-primary.rounded-pill.gmail-section {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        font-size: 3vw;
+
+      }
+
+      .Newsletter-h4
+       {
+        font-size: calc(1rem + 0.3vw);
+      }
+
+    
+
+      .newsletter-padding {
+        padding-top: 5rem;
+      }
+
+      .mobile-col-md-4 {
+        display: none;
+      }
+
+      .d-flex.gap-3.mt-2.mobile-link {
+        justify-content: center;
+        padding: 8% 0 4% 0;
+
+      }
+
+      .col-md-3.mobile-col-md-12,
+      .col-md-3.mobile-col-md-2,
+      .col-md-3.mobile-col-md-3,
+      .mobile-col-md-4 {
+        display: none;
+      }
+
+
+      .top-padding {
+        padding-top: 0rem !important;
+      }
+
+      .col-md-3.mobile-col-md-1 {
+        --bs-gutter-y: 0rem !important;
+      }
+
+      .footer-content {
+        max-width: 97%;
+        padding: 2%
+      }
+
+
+      .accordion-header-custom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding-bottom: 0.5rem;
+
+      }
+
+      .accordion-header-custom h6 {
+        margin: 0;
+      }
+
+      .footer-toggle-icon {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .accordion-body-custom {
+        display: none;
+        padding-bottom: 1rem;
+        /* border-bottom: 1px solid #6c757d; */
+      }
+
+      .accordion-body-custom.active {
+        display: block;
+      }
+
+      .buttom-border {
+        border-bottom: 1px solid #6c757d;
+
+      }
+
+    }
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+
+      <!-- Mobile: Toggler | Centered Logo | Contact Button -->
+      <div class="mobile-header d-lg-none w-100">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Centered Logo -->
+        <a class="navbar-brand navbar-logo-center" href="#">
+          <img src="./images-compress/VC Fitness Logo.webp" alt="VC Fitness Logo">
+        </a>
+
+        <a href="#" class="btn btn-contact">Contact Us</a>
+      </div>
+
+      <!-- Desktop View -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <!-- Left Logo -->
+        <a class="navbar-brand d-none d-lg-block" href="#">
+          <img src="./images-compress/VC Fitness Logo.webp" alt="VC Fitness Logo">
+        </a>
+
+        <!-- Menu Center -->
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item custom-dropdown">
+          <a class="nav-link" href="./service-page.html">Services</a>
+          <ul class="dropdown-menu">
+          <li class="nav-dropdown-border"><a href="./service-page.html#one-to-one-section" class="dropdown-color">1-On-1 Training</a></li>
+          <li class="nav-dropdown-border"><a href="./service-page.html#online-programs" class="dropdown-color">Online Programs</a></li>
+         </ul>
+         </li>
+          <li class="nav-item custom-dropdown">
+          <a class="nav-link" href="./About-Us-page.html">About Us</a>
+          <ul class="dropdown-menu">
+         <li class="nav-dropdown-border"><a href="./vinochannafiness/meet.html" class="dropdown-color">Meet Vinod Channa</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/vinod channa story.html" class="dropdown-color">Vinod Channa Story</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/mantra.html" class="dropdown-color">Vinod Channa's Mantra</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/awards.html" class="dropdown-color">Awards</a></li>
+         </ul>
+         </li>
+          <li class="nav-item"><a class="nav-link" href="./blog-page.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="./Media-page.html">Media</a></li>
+           <li class="nav-item"><a class="nav-link" href="https://pages.razorpay.com/vinodchanna">Online Payment</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Log In/Sign Up</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#">Store</a></li> -->
+        </ul>
+
+        <!-- Contact Us Desktop -->
+        <div class="d-none d-lg-block">
+          <a href="./Contact-Us.html" class="btn btn-contact">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+          // Remove 'active' class from all links
+          navLinks.forEach(l => l.classList.remove("active"));
+          // Add 'active' class to the clicked link
+          this.classList.add("active");
+        });
+      });
+    });
+  </script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      const currentPage = decodeURIComponent(window.location.pathname.split('/').pop());
+
+      navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href').split('/').pop();
+        if (linkHref === currentPage || (currentPage === "" && linkHref === "index.html")) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+
+
+<!-- contact-top-section -->
+
+<section class="contact-section">
+    <!-- Circles -->
+    <div class="contact-circle top-left"></div>
+    <div class="contact-circle bottom-center"></div>
+    <div class="contact-circle top-right"></div>
+
+    <!-- Content -->
+    <h1>CONTACT US</h1>
+    <div class="contact-breadcrumb">Home / Contact Us</div>
+  </section>
+
+
+
+<!-- contact-us-form-section -->
+
+   <section class="contact-us-form-section">
+    <div class="container">
+      <div class="row g-4">
+        <!-- LEFT: Contact Info Cards -->
+        <div class="col-12 col-lg-6 desktop">
+          <div class="row g-4">
+            <!-- Location -->
+            <div class="col-12 col-sm-6">
+              <div class="form-info-card">
+                <div class="form-icon-circle"><svg width="23" height="27" viewBox="0 0 23 27" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.5 14.0801C8.72762 14.0801 6.47209 11.8564 6.47209 9.12305C6.47209 6.38972 8.72762 4.16602 11.5 4.16602C14.2724 4.16602 16.5279 6.38972 16.5279 9.12305C16.5279 9.39191 16.5058 9.66191 16.4622 9.92561C16.3671 10.5005 15.818 10.8905 15.2342 10.7968C14.6511 10.7031 14.2555 10.1611 14.3505 9.58615C14.3756 9.43437 14.3883 9.27859 14.3883 9.12314C14.3883 7.55293 13.0926 6.27545 11.4999 6.27545C9.9073 6.27545 8.61161 7.55293 8.61161 9.12314C8.61161 10.6932 9.9073 11.9707 11.4999 11.9707C11.631 11.9707 11.7628 11.9621 11.8918 11.9449C12.4772 11.8672 13.016 12.2718 13.095 12.8491C13.174 13.4264 12.7634 13.9574 12.1779 14.0353C11.9545 14.065 11.7264 14.0801 11.5 14.0801ZM7.13326 18.1362C4.73265 15.5961 2.25031 12.9695 2.24651 9.07135C2.2494 6.62665 3.21166 4.34236 4.95607 2.63714C6.69574 0.936565 9.01983 0 11.5 0C13.9817 0 16.3141 0.935354 18.0673 2.63377C19.8312 4.34257 20.8041 6.62798 20.807 9.06905C20.8032 12.9631 18.3087 15.5851 15.8963 18.1206C14.6617 19.4182 13.3851 20.7602 12.4042 22.2901C12.2082 22.5958 11.8669 22.7813 11.5 22.7813C11.1331 22.7813 10.7918 22.5958 10.5958 22.2901C9.61859 20.766 8.35517 19.4291 7.13326 18.1362ZM4.38604 9.07151C4.3891 12.1382 6.3862 14.2514 8.69866 16.6983C9.6478 17.7025 10.6208 18.7321 11.5007 19.8803C12.3889 18.7239 13.3745 17.6881 14.3359 16.6776C16.6585 14.2362 18.6645 12.1278 18.6674 9.0693C18.663 5.23262 15.4477 2.10937 11.5 2.10937C7.51542 2.10937 4.39059 5.1675 4.38604 9.07151ZM21.2758 20.9149C20.4529 20.4893 19.323 20.1308 17.9177 19.8493C17.3385 19.7334 16.774 20.102 16.6563 20.6728C16.5387 21.2436 16.9127 21.8004 17.4917 21.9164C19.6595 22.3506 20.5483 22.8719 20.8046 23.1246C20.6158 23.3111 19.9842 23.7796 18.1288 24.2199C16.3063 24.6524 13.9523 24.8906 11.5 24.8906C9.04771 24.8906 6.69367 24.6524 4.87118 24.2199C3.01578 23.7796 2.3843 23.3112 2.19543 23.1246C2.4518 22.8719 3.34051 22.3506 5.50839 21.9164C6.08736 21.8004 6.46139 21.2436 6.34371 20.6728C6.22612 20.102 5.66127 19.7334 5.08237 19.8493C3.677 20.1308 2.54717 20.4893 1.72425 20.9149C0.580137 21.5066 0 22.2506 0 23.1263C0 24.4349 1.2926 25.4477 3.84186 26.1368C5.90143 26.6934 8.62115 27 11.5 27C14.3789 27 17.0986 26.6934 19.1581 26.1368C21.7074 25.4477 23 24.4349 23 23.1263C23 22.2506 22.4199 21.5066 21.2758 20.9149Z"
+                      fill="#4E4D4D" />
+                  </svg>
+                  </i></div>
+                <h6>Location</h6>
+                <p class="small mb-0">
+                  Pinnacle House, 5th Floor, 15th Road,<br>
+                  P D Hinduja Junction, Bandra West<br>
+                  Mumbai, Maharashtra - 400050
+                </p>
+              </div>
+            </div>
+            <!-- Phone -->
+            <div class="col-12 col-sm-6">
+              <div class="form-info-card">
+                <div class="form-icon-circle">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_542_4138" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
+                      width="26" height="26">
+                      <path d="M26 0H0V26H26V0Z" fill="white" />
+                    </mask>
+                    <g mask="url(#mask0_542_4138)">
+                      <mask id="mask1_542_4138" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
+                        width="26" height="26">
+                        <path d="M26 0H0V26H26V0Z" fill="white" />
+                      </mask>
+                      <g mask="url(#mask1_542_4138)">
+                        <path
+                          d="M22.2326 3.40596C20.036 1.20944 17.1154 -0.000122852 14.0093 9.35874e-09C13.5003 9.35874e-09 13.0879 0.412568 13.0879 0.921456C13.0879 1.43035 13.5004 1.84292 14.0093 1.84292C16.6233 1.84279 19.0809 2.8607 20.9293 4.70914C22.7779 6.55759 23.7958 9.0153 23.7957 11.6294C23.7957 12.1383 24.2082 12.5509 24.7171 12.5509C25.226 12.5509 25.6386 12.1383 25.6386 11.6296C25.6387 8.52304 24.4292 5.60247 22.2326 3.40596Z"
+                          fill="#4E4D4D" />
+                        <path
+                          d="M18.442 11.6295C18.442 12.1384 18.8546 12.551 19.3636 12.5509C19.8725 12.5509 20.2849 12.1383 20.2849 11.6294C20.2847 8.16964 17.4694 5.35449 14.0095 5.354C14.0093 5.354 14.0096 5.354 14.0095 5.354C13.5006 5.354 13.088 5.76645 13.0879 6.27534C13.0879 6.78423 13.5003 7.1968 14.0092 7.19692C16.4532 7.19729 18.4418 9.18569 18.442 11.6295Z"
+                          fill="#4E4D4D" />
+                        <path
+                          d="M16.401 16.3275C14.9964 16.2548 14.2809 17.2994 13.9378 17.8011C13.6504 18.2212 13.758 18.7945 14.1781 19.0819C14.5981 19.3693 15.1715 19.2616 15.4588 18.8416C15.8643 18.2488 16.048 18.1555 16.2972 18.1674C17.0946 18.2611 20.2356 20.5627 20.5501 21.2825C20.629 21.4944 20.6261 21.7022 20.5414 21.9549C20.2116 22.9336 19.6657 23.6214 18.9625 23.9438C18.2944 24.2501 17.4753 24.2223 16.5943 23.8638C13.3044 22.5229 10.4301 20.6516 8.05161 18.3018L8.04877 18.2989C5.70382 15.9227 3.83597 13.0521 2.49727 9.76731C2.13864 8.88552 2.11087 8.06628 2.41716 7.39832C2.73955 6.69506 3.42733 6.14919 4.40518 5.8198C4.65876 5.73478 4.86616 5.73207 5.07613 5.81022C5.79842 6.12585 8.09998 9.2667 8.19287 10.0552C8.20611 10.3137 8.11212 10.4973 7.51984 10.9019C7.09964 11.189 6.99165 11.7624 7.27878 12.1826C7.56579 12.6027 8.13906 12.7106 8.55939 12.4236C9.06135 12.0808 10.1057 11.3673 10.0332 9.9579C9.95331 8.48575 7.08969 4.58725 5.72139 4.08414C5.11286 3.85734 4.47275 3.8534 3.81815 4.07308C2.34529 4.56907 1.28156 5.45343 0.741952 6.63044C0.218563 7.77231 0.235149 9.09714 0.790485 10.4624C2.22316 13.9777 4.22765 17.0535 6.74814 19.6047C6.75429 19.611 6.76055 19.6171 6.76694 19.6231C9.31631 22.139 12.3886 24.1397 15.8992 25.5707C16.6022 25.8566 17.2945 25.9997 17.9567 25.9997C18.58 25.9997 19.1769 25.873 19.7305 25.6191C20.9077 25.0797 21.7919 24.016 22.2883 22.5422C22.5074 21.8888 22.5038 21.2489 22.2788 20.6433C21.7739 19.2713 17.8754 16.4076 16.401 16.3275Z"
+                          fill="#4E4D4D" />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <h6>Phone</h6>
+                <p class="small mb-0">+91 90***0074<br>+91 98***1149</p>
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="col-12 col-sm-6">
+              <div class="form-info-card">
+                <div class="form-icon-circle"><svg width="27" height="19" viewBox="0 0 27 19" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M23.5523 0H3.44767C2.53361 0.00104727 1.65729 0.364615 1.01095 1.01095C0.364619 1.65729 0.00104678 2.53361 0 3.44767V14.8632C0.00104678 15.7773 0.364619 16.6535 1.01095 17.2999C1.65729 17.9462 2.53361 18.3098 3.44767 18.3109H23.5523C24.4664 18.3098 25.3427 17.9462 25.9891 17.2999C26.6354 16.6535 26.9989 15.7773 27 14.8632V3.44767C26.9989 2.53361 26.6354 1.65729 25.9891 1.01095C25.3427 0.364615 24.4664 0.00104727 23.5523 0ZM18.4371 8.69698L25.1098 2.02431C25.4662 2.41259 25.6638 2.92058 25.6635 3.44767V14.8632C25.6637 15.1638 25.5992 15.4609 25.4746 15.7344L18.4371 8.69698ZM23.5523 1.33666C23.6625 1.33667 23.7725 1.3453 23.8813 1.36244L13.5268 11.717L10.0348 8.22497L10.0339 8.2239L3.16591 1.35601C3.25929 1.34328 3.35342 1.33682 3.44767 1.33666H23.5523ZM1.54232 15.7713C1.40661 15.4878 1.33632 15.1775 1.33666 14.8632V3.44767C1.33643 2.90753 1.54402 2.38802 1.91642 1.99679L8.61676 8.69698L1.54232 15.7713ZM3.44767 16.9742C3.10721 16.9744 2.7718 16.8918 2.47045 16.7333L9.56176 9.64214L13.0543 13.1346C13.1164 13.1967 13.19 13.246 13.2711 13.2795C13.3522 13.3132 13.439 13.3304 13.5268 13.3304C13.6146 13.3304 13.7015 13.3132 13.7826 13.2795C13.8637 13.246 13.9373 13.1967 13.9994 13.1346L17.492 9.64214L24.5648 16.715C24.2545 16.8854 23.9062 16.9746 23.5523 16.9742H3.44767Z"
+                      fill="#4E4D4D" />
+                  </svg>
+                </div>
+                <h6>Email</h6>
+                <p class="small mb-0">Thepi***Xyz@Gmail.Com<br>Ar***Xyz@Yahoo.Co.In</p>
+              </div>
+            </div>
+            <!-- Social Media -->
+            <div class="col-12 col-sm-6">
+              <div class="form-info-card">
+                <div class="form-icon-circle"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_542_4138" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
+                      width="26" height="26">
+                      <path d="M26 0H0V26H26V0Z" fill="white" />
+                    </mask>
+                    <g mask="url(#mask0_542_4138)">
+                      <mask id="mask1_542_4138" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
+                        width="26" height="26">
+                        <path d="M26 0H0V26H26V0Z" fill="white" />
+                      </mask>
+                      <g mask="url(#mask1_542_4138)">
+                        <path
+                          d="M22.2326 3.40596C20.036 1.20944 17.1154 -0.000122852 14.0093 9.35874e-09C13.5003 9.35874e-09 13.0879 0.412568 13.0879 0.921456C13.0879 1.43035 13.5004 1.84292 14.0093 1.84292C16.6233 1.84279 19.0809 2.8607 20.9293 4.70914C22.7779 6.55759 23.7958 9.0153 23.7957 11.6294C23.7957 12.1383 24.2082 12.5509 24.7171 12.5509C25.226 12.5509 25.6386 12.1383 25.6386 11.6296C25.6387 8.52304 24.4292 5.60247 22.2326 3.40596Z"
+                          fill="#4E4D4D" />
+                        <path
+                          d="M18.442 11.6295C18.442 12.1384 18.8546 12.551 19.3636 12.5509C19.8725 12.5509 20.2849 12.1383 20.2849 11.6294C20.2847 8.16964 17.4694 5.35449 14.0095 5.354C14.0093 5.354 14.0096 5.354 14.0095 5.354C13.5006 5.354 13.088 5.76645 13.0879 6.27534C13.0879 6.78423 13.5003 7.1968 14.0092 7.19692C16.4532 7.19729 18.4418 9.18569 18.442 11.6295Z"
+                          fill="#4E4D4D" />
+                        <path
+                          d="M16.401 16.3275C14.9964 16.2548 14.2809 17.2994 13.9378 17.8011C13.6504 18.2212 13.758 18.7945 14.1781 19.0819C14.5981 19.3693 15.1715 19.2616 15.4588 18.8416C15.8643 18.2488 16.048 18.1555 16.2972 18.1674C17.0946 18.2611 20.2356 20.5627 20.5501 21.2825C20.629 21.4944 20.6261 21.7022 20.5414 21.9549C20.2116 22.9336 19.6657 23.6214 18.9625 23.9438C18.2944 24.2501 17.4753 24.2223 16.5943 23.8638C13.3044 22.5229 10.4301 20.6516 8.05161 18.3018L8.04877 18.2989C5.70382 15.9227 3.83597 13.0521 2.49727 9.76731C2.13864 8.88552 2.11087 8.06628 2.41716 7.39832C2.73955 6.69506 3.42733 6.14919 4.40518 5.8198C4.65876 5.73478 4.86616 5.73207 5.07613 5.81022C5.79842 6.12585 8.09998 9.2667 8.19287 10.0552C8.20611 10.3137 8.11212 10.4973 7.51984 10.9019C7.09964 11.189 6.99165 11.7624 7.27878 12.1826C7.56579 12.6027 8.13906 12.7106 8.55939 12.4236C9.06135 12.0808 10.1057 11.3673 10.0332 9.9579C9.95331 8.48575 7.08969 4.58725 5.72139 4.08414C5.11286 3.85734 4.47275 3.8534 3.81815 4.07308C2.34529 4.56907 1.28156 5.45343 0.741952 6.63044C0.218563 7.77231 0.235149 9.09714 0.790485 10.4624C2.22316 13.9777 4.22765 17.0535 6.74814 19.6047C6.75429 19.611 6.76055 19.6171 6.76694 19.6231C9.31631 22.139 12.3886 24.1397 15.8992 25.5707C16.6022 25.8566 17.2945 25.9997 17.9567 25.9997C18.58 25.9997 19.1769 25.873 19.7305 25.6191C20.9077 25.0797 21.7919 24.016 22.2883 22.5422C22.5074 21.8888 22.5038 21.2489 22.2788 20.6433C21.7739 19.2713 17.8754 16.4076 16.401 16.3275Z"
+                          fill="#4E4D4D" />
+                      </g>
+                    </g>
+                  </svg></i></div>
+                <h6>Social Media</h6>
+                <div class="d-flex gap-0 mt-2">
+                  <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" target="_blank" class="btn form-social-icon"><i class="bi bi-instagram"></i></a>
+                  <!-- <a href="#" target="_blank" class="btn"><i class="bi bi-facebook"></i></a> -->
+                  <a href="https://www.youtube.com/@TheVinodChanna" target="_blank" class="btn form-social-icon"><i class="bi bi-youtube "></i></a>
+                  <a href="#" target="_blank" class="btn form-social-icon"><i class="bi bi-twitter-x text-dark"></i></a>
+                  <a href="#" target="_blank" class="btn form-social-icon"><i class="bi bi-linkedin"></i></a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Contact Form -->
+        <div class="col-12 col-lg-6">
+          <form class="form-section">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label>Nature of Enquiry</label>
+                <select class="form-select">
+                  <option>Select</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label>First Name</label>
+                <input type="text" class="form-control" placeholder="First Name">
+              </div>
+              <div class="col-md-6">
+                <label>Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name">
+              </div>
+              <div class="col-md-6">
+                <label>Phone</label>
+                <div class="input-group">
+                  <div class="input-group">
+                    <select class="form-select" style="max-width: 75px;">
+                      <option value="+91">IN</option>
+                      <option value="+1">US</option>
+                      <option value="+44">UK</option>
+                      <option value="+61">AU</option>
+                    </select>
+                    <input type="text" class="form-control" placeholder="Phone Number">
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col-md-6">
+                <label>Address</label>
+                <input type="text" class="form-control" placeholder="Address">
+              </div>
+              <div class="col-md-6">
+                <label>Country</label>
+                <select class="form-select">
+                  <option>Select</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label>State</label>
+                <select class="form-select">
+                  <option>Select State</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label>City</label>
+                <select class="form-select">
+                  <option>Select City</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label>Your Message</label>
+                <textarea class="form-control" rows="2" placeholder="Write Here ..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn form-btn-brown mt-4">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+ <!-- footer section -->
+  <footer class="footer-custom text-white pt-5 pb-4">
+    <!-- Arrows -->
+    <img src="./images-compress/arrow-left.webp" class="arrow-left" alt="Arrow" />
+    <img src="./images-compress/arrow-right.webp" class="arrow-right" alt="arrow-right" />
+
+    <img src="./images-compress/triangle-arrow-left.webp" class="triangle-arrow-left" alt="triangle-Arrow-left" />
+    <img src="./images-compress/triangle-arrow-right.webp" class="triangle-arrow-right" alt="triangle-arrow-right" />
+
+    <!-- Newsletter -->
+    <div class="container text-center mb-5 newsletter-padding">
+      <h4 class="fw-bold text-uppercase Newsletter-h4">Subscribe to Our Newsletter</h4>
+      <p class="text-muted small gmail-section-line">To Make Your Stay Special And Even More Memorable</p>
+      <div class="d-flex justify-content-center gap_11 flex-wrap mt-3">
+        <input type="email" class="form-control rounded-pill gmail-section py-2 w-auto" placeholder="Email Address" id="emailInput"/>
+        <button class="btn btn-primary rounded-pill gmail-section" onclick="subscribe()">Subscribe</button>
+      </div>
+      <script>
+  function subscribe() {
+    const email = document.getElementById('emailInput').value;
+
+    if (!email) {
+      alert("Please enter your email address.");
+      return;
+    }
+
+    // Simple email validation
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Simulate sending email to backend
+    console.log("Subscribed email:", email);
+
+    // Optionally show a success message
+    alert("Thank you for subscribing!");
+  }
+</script>
+    </div>
+    <hr class="border-line-secondary">
+
+    <!-- Main Footer Content -->
+    <div class="container footer-content">
+      <div class="row gy-4 text-start">
+        <!-- About Us  for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md">
+          <h6 class="fw-bold">About Us</h6>
+          <p class="small text-white-50" style="text-align: justify;">
+            VC Fitness is owned by a celebrity trainer Mr. Vinod Channa. He is also a personal trainer to business
+            tycoons namely Anant Ambani, Nita Ambani, Kumar Mangalam Birla, Ananya Birla etc and many Bollywood
+            celebrities namely John Abraham, Shilpa Shetty Kundra, Harshvardhan Rane, Vivek Oberoi, Arjun Rampal to name
+            a few.
+          </p>
+        </div>
+        <!-- Contact  for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md-1">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small text-white-50">
+            Pinnacle House, 5th Floor, 15th Road, P D Hinduja Junction,<br>
+            Bandra West Mumbai, Maharashtra - 400050
+          </p>
+          <p class="small text-white-50">📞 91 9870406617<br>📧 Channa.Vinod@Gmail.Com<br>🌐
+            https://vinodchannafitness.com</p>
+        </div>
+        <!-- Contact -->
+        <div class="col-md-3 top-padding mobile-col-md-12">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small text-white-50 lh-base">
+            Pinnacle House, 5th Floor, 15th Road, P D Hinduja Junction,<br>
+            Bandra West Mumbai, Maharashtra - 400050
+          </p>
+          <div class="d-flex gap-3 mt-2">
+            <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- Useful Links -->
+        <div class="col-md-3 top-padding mobile-col-md-2">
+          <h6 class="fw-bold">Useful Links</h6>
+          <ul class="list-unstyled small text-white-50 useful-links">
+            <li class="pt-2"><a href="./index.html" class="text-white-50 text-decoration-none">VC Fitness</a></li>
+            <li class="pt-2"><a href="./service-page.html" class="text-white-50 text-decoration-none">Vinod Channa Fitness Service</a></li>
+            <li class="pt-2"><a href="#" class="text-white-50 text-decoration-none">Vinod Channa Story</a></li>
+            <li class="pt-2"><a href="Contact-Us.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+            <li class="pt-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+            <li class="pt-2"><a href="term-conditions.html" class="text-white-50 text-decoration-none">Term Conditions</a></li>
+            <li class="pt-2"><a href="./Media-page.html" class="text-white-50 text-decoration-none">Press Releases</a></li>
+          </ul>
+        </div>
+        <!-- Key Highlights -->
+        <div class="col-md-3 top-padding mobile-col-md-3">
+          <h6 class="fw-bold">Key Highlights</h6>
+          <ul class="list-unstyled small text-white-50 ">
+            <li class="pt-2">Best Celebrity Trainer</li>
+            <li class="pt-2">Vinod Channa Fitness</li>
+            <li class="pt-2">Celebrity Trainer</li>
+            <li class="pt-2">Gym In Bandra</li>
+            <li class="pt-2">Online Coaching Body Transformation</li>
+            <li class="pt-2">Buyback & Exchange Policy</li>
+          </ul>
+        </div>
+        <!-- Useful Links for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md-21 mobile-accordion-section">
+          <div class="buttom-border">
+            <div class="accordion-header-custom" onclick="toggleAccordion(this)">
+              <h6 class="fw-bold mb-0">Useful Links</h6>
+              <span class="footer-toggle-icon">+</span>
+            </div>
+            <div class="accordion-body-custom">
+              <ul class="list-unstyled small text-white-50 mb-0 useful-links">
+                <li class="pt-2"><a href="./index.html" class="text-white-50 text-decoration-none">VC Fitness</a></li>
+                <li class="pt-2"><a href="./service-page.html" class="text-white-50 text-decoration-none">Vinod Channa Fitness Service</a></li>
+                <li class="pt-2"><a href="#" class="text-white-50 text-decoration-none">Vinod Channa Story</a></li>
+                <li class="pt-2"><a href="Contact-Us.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                <li class="pt-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                <li class="pt-2"><a href="term-conditions.html" class="text-white-50 text-decoration-none">Term Conditions</a></li>
+                <li class="pt-2"><a href="./Media-page.html" class="text-white-50 text-decoration-none">Press Releases</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Key Highlights for mobile -->
+        <div class="col-md-3 top-padding mobile-col-md-31 mobile-accordion-section">
+          <div class="buttom-border">
+            <div class="accordion-header-custom" onclick="toggleAccordion(this)">
+              <h6 class="fw-bold mb-0">Key Highlights</h6><span class="footer-toggle-icon">+</span>
+            </div>
+            <div class="accordion-body-custom">
+              <ul class="list-unstyled small text-white-50 mb-0">
+                <li class="pt-2">Best Celebrity Trainer</li>
+                <li class="pt-2">Vinod Channa Fitness</li>
+                <li class="pt-2">Celebrity Trainer</li>
+                <li class="pt-2">Gym In Bandra</li>
+                <li class="pt-2">Online Coaching Body Transformation</li>
+                <li class="pt-2">Buyback & Exchange Policy</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mt-2 mobile-link">
+
+           <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- About Us-->
+        <div class="col-md-3 top-padding mobile-col-md-4">
+          <h6 class="fw-bold">About Us</h6>
+          <p class="small text-white-50 lh-base">
+            VC Fitness is owned by a celebrity trainer Mr. Vinod Channa. He is also a personal trainer to business
+            tycoons namely Anant Ambani, Nita Ambani, Kumar Mangalam Birla, Ananya Birla etc and many Bollywood
+            celebrities namely John Abraham, Shilpa Shetty Kundra, Harshvardhan Rane, Vivek Oberoi, Arjun Rampal to name
+            a few.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="border-line-secondary mt-4">
+
+    <!-- Bottom Bar -->
+    <div class="container d-flex flex-wrap justify-content-between align-items-center small text-white-50">
+      <p class="mb-0">&copy; 2025 VC Fitness All Rights Reserved</p>
+      <div>
+        <a href="privacy-policy.html" class="text-white-50 text-decoration-none me-3">Privacy Policy</a>
+        <a href="term-conditions.html" class="text-white-50 text-decoration-none">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleAccordion(header) {
+      const icon = header.querySelector('.footer-toggle-icon');
+      const body = header.nextElementSibling;
+      const isOpen = body.classList.contains('active');
+
+      // Close all open sections (optional)
+      document.querySelectorAll('.accordion-body-custom').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.footer-toggle-icon').forEach(el => el.innerText = '+');
+
+      // Open the clicked section if it was closed
+      if (!isOpen) {
+        body.classList.add('active');
+        icon.innerText = '-';
+      }
+    }
+  </script>
+
+
+
+
+    
+</body>
+</html>

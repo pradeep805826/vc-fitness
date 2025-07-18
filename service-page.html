@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto Slab", serif;
+      
+    }
+    h1,.programs-section h2,.section-wrapper h2,.testimonial-title,.instagram-center-content h2,.fw-bold.text-uppercase,.program-title{
+      font-family: "Oswald", sans-serif;
+    }
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+   .navbar-custom {
+      background: linear-gradient(to bottom, #FEE7DC, #FEF5F0);
+      padding: 10px 12px;
+      overflow: visible;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    .btn-contact {
+      background-color: #9E6449;
+      color: #fff;
+      border: none;
+      padding: 6px 16px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .btn-contact:hover {
+      background-color: #703926 !important;
+      color: #fff;
+
+    }
+    
+    /* Mobile Top Bar Layout */
+    .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .mobile-header .navbar-logo-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-93%);
+      z-index: 1;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #000;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    /* .navbar-nav .nav-link.active {
+      color: #9E6449;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    } */
+    .navbar-nav .nav-link:hover {
+      color: #703926 !important;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #9E6449;
+      /* underline color */
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #9E6449;
+      /* active text color */
+    }
+
+    .navbar-nav .nav-link.active::after,
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+    
+
+     /* .nav-dropdown-border{
+      padding: 5px;
+    } */
+
+    .nav-dropdown-border:hover{
+      border-left: 4px solid #9E6449;
+      background: linear-gradient(to bottom, #FEE7DC, #FEF5F0) !important;
+    }
+    
+    .dropdown-color:hover{
+     background: linear-gradient(to bottom, #FEE7DC, #FEF5F0) !important;
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 0.8s ease-out;
+    }
+
+    .animate-on-scroll.show {
+     opacity: 1;
+     transform: translateX(0);
+    }
+
+    .animate-left-on-scroll {
+     opacity: 0;
+     transform: translateX(-100px);
+     transition: all 0.8s ease-out;
+    }
+
+    .animate-left-on-scroll.show {
+     opacity: 1;
+     transform: translateX(0);
+    }
+
+    .image-zoom-on-scroll {
+     opacity: 0;
+     transform: scale(0.7);
+     transition: all 0.8s ease-out;
+     will-change: transform, opacity;
+   }
+
+   .image-zoom-on-scroll.show {
+    opacity: 1;
+    transform: scale(1);
+   }
+
+    /* Base dropdown styles */
+.custom-dropdown {
+  position: relative;
+}
+
+.custom-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 30px; /* buffer zone under About Us */
+}
+
+.custom-dropdown .dropdown-menu {
+  position: absolute;
+  top: 156%;
+  left: 0;
+  display: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  min-width: 220px;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown:hover .dropdown-menu,
+.custom-dropdown .dropdown-menu:hover {
+  display: block;
+}
+
+/* Optional: smooth transition */
+.custom-dropdown .dropdown-menu li {
+  list-style: none;
+}
+
+.custom-dropdown .dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.custom-dropdown .dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+    
+    /* Desktop layout */
+    @media (min-width: 992px) {
+      .mobile-header {
+        display: none;
+      }
+
+      .navbar-collapse {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .navbar-nav {
+        flex: 2;
+        justify-content: center;
+        display: flex;
+      }
+
+      .navbar-brand {
+        position: static !important;
+        transform: none !important;
+      }
+
+      .navbar-brand img {
+        height: 55px;
+      }
+    }
+
+    
+   /* service-Banner */
+   
+   .service-Banner {
+  /* position: relative;
+  min-height: 500px;
+  width: 100vw;
+  padding: 9em 3em 2em 3em;
+  overflow: hidden; */
+   position: relative;
+   width: 100%;
+   padding: 0;
+   padding-top: 10px;
+   transform-origin: center center;
+  animation: zoomOutInfinite 15s ease-in-out infinite;
+}
+
+.service-Banner-bg {
+  width: 100%;
+  height: auto;
+  display: block; 
+}
+
+.service-Banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #000 2%, transparent 35%);
+  pointer-events: none;
+  /* so links remain clickable */
+  z-index: 1;
+}
+
+@keyframes zoomOutInfinite {
+  0% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.service-Banner .service-wrapper {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  padding: 0 1rem;
+  /* so content doesn't touch screen edges on mobile */
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+  .service-Banner h1 {
+    font-size: clamp(0.6rem, 4vw, 2.3rem); /* responsive scaling */
+    font-weight: bold;
+    color: white;
+    margin: 0;
+  }
+
+  .breadcrumb {
+    background: white;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-top: 1rem;
+    font-size: clamp(0.3rem, 1.5vw, 0.9rem); /* responsive scaling */
+    display: inline-block;
+  }
+  .breadcrumb:hover{
+  color: #703926;
+}
+
+  /* Optional fine-tuning at smaller sizes */
+  @media (max-width: 480px) {
+    .breadcrumb {
+       padding: 1.5vw 2vw;
+        margin-top: 1.5vw;
+    }
+    .service-Banner{
+      padding: 0px !important;
+    }
+  }
+
+
+
+    /* program-card */
+   /* program-card */
+    .programs-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      background: #f2f2f2;
+      padding: 2rem;
+    }
+
+    .program-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .program-card img {
+      width: 100%;
+      /* height: 15vw; */
+      object-fit: cover;
+    }
+
+    .program-content {
+      padding: 1rem;
+    }
+
+    .program-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .program-sub {
+      font-size: 1rem;
+      color: #9e6449;
+      margin-bottom: 0.5rem;
+    }
+
+    .program-desc {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    .read-more {
+      color: #9e6449;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .read-more:hover{
+      color: #703926;
+    }
+    .image-wrapper {
+  position: relative;
+}
+
+.image-wrapper img.program-image {
+  width: 100%;
+  display: block;
+  border-radius: 12px 12px 0 0; /* matches card corners */
+}
+
+.icon-overlay {
+  position: absolute;
+  bottom: -20px; /* position halfway over the content section */
+  right: 3rem;
+  width: 48px;
+  height: 48px;
+  padding: 6px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-overlay img {
+  width: 28px;
+  height: 28px;
+}
+
+
+    @media (max-width: 1024px) {
+      .programs-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .programs-container {
+        display: flex;
+        flex-direction: column;
+      }
+      /* .program-card{
+        flex: 1 1 100%;
+      } */
+    }
+
+   @media (min-width: 525px) and (max-width: 768px){
+     .program-card{
+      height: 500px;
+     }
+   }
+
+    /* programs-section */
+
+.programs-section {
+            
+            background: #fafafa;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .programs-section h2 {
+            font-size: clamp(1rem, 5vw, 2rem);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .programs-tabs {
+            display: inline-flex;
+            background: #fdf2ec;
+            border-radius: 8px;
+            padding: 0.2rem;
+            margin-bottom: 2rem;
+        }
+         
+        .programs-tabs .programs-tab {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 6px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .programs-tabs .programs-tab.active {
+            background: #a56448;
+            color: white;
+        }
+
+        .programs-training-container {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .one-to-one-cards{
+          display: flex;
+          gap: 20px;
+        }
+        .programs-card {
+            flex: 1 1 45%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .programs-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+            display: block;
+        }
+
+        .programs-label {
+            background: #a56448;
+            padding: 0.75rem 1rem;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .programs-label .programs-arrow {
+            background: #fff;
+            color: #a56448;
+            padding: 0.25rem 0.5rem;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+        
+        /* minimal visibility control handled by JS */
+         .programs-card{display:none;}
+        /* optional visual cue for active tab */
+        .programs-active{font-weight:600;border-bottom:2px solid;}
+        @media (max-width: 768px) {
+            .programs-training-container {
+                flex-direction: column;
+            }
+
+             .programs-card {
+                display: flex;
+                flex-direction: column;
+                
+            }
+
+            .one-to-one-cards{
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              object-fit: cover;
+              text-align: center;
+            }
+            .programs-label{
+              font-size: 1rem;
+              width: 100%;
+            }
+        }
+
+
+        /* results-section */
+
+ .results-section {
+  background: #fafafa;
+  padding: 2rem;
+}
+.results-section .section-wrapper {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  text-align: center;
+}
+.results-section h2 {
+  font-size: clamp(1rem, 5vw, 2rem);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+.results-section .card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.results-section .card {
+  flex: 1 1 calc(33.333% - 1.5rem); /* 3 cards per row on large screens */
+  background: #fdf2f2;
+  border: 2px solid #955b50;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-width: 280px; /* responsive shrink */
+}
+.results-section .result-header {
+  background: #fdf2f2;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #955b50;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.results-section .result-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.results-section .result-header p {
+  margin: 0.1rem 0 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+.results-section .result-header span {
+  color: #955b50;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.results-section .images {
+  display: flex;
+  width: 100%;
+}
+.results-section .images img {
+  width: 50%;
+  object-fit: cover;
+  border-right: 1px solid #955b50;
+}
+.results-section .images img:last-child {
+  border-right: none;
+}
+.programs-arrows{
+  text-decoration: none;
+}
+
+/* Responsive: 2 columns on tablets */
+@media (max-width: 1024px) {
+  .results-section .card {
+    flex: 1 1 calc(50% - 1.5rem);
+  }
+}
+/* 1 column on phones */
+@media (max-width: 600px) {
+  .results-section .card {
+    flex: 1 1 100%;
+  }
+}
+
+
+    
+
+    /* trainer-hero-section */
+    /* .trainer-hero-container {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+    }
+
+    .trainer-background-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .trainer-hero-content {
+      position: relative;
+      color: white;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0 20px;
+      width: 100%;
+
+    }
+
+    .trainer-hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+
+    .trainer-hero-content button {
+      padding: 12px 28px;
+      background-color: #9E6449;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .trainer-hero-content button:hover {
+      background-color: #703926;
+    }
+
+    @media (max-width: 768px) {
+      .trainer-hero-container {
+        height: 200px;
+        width: 100%;
+      }
+
+      .trainer-hero-content h1 {
+        font-size: 1.2rem;
+      }
+
+      .trainer-hero-content button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+    } */
+
+   /* testimonial-section */
+
+
+     .testimonial-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+  }
+
+  .testimonial-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: "Oswald", sans-serif;
+  }
+
+   .testimonial-slider {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.testimonial-card {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.testimonial-card a{
+    text-decoration: none;
+    color: black;
+}
+.carousel-indicators{
+    position: absolute;
+    bottom: -60px;
+  }
+
+  .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #555;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  border: none;
+  margin: 0 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  background-color: #000;
+}
+
+.testimonial-indicators{
+  margin-bottom: 60px !important;
+}
+.testimonial-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 18px;
+}
+
+.zoom-effect:hover {
+    transform: scale(1.2) !important;
+    transition: transform 0.3s ease !important;
+  }
+
+.testimonial-card h4 {
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+}
+
+.testimonial-card h4:hover {
+  color: #703926;
+}
+
+.stars {
+  color: orange;
+  font-size: 18px;
+}
+
+
+
+/* Mobile - 2 cards per slide */
+@media (max-width: 767px) {
+  .testimonial-card {
+    width: 50%;
+  }
+  .testimonial-carousel-item {
+  display: none;
+  position: relative;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.carousel-item.active {
+  display: block;
+}
+}
+
+/* Desktop - show 4 cards at once (static layout) */
+@media (min-width: 768px) {
+  .testimonial-carousel-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+   
+  .testimonial-carousel-item {
+    display: flex !important;
+    flex: auto;
+  }
+  
+  .testimonial-slide{
+   width: 35% !important;
+  }
+  
+  
+  /* .slide-2-testimonial{
+    justify-content: flex-start;
+  } */
+  .testimonial-card {
+    max-width: 35%;
+  }
+
+  /* Hide indicators on desktop */
+  .carousel-indicators {
+    display: none;
+  }
+}
+
+@media(max-width: 350px){
+  .testimonial-card{
+    width: 50%;
+  }
+  .testimonial-slide{
+    width: 90% !important;
+  }
+  .testimonial-slider{
+    padding-right: 0px !important;
+  }
+  .testimonial-card img{
+    width: 70px;
+    height: 70px;
+  }
+  .testimonial-card h4{
+    font-size: 0.8rem;
+  }
+  .testimonial-card p{
+    font-size: 0.5rem;
+  }
+}
+
+
+
+    /* instagram-section */
+
+    .instagram-section {
+      padding: 2rem;
+      max-width: 1500px;
+      margin: auto;
+      background: #fffaf8;
+    }
+
+    .instagram-grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .instagram-center-content {
+      grid-column: span 2;
+      text-align: center;
+
+    }
+
+    .instagram-center-content h2 {
+      font-size: 2em;
+      font-weight: bold;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .instagram-center-content .instagram-icon {
+      margin-top: 12px;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+    }
+
+    .instagram-center-content .instagram-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: #000;
+      transition: fill 0.3s ease;
+    }
+
+    .instagram-center-content .instagram-icon:hover svg {
+      fill: #E1306C;
+    }
+
+    .gym-grid-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gym-grid-item img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .instagram-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2%;
+      }
+
+      .instagram-center-content {
+        grid-column: span 3;
+        order: -1;
+
+      }
+
+      .gym-desktop {
+        display: none;
+      }
+
+      .instagram-center-content h2 {
+        font-size: 1.5em;
+      }
+
+      .instagram-section {
+        padding: 3%;
+
+      }
+
+    }
+
+
+  .footer-custom {
+      border-radius: 50px;
+      background-color: #000;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .footer-custom .arrow-left,
+    .footer-custom .arrow-right {
+      position: absolute;
+      top: 0px;
+      width: 115px;
+      height: 147px;
+    }
+
+    .footer-custom .arrow-left {
+      left: 0px;
+    }
+
+    .footer-custom .arrow-right {
+      right: 0px;
+    }
+
+    .footer-custom .triangle-arrow-left,
+    .footer-custom .triangle-arrow-right {
+      position: absolute;
+      top: 78px;
+      width: 40px;
+      height: 40px;
+    }
+
+
+    .footer-custom .triangle-arrow-left {
+      left: 20vw;
+    }
+
+    .footer-custom .triangle-arrow-right {
+      right: 20vw
+    }
+
+    .footer-custom input[type="email"] {
+      background-color: #333;
+      border: none;
+      color: #fff;
+      padding-right: 140px !important;
+
+    }
+
+
+    .gmail-section-line {
+      color: #ffffff !important;
+    }
+
+    .gmail-section {
+      padding-right: 2rem !important;
+      padding-left: 2rem !important;
+      color: #ffffff;
+    }
+
+    .gmail-section::placeholder {
+      color: #ffffff;
+
+    }
+
+    .justify-content-center.gap_11 {
+      gap: 1.5rem !important;
+    }
+
+    .footer-custom .d-flex a {
+      color: #aaa;
+      transition: color 0.3s ease;
+    }
+
+    .footer-custom .d-flex a:hover {
+      color: #fff !important;
+      /* Highlight in white on hover */
+    }
+
+    .border-line-secondary {
+      opacity: 1 !important;
+    }
+
+
+    .top-padding {
+      padding-top: 2rem;
+    }
+
+    .footer-content {
+      max-width: 100%;
+      padding: 1% 5%;
+    }
+    
+    .useful-links li a:hover{
+      color:white !important;
+    }
+
+    @media (min-width: 767px) {
+
+
+      .col-md-3.mobile-col-md-1,
+      .col-md-3.mobile-col-md-31,
+      .col-md-3.mobile-col-md-21,
+      .mobile-col-md {
+        display: none;
+      }
+
+
+    }
+
+
+    @media (max-width: 767px) {
+
+      .footer-custom .triangle-arrow-right {
+        right: 5vw;
+      }
+
+      .footer-custom .triangle-arrow-left {
+        left: 5vw;
+      }
+
+      .gmail-section-line {
+        display: none;
+      }
+
+      .justify-content-center.gap_11 {
+        gap: 0rem !important;
+      }
+
+      .footer-custom input[type="email"] {
+
+        padding-right: 0px !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        padding-left: 1rem !important;
+        font-size: 3vw;
+
+      }
+
+
+      .btn-primary.rounded-pill.gmail-section {
+        border-top-left-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+        font-size: 3vw;
+
+      }
+
+      .Newsletter-h4
+       {
+        font-size: calc(1rem + 0.3vw);
+      }
+
+    
+
+      .newsletter-padding {
+        padding-top: 7rem;
+      }
+
+      .mobile-col-md-4 {
+        display: none;
+      }
+
+      .d-flex.gap-3.mt-2.mobile-link {
+        justify-content: center;
+        padding: 8% 0 4% 0;
+
+      }
+
+      .col-md-3.mobile-col-md-12,
+      .col-md-3.mobile-col-md-2,
+      .col-md-3.mobile-col-md-3,
+      .mobile-col-md-4 {
+        display: none;
+      }
+
+
+      .top-padding {
+        padding-top: 0rem !important;
+      }
+
+      .col-md-3.mobile-col-md-1 {
+        --bs-gutter-y: 0rem !important;
+      }
+
+      .footer-content {
+        max-width: 97%;
+        padding: 2%
+      }
+
+
+      .accordion-header-custom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding-bottom: 0.5rem;
+
+      }
+
+      .accordion-header-custom h6 {
+        margin: 0;
+      }
+
+      .footer-toggle-icon {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .accordion-body-custom {
+        display: none;
+        padding-bottom: 1rem;
+        /* border-bottom: 1px solid #6c757d; */
+      }
+
+      .accordion-body-custom.active {
+        display: block;
+      }
+
+      .buttom-border {
+        border-bottom: 1px solid #6c757d;
+
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+
+      <!-- Mobile: Toggler | Centered Logo | Contact Button -->
+      <div class="mobile-header d-lg-none w-100">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Centered Logo -->
+        <a class="navbar-brand navbar-logo-center" href="#">
+          <img src="./images-compress/VC Fitness Logo.webp" alt="VC Fitness Logo">
+        </a>
+
+        <a href="#" class="btn btn-contact">Contact Us</a>
+      </div>
+
+      <!-- Desktop View -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <!-- Left Logo -->
+        <a class="navbar-brand d-none d-lg-block" href="#">
+          <img src="./images-compress/VC Fitness Logo.webp" alt="VC Fitness Logo">
+        </a>
+
+        <!-- Menu Center -->
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item custom-dropdown">
+          <a class="nav-link" href="./service-page.html">Services</a>
+          <ul class="dropdown-menu">
+          <li class="nav-dropdown-border"><a href="#one-to-one-section" class="dropdown-color">1-On-1 Training</a></li>
+          <li class="nav-dropdown-border"><a href="#online-programs" class="dropdown-color">Online Programs</a></li>
+         </ul>
+         </li>
+          <li class="nav-item custom-dropdown">
+          <a class="nav-link" href="./About-Us-page.html">About Us</a>
+          <ul class="dropdown-menu">
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/meet.html" class="dropdown-color">Meet Vinod Channa</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/vinod channa story.html" class="dropdown-color">Vinod Channa Story</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/mantra.html" class="dropdown-color">Vinod Channa's Mantra</a></li>
+          <li class="nav-dropdown-border"><a href="./vinochannafiness/awards.html" class="dropdown-color">Awards</a></li>
+         </ul>
+         </li>
+          <li class="nav-item"><a class="nav-link" href="./blog-page.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="./Media-page.html">Media</a></li>
+           <li class="nav-item"><a class="nav-link" href="https://pages.razorpay.com/vinodchanna">Online Payment</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Log In/Sign Up</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#">Store</a></li> -->
+        </ul>
+
+        <!-- Contact Us Desktop -->
+        <div class="d-none d-lg-block">
+          <a href="./Contact-Us.html" class="btn btn-contact">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+          // Remove 'active' class from all links
+          navLinks.forEach(l => l.classList.remove("active"));
+          // Add 'active' class to the clicked link
+          this.classList.add("active");
+        });
+      });
+    });
+  </script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      const currentPage = decodeURIComponent(window.location.pathname.split('/').pop());
+
+      navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href').split('/').pop();
+        if (linkHref === currentPage || (currentPage === "" && linkHref === "index.html")) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+
+
+   <!-- service-Banner -->
+
+  <section class="service-Banner">
+  <img src="./images-compress/service-banner.webp" alt="service-banner" class="service-Banner-bg">
+  <div class="service-wrapper">
+    <h1>SERVICE</h1>
+   <a href="index.html" class="home-service-btn"> <div class="breadcrumb">Home / Service</div></a>
+  </div>
+</section>
+
+
+
+  <!-- program-card -->
+
+   <!-- program-card -->
+
+  <section class="programs-section" id="online-programs">
+        <h2>PROGRAMS</h2>
+        <div class="programs-tabs" >
+            <button class="programs-tab" data-tab="one-to-one" >1-On-1 Training</button>
+            <button class="programs-tab" data-tab="online-programs">Online Programs</button>
+        </div>
+
+        <div class="programs-training-container" id="one-to-one-section">
+          <div class="one-to-one-cards ">
+            <div class="programs-card animate-on-scroll" data-type="one-to-one">
+                <img src="./images-compress/Training-vinod img1.webp" alt="Train With Vinod Channa" />
+                <div class="programs-label">
+                    <span>Train With Vinod Channa</span>
+                    <a href="#" class="programs-arrows"><i class="bi bi-arrow-right programs-arrow"></i></a>
+                </div>
+            </div>
+
+            <div class="programs-card animate-on-scroll" data-type="one-to-one">
+                <img src="./images-compress/Training-vinod img2.webp" alt="Train With Vinod's Assistant Trainers" />
+                <div class="programs-label">
+                    <span>Train With Vinod’s Assistant Trainers</span>
+                    <a href="#" class="programs-arrows"><i class="bi bi-arrow-right programs-arrow"></i></a>
+                </div>
+            </div>
+
+            <!-- <div class="programs-card animate-on-scroll" data-type="one-to-one">-->
+            <!--    <img src="./images-compress/Training-vinod img2.webp" alt="Train With Vinod's Assistant Trainers" />-->
+            <!--    <div class="programs-label">-->
+            <!--        <span>Train With Vinod’s Assistant Trainers</span>-->
+            <!--        <a href="#" class="programs-arrows"><i class="bi bi-arrow-right programs-arrow"></i></a>-->
+            <!--    </div>-->
+            <!--</div>-->
+           </div>
+
+            <!-- Dummy cards for online -->
+            <!-- <div class="programs-card" data-type="online-programs" >
+                <img src="./images-compress/Training-vinod img1.webp" alt="Online Program 1" />
+                <div class="programs-label">
+                    <span>Online Program 1</span>
+                   <a href="#" class="programs-arrows"><i class="bi bi-arrow-right programs-arrow"></i></a>
+                </div>
+            </div>
+
+            <div class="programs-card" data-type="online-programs">
+                <img src="./images-compress/Training-vinod img2.webp" alt="Online Program 2" />
+                <div class="programs-label">
+                    <span>Online Program 2</span>
+                   <a href="#" class="programs-arrows"><i class="bi bi-arrow-right programs-arrow"></i></a>
+                </div>
+            </div> -->
+
+
+            <div class="program-card animate-on-scroll" data-type="online-programs">
+      <div class="image-wrapper">
+        <img class="program-image" src="./images-compress/program-card1.webp" alt="Fat Loss" />
+        <div class="icon-overlay">
+          <img src="./images-compress/Program Icon1.webp" alt="Program Icon" />
+        </div>
+      </div>
+      <div class="program-content">
+        <div class="program-sub">VC Fitness</div>
+        <div class="program-title">Yoga</div>
+        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+
+
+    <!-- Duplicate and update image/text for each card as needed -->
+    <div class="program-card animate-on-scroll" data-type="online-programs">
+      <div class="image-wrapper">
+        <img class="program-image" src="./images-compress/program-card2.webp" alt="One to One" />
+        <div class="icon-overlay">
+          <img src="./images-compress/Program Icon2.webp" alt="Program Icon" />
+        </div>
+      </div>
+      <div class="program-content">
+        <div class="program-sub">VC Fitness</div>
+        <div class="program-title">Pilates</div>
+        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+
+  
+    <!-- Add other cards similarly -->
+   <div class="program-card animate-on-scroll" data-type="online-programs">
+      <div class="image-wrapper">
+        <img class="program-image" src="./images-compress/program-card3.webp" alt="One to One" />
+        <div class="icon-overlay">
+          <img src="./images-compress/Program Icon3.webp" alt="Program Icon" />
+        </div>
+      </div>
+      <div class="program-content">
+        <div class="program-sub">VC Fitness</div>
+        <div class="program-title">kickboxing </div>
+        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+
+   <div class="program-card animate-on-scroll" data-type="online-programs">
+      <div class="image-wrapper">
+        <img class="program-image" src="./images-compress/program-card4.webp" alt="One to One" />
+        <div class="icon-overlay">
+          <img src="./images-compress/Program Icon4.webp" alt="Program Icon" />
+        </div>
+      </div>
+      <div class="program-content">
+        <div class="program-sub">VC Fitness</div>
+        <div class="program-title">Cardio & Healthy Training</div>
+        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+
+    <div class="program-card animate-on-scroll" data-type="online-programs">
+      <div class="image-wrapper">
+        <img class="program-image" src="./images-compress/program-card5.webp" alt="One to One" />
+        <div class="icon-overlay">
+          <img src="./images-compress/Program Icon5.webp" alt="Program Icon" />
+        </div>
+      </div>
+      <div class="program-content">
+        <div class="program-sub">VC Fitness</div>
+        <div class="program-title">Online Training House </div>
+        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+
+    <div class="program-card animate-on-scroll" data-type="online-programs">
+      <div class="image-wrapper">
+        <img class="program-image" src="./images-compress/program-card6.webp" alt="One to One" />
+        <div class="icon-overlay">
+          <img src="./images-compress/Program Icon6.webp" alt="Program Icon" />
+        </div>
+      </div>
+      <div class="program-content">
+        <div class="program-sub">VC Fitness</div>
+        <div class="program-title">Weight Training</div>
+        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+
+        </div>
+    </section>
+
+   <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash;
+
+    if (hash === "#one-to-one-section") {
+      activateTab("one-to-one");
+    } else if (hash === "#online-programs") {
+      activateTab("online-programs");
+    }
+
+    // Optional: Listen to hash changes too (if user clicks without reload)
+    window.addEventListener("hashchange", () => {
+      const newHash = window.location.hash;
+      if (newHash === "#one-to-one-section") {
+        activateTab("one-to-one");
+      } else if (newHash === "#online-programs") {
+        activateTab("online-programs");
+      }
+    });
+  });
+
+  function activateTab(tabType) {
+    // Deactivate all tabs
+    document.querySelectorAll(".programs-tab").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    // Activate the correct tab button
+    const tabBtn = document.querySelector(`.programs-tab[data-tab="${tabType}"]`);
+    if (tabBtn) tabBtn.classList.add("active");
+
+    // Show/Hide program cards
+    document.querySelectorAll(".program-card, .programs-card").forEach((card) => {
+      const type = card.getAttribute("data-type");
+      if (type === tabType) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // On page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabButtons = document.querySelectorAll(".programs-tab");
+    const allCards = document.querySelectorAll(".programs-card, .program-card");
+
+    // Tab click handler
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const selectedTab = button.getAttribute("data-tab");
+
+        // Update active class on buttons
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        // Show matching cards, hide others
+        allCards.forEach(card => {
+          const cardType = card.getAttribute("data-type");
+          if (cardType === selectedTab) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+
+    // Default tab: Optional (shows "one-to-one" tab on load)
+    tabButtons[0].click();
+  });
+</script>
+
+
+
+<!-- results-section -->
+
+<section class="results-section">
+  <div class="section-wrapper">
+    <h2>MAXIMUM RESULTS IN MINIMUM TIME</h2>
+    <div class="card-grid animate-left-on-scroll">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="result-header">
+          <div>
+            <h3>50 Weeks</h3>
+            <p>Age: 35</p>
+          </div>
+          <span>VC Fitness</span>
+        </div>
+        <div class="images">
+          <img src="./images-compress/result before1.webp" class="image-zoom-on-scroll" alt="Before" />
+          <img src="./images-compress/result after1.webp"  class="image-zoom-on-scroll" alt="After" />
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="result-header">
+          <div>
+            <h3>50 Weeks</h3>
+            <p>Age: 25</p>
+          </div>
+          <span>VC Fitness</span>
+        </div>
+        <div class="images">
+          <img src="./images-compress/result before2.webp"  class="image-zoom-on-scroll" alt="Before" />
+          <img src="./images-compress/result after2.webp"   class="image-zoom-on-scroll" alt="After" />
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="result-header">
+          <div>
+            <h3>50 Weeks</h3>
+            <p>Age: 40</p>
+          </div>
+          <span>VC Fitness</span>
+        </div>
+        <div class="images">
+          <img src="./images-compress/result before3.webp"  class="image-zoom-on-scroll" alt="Before" />
+          <img src="./images-compress/result after3.webp"  class="image-zoom-on-scroll" alt="After" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- trainer-hero-section -->
+  <!-- <section class="trainer-hero-container">
+    <div class="trainer-background-image">
+      <img src="./images-compress/trainer.webp" alt="trainer">
+    </div>
+    <div class="trainer-hero-content">
+      <h1>A PERSONAL TRAINER FOR YOU</h1>
+      <button>Book Senior's</button>
+    </div>
+  </section> -->
+
+
+
+  <!-- testimonial-section -->
+<section class="testimonial-section">
+  <h2 class="testimonial-title">OUR CLIENTS</h2>
+<div id="carouselExampleAutoplaying" class="carousel slide testimonial-slider" data-bs-ride="carousel">
+  <div class="carousel-indicators testimonial-indicators">
+    <button type="button" data-bs-target=".testimonial-slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target=".testimonial-slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+
+  <div class="carousel-inner testimonial-carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active testimonial-carousel-item ">
+      <div class="d-flex flex-row flex-wrap justify-content-evenly testimonial-slide">
+        <!-- Card 1 -->
+        <div class="testimonial-card animate-on-scroll">
+          <a href="john-abraham.html">
+            <img src="./images-compress/clint-img3.webp" alt="Client 1" class="zoom-effect image-zoom-on-scroll" />
+            <h4>JOHN ABRAHAM</h4>
+            <p>Vinod is not only a trainer but more of a friend</p>
+            <div class="stars">★★★★★</div>
+          </a>
+        </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card animate-on-scroll">
+          <a href="shilpa-shetty.html">
+            <img src="./images-compress/clint-img2.webp" alt="Client 2" class="zoom-effect image-zoom-on-scroll"/>
+            <h4>SHILPA SHETTY</h4>
+            <p>Vinod Channa you are the reason I am so fit.</p>
+            <div class="stars">★★★★★</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item testimonial-carousel-item slide-2-testimonial animate-on-scroll">
+      <div class="d-flex flex-row flex-wrap justify-content-evenly testimonial-slide">
+        <!-- Card 3 -->
+        <div class="testimonial-card animate-on-scroll">
+          <a href="harshvardhan-rane.html">
+            <img src="./images-compress/harshvarndhan-rane-thegem-person.webp" alt="Client 3" class="zoom-effect image-zoom-on-scroll" />
+            <h4>HARSHVARDHAN RANE</h4>
+            <p>I am now addicted to Vinod's workout</p>
+            <div class="stars">★★★★★</div>
+          </a>
+        </div>
+        <!-- Card 4 -->
+        <div class="testimonial-card animate-on-scroll">
+          <a href="sayeesha.html">
+            <img src="./images-compress/sayeesha-saigal.webp" alt="Client 4" class="zoom-effect image-zoom-on-scroll" />
+            <h4>SAYEESHA SAIGAL</h4>
+            <p>I can confidently say Vinod Channa is one of the best trainer.</p>
+            <div class="stars">★★★★★</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".testimonial-slider");
+
+  if (window.innerWidth >= 768 && carousel) {
+    const bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
+    bsCarousel.pause(); // disables auto sliding
+    carousel.classList.remove("slide"); // disables transition effect
+  }
+});
+</script>
+
+<!--animation script -->
+<script>
+     const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show'); // Remove class when out of view
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('.animate-left-on-scroll').forEach((el) => {
+    observer.observe(el);
+  });
+
+  const zoomObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show'); // Re-trigger when scrolling back
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  document.querySelectorAll('.image-zoom-on-scroll').forEach((el) => {
+    zoomObserver.observe(el);
+  });
+  </script>
+
+   <!-- footer section -->
+  <footer class="footer-custom text-white pt-5 pb-4">
+    <!-- Arrows -->
+    <img src="./images-compress/arrow-left.webp" class="arrow-left" alt="Arrow" />
+    <img src="./images-compress/arrow-right.webp" class="arrow-right" alt="arrow-right" />
+
+    <img src="./images-compress/triangle-arrow-left.webp" class="triangle-arrow-left" alt="triangle-Arrow-left" />
+    <img src="./images-compress/triangle-arrow-right.webp" class="triangle-arrow-right" alt="triangle-arrow-right" />
+
+    <!-- Newsletter -->
+    <div class="container text-center mb-5 newsletter-padding">
+      <h4 class="fw-bold text-uppercase Newsletter-h4">Subscribe to Our Newsletter</h4>
+      <p class="text-muted small gmail-section-line">To Make Your Stay Special And Even More Memorable</p>
+      <div class="d-flex justify-content-center gap_11 flex-wrap mt-3">
+        <input type="email" class="form-control rounded-pill gmail-section py-2 w-auto" placeholder="Email Address" id="emailInput"/>
+        <button class="btn btn-primary rounded-pill gmail-section" onclick="subscribe()">Subscribe</button>
+      </div>
+      <script>
+  function subscribe() {
+    const email = document.getElementById('emailInput').value;
+
+    if (!email) {
+      alert("Please enter your email address.");
+      return;
+    }
+
+    // Simple email validation
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Simulate sending email to backend
+    console.log("Subscribed email:", email);
+
+    // Optionally show a success message
+    alert("Thank you for subscribing!");
+  }
+</script>
+    </div>
+    <hr class="border-line-secondary">
+
+    <!-- Main Footer Content -->
+    <div class="container footer-content">
+      <div class="row gy-4 text-start">
+        <!-- About Us  for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md">
+          <h6 class="fw-bold">About Us</h6>
+          <p class="small text-white-50" style="text-align: justify;">
+            VC Fitness is owned by a celebrity trainer Mr. Vinod Channa. He is also a personal trainer to business
+            tycoons namely Anant Ambani, Nita Ambani, Kumar Mangalam Birla, Ananya Birla etc and many Bollywood
+            celebrities namely John Abraham, Shilpa Shetty Kundra, Harshvardhan Rane, Vivek Oberoi, Arjun Rampal to name
+            a few.
+          </p>
+        </div>
+        <!-- Contact  for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md-1">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small text-white-50">
+            Pinnacle House, 5th Floor, 15th Road, P D Hinduja Junction,<br>
+            Bandra West Mumbai, Maharashtra - 400050
+          </p>
+          <p class="small text-white-50">📞 +91 9870406617<br>
+✉️ Channa.Vinod@Gmail.Com<br>
+🌐 https://vinodchannafitness.com
+</p>
+        </div>
+        <!-- Contact -->
+        <div class="col-md-3 top-padding mobile-col-md-12">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small text-white-50 lh-base">
+            Pinnacle House, 5th Floor, 15th Road, P D Hinduja Junction,<br>
+            Bandra West Mumbai, Maharashtra - 400050
+          </p>
+          <div class="d-flex gap-3 mt-2">
+            <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- Useful Links -->
+        <div class="col-md-3 top-padding mobile-col-md-2">
+          <h6 class="fw-bold">Useful Links</h6>
+          <ul class="list-unstyled small text-white-50 useful-links">
+            <li class="pt-2"><a href="./index.html" class="text-white-50 text-decoration-none">VC Fitness</a></li>
+            <li class="pt-2"><a href="./service-page.html" class="text-white-50 text-decoration-none">Vinod Channa Fitness Service</a></li>
+            <li class="pt-2"><a href="#" class="text-white-50 text-decoration-none">Vinod Channa Story</a></li>
+            <li class="pt-2"><a href="Contact-Us.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+            <li class="pt-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+            <li class="pt-2"><a href="term-conditions.html" class="text-white-50 text-decoration-none">Term Conditions</a></li>
+            <li class="pt-2"><a href="./Media-page.html" class="text-white-50 text-decoration-none">Press Releases</a></li>
+          </ul>
+        </div>
+        <!-- Key Highlights -->
+        <div class="col-md-3 top-padding mobile-col-md-3">
+          <h6 class="fw-bold">Key Highlights</h6>
+          <ul class="list-unstyled small text-white-50 ">
+            <li class="pt-2">Best Celebrity Trainer</li>
+            <li class="pt-2">Vinod Channa Fitness</li>
+            <li class="pt-2">Celebrity Trainer</li>
+            <li class="pt-2">Gym In Bandra</li>
+            <li class="pt-2">Online Coaching Body Transformation</li>
+            <li class="pt-2">Buyback & Exchange Policy</li>
+          </ul>
+        </div>
+        <!-- Useful Links for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md-21 mobile-accordion-section">
+          <div class="buttom-border">
+            <div class="accordion-header-custom" onclick="toggleAccordion(this)">
+              <h6 class="fw-bold mb-0">Useful Links</h6>
+              <span class="footer-toggle-icon">+</span>
+            </div>
+            <div class="accordion-body-custom">
+              <ul class="list-unstyled small text-white-50 mb-0 useful-links">
+                <li class="pt-2"><a href="./index.html" class="text-white-50 text-decoration-none">VC Fitness</a></li>
+                <li class="pt-2"><a href="./service-page.html" class="text-white-50 text-decoration-none">Vinod Channa Fitness Service</a></li>
+                <li class="pt-2"><a href="#" class="text-white-50 text-decoration-none">Vinod Channa Story</a></li>
+                <li class="pt-2"><a href="Contact-Us.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                <li class="pt-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                <li class="pt-2"><a href="term-conditions.html" class="text-white-50 text-decoration-none">Term Conditions</a></li>
+                <li class="pt-2"><a href="./Media-page.html" class="text-white-50 text-decoration-none">Press Releases</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Key Highlights for mobile -->
+        <div class="col-md-3 top-padding mobile-col-md-31 mobile-accordion-section">
+          <div class="buttom-border">
+            <div class="accordion-header-custom" onclick="toggleAccordion(this)">
+              <h6 class="fw-bold mb-0">Key Highlights</h6><span class="footer-toggle-icon">+</span>
+            </div>
+            <div class="accordion-body-custom">
+              <ul class="list-unstyled small text-white-50 mb-0">
+                <li class="pt-2">Best Celebrity Trainer</li>
+                <li class="pt-2">Vinod Channa Fitness</li>
+                <li class="pt-2">Celebrity Trainer</li>
+                <li class="pt-2">Gym In Bandra</li>
+                <li class="pt-2">Online Coaching Body Transformation</li>
+                <li class="pt-2">Buyback & Exchange Policy</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mt-2 mobile-link">
+
+           <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- About Us-->
+        <div class="col-md-3 top-padding mobile-col-md-4">
+          <h6 class="fw-bold">About Us</h6>
+          <p class="small text-white-50 lh-base">
+            VC Fitness is owned by a celebrity trainer Mr. Vinod Channa. He is also a personal trainer to business
+            tycoons namely Anant Ambani, Nita Ambani, Kumar Mangalam Birla, Ananya Birla etc and many Bollywood
+            celebrities namely John Abraham, Shilpa Shetty Kundra, Harshvardhan Rane, Vivek Oberoi, Arjun Rampal to name
+            a few.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="border-line-secondary mt-4">
+
+    <!-- Bottom Bar -->
+    <div class="container d-flex flex-wrap justify-content-between align-items-center small text-white-50">
+      <p class="mb-0">&copy; 2025 VC Fitness All Rights Reserved</p>
+      <div>
+        <a href="privacy-policy.html" class="text-white-50 text-decoration-none me-3">Privacy Policy</a>
+        <a href="term-conditions.html" class="text-white-50 text-decoration-none">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    function toggleAccordion(header) {
+      const icon = header.querySelector('.footer-toggle-icon');
+      const body = header.nextElementSibling;
+      const isOpen = body.classList.contains('active');
+
+      // Close all open sections (optional)
+      document.querySelectorAll('.accordion-body-custom').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.footer-toggle-icon').forEach(el => el.innerText = '+');
+
+      // Open the clicked section if it was closed
+      if (!isOpen) {
+        body.classList.add('active');
+        icon.innerText = '-';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One on One Personal Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400" rel="stylesheet">
+</head>
+
+<style>
+  .one-to-one-left{
+    padding: 20px 0px 20px 20px;
+  }
+  .one-to-one-left img{
+    width: 90%;
+    height: 558px;
+    display: block;
+  transition: transform 0.3s ease;
+  }
+  
+.one-to-one-left img:hover{
+  transform: scale(1.05);
+}
+
+  .fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* dark semi-transparent */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.fullscreen-overlay.active {
+  display: flex;
+}
+
+.fullscreen-content img {
+  width: 600px;
+  height: 600px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+  .one-to-one-right{
+    padding: 20px 20px 20px 0px;
+  }
+  .one-to-one-right h1{
+    color: #3c3950;
+    font-weight: normal;
+    text-align: left;
+    padding-bottom: 20px;
+    letter-spacing: 3px;
+  }
+
+  .rating-divider{
+    height: 4px;
+    border-top: 1px solid #dfe5e8;
+  }
+  
+  .price{
+    color: #3c3950;
+     text-align: start;
+     font-size: 1.5rem;
+  }
+
+  .description{
+    color: #5f727f;
+    max-width: 36vw;
+    text-align: justify;
+  }
+
+  .disclaimer{
+    color: #703926;
+    max-width: 36vw;
+    text-align: justify;
+  }
+
+  #choose-an-option{
+    color: #989898;
+    padding: 10px;
+    border-color: #dfe5e8;
+  }
+
+  #choose-an-option option{
+    border: 1px solid black !important;
+  }
+
+  .buy-buttons{
+    display: flex;
+    margin-top: 50px;
+    gap: 20px;
+  }
+  .add-to-cart{
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px 10px 15px;
+    background-color: #9E6449;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .add-to-cart:hover{
+    background-color: #3c3950;
+  }
+
+  .buy-now{
+    color: white;
+    padding: 10px 15px 10px 15px;
+    background-color: #b6c6c9;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .buy-now:hover{
+    background-color:#3c3950;
+  }
+  .social-icons{
+    margin-top: 100px;
+  }
+
+  .social-icons div a{
+    color: #989898;
+  }
+  .bi-facebook:hover, .bi-linkedin:hover{
+    color: blue;
+  }
+  
+  .bi-youtube:hover{
+    color: red;
+  }
+
+  .bi-instagram:hover{
+    color: rgb(238, 10, 219);
+  }
+
+  .bi-twitter:hover{
+    color: rgb(26, 160, 244);
+  }
+
+  .prev-button{
+    position: relative;
+    left: 0;
+    padding-left: 20px;
+  }
+
+  .prev-button a{
+    display: flex;
+    background-color: white;
+    text-decoration: none;
+    gap: 5px;
+    color: #989898;
+    padding: 5px 20px 5px 20px;
+    border-radius: 4px;
+    border: 1px solid #5f727f;
+    font-weight: bold;
+  }
+
+  .prev-button a:hover{
+    background-color: #989898;
+    color: white;
+  }
+  .next-button{
+    position: absolute;
+    right: 250px;
+  }
+  .next-button a{
+    display: flex;
+    gap: 5px;
+    color: #989898;
+    text-decoration: none;
+    background-color: white;
+    padding: 5px 20px 5px 20px;
+    border-radius: 4px;
+    border: 1px solid #5f727f;
+    font-weight: bold;
+  }
+  .next-button a:hover{
+    background-color: #989898;
+    color: white;
+  }
+  
+  .one-to-one-training{
+    margin-top: 100px;
+  }
+  .left-section{
+    width: 60%;
+  }
+
+  .left-section h1{
+    color: #703926;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+
+  .left-section p{
+    text-align: justify;
+    color: #5f727f;
+   margin-top: 20px;
+  }
+
+  .left-section h5{
+    letter-spacing: 1.5px;
+    font-weight: bold;
+  }
+
+  .rotated-tag-icon {
+  color: #703926;
+  transform: rotate(90deg);
+  display: inline-block; /* needed to make transform work properly */
+}
+
+.enquiry-form{
+  position: relative;
+  left: 0px;
+}
+.right-section{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding-left: 80px;
+}
+
+.right-section h2{
+  color: #703926;
+  font-weight: bold;
+}
+.enquiry-form label{
+  color: #703926;
+}
+.enquiry-form input{
+  padding: 10px;
+  border: none;
+  width: 80%;
+  border-bottom: 1px solid #703926;
+}
+.enquiry-form textarea{
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #703926;
+  width: 80%;
+}
+.submit-btn{
+  color: #703926;
+  border: 2px solid #703926 !important;
+  background-color: none;
+  border-radius: 4px;
+  height: 35px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0px !important;
+}
+
+.submit-btn:hover{
+  color: white;
+  background-color: #3c3950;
+}
+
+@media (max-width: 768px){
+  .one-to-one-training-page{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+  .fullscreen-content{
+    padding: 20px;
+  }
+  .fullscreen-content img{
+    width: 100%;
+    height: 500px;
+  }
+  .one-to-one-left{
+    width: 100%;
+  }
+  .one-to-one-left img{
+    width: 100%;
+    height: auto;
+  }
+  .one-to-one-right{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+  .description{
+    max-width: 100vw;
+  }
+  .disclaimer{
+    max-width: 100%;
+  }
+  .buy-buttons{
+    justify-content: center;
+  }
+  .next-button{
+    right: 30px;
+  }
+  .prev-next-buttons{
+     margin-top: 70px;
+  }
+  .one-to-one-training{
+    display: flex;
+    flex-direction: column;
+  }
+  .left-section{
+    width: 100%;
+  }
+  .right-section{
+    padding: 0px;
+    width: 100%;
+  }
+  .enquiry-form input{
+    width: 100%;
+  }
+  .enquiry-form textarea{
+    width: 100%;
+  };
+}
+</style>
+<body>
+  <div class="container d-flex one-to-one-training-page">
+    <div class="one-to-one-left">
+      <a href="one-to-one-training.gif">
+     <img src="./images-compress/one-to-one-training.gif" alt="one-to-one-training">
+     </a>
+     <div class="social-icons">
+      <div class="d-flex gap-3 mt-2">
+            <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" ><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" ><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+     </div>
+     <br>
+     <p>SKU: N/A</p>
+     <p>Category: <span style="color: #9E6449;">Uncategorized</span></p>
+    </div>
+    <div class="one-to-one-right">
+       <h1>ONE TO ONE TRAINING</h1>
+       <div class="rating-divider"></div>
+       <div class="rating-divider mb-3"></div>
+       <p class="price">₹100,000.00</p>
+       <p class="description">You can now avail personalized online trainings from any place as long as you are connected to the internet through our One-to-one training program. This program is specifically designed to support your need for accessing our expert coaching at your suitable timings and to avoid skipping personal coaching even though you are out of town or stay away from gym locality or you could not accommodate your work routine due to irregular working hours or you cannot travel to gym due to any injury. Once you have enrolled for this program, you can login from any place to get training from our Coach Vinod Channa who will provide you exercise tips and hints by correcting your false moves/postures, demonstrating each exercise precisely and finally motivating you in the same way when you are getting personal training in the gym.</p>
+       <p class="disclaimer"><strong>Disclaimer: </strong>All training is provided through Zoom. You will need an active Zoom account and an internet connection with minimum 2 Mbps speed.</p>
+       <div>
+        <span class="pe-3">Month</span>
+        <select name="choose an option" id="choose-an-option">
+           <option value="Choose-an-option">Choose an option</option>
+           <option value="one-month">1 Month</option>
+        </select>
+       </div>
+       <div class="buy-buttons">
+       <a href="#" class="add-to-cart"><i class="bi bi-cart2"></i> ADD TO CART</a>
+       <a href="#" class="buy-now">BUY NOW</a>
+       </div>
+    </div>
+  </div>
+
+  <div class="container d-flex prev-next-buttons">
+    <div class="prev-button">
+       <a href="#"><i class="bi bi-chevron-left"></i> PREV</a>
+    </div>
+    <div class="next-button">
+      <a href="#">NEXT <i class="bi bi-chevron-right"></i></a>
+    </div>
+  </div>
+
+  <div class="container d-flex one-to-one-training">
+    <div class="left-section">
+    <h1>ONE TO ONE TRAINING</h1>
+    <p>You can now avail personalized online trainings from any place as long as you are connected to the internet through our One-to-one training program. This program is specifically designed to support your need for accessing our expert coaching at your suitable timings and to avoid skipping personal coaching even though you are out of town or stay away from gym locality or you could not accommodate your work routine due to irregular working hours or you cannot travel to gym due to any injury. Once you have enrolled for this program, you can login from any place to get training from our Coach Vinod Channa who will provide you exercise tips and hints by correcting your false moves/postures, demonstrating each exercise precisely and finally motivating you in the same way when you are getting personal training in the gym.</p>
+    <h5 class="text-uppercase">Benefits of this program are as follows:</h5>
+    <p><i class="bi bi-tag rotated-tag-icon"></i> Saves your time</p>
+    <p><i class="bi bi-tag rotated-tag-icon"></i> Easy access from anywhere</p>
+    <p><i class="bi bi-tag rotated-tag-icon"></i> Constant support and motivation</p>
+    <p class="mt-4">So, don’t miss your chance to skip your exercise regimen or personal training just because you are not in town or stay away from gym locality or you could not accommodate your work routine due to irregular working hours or you cannot travel to gym due to any reason and enroll now into this one-click-connect program.</p>
+    </div>
+    <div class="right-section d-flex">
+      <h2>ENQUIRY</h2>
+      <br>
+      <form action="#" class="enquiry-form">
+        <label for="name">Your Name</label>
+        <br>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="email">Your email</label>
+        <br>
+        <input type="email" name="email" id="email">
+        <br>
+        <label for="subject">Subject</label>
+        <br>
+        <input type="text" name="subject" id="subject">
+        <br>
+        <label for="phone-no">Phone Number</label>
+        <br>
+        <input type="number" name="phone-no" id="phone-no">
+        <br>
+        <label for="message">Your Message</label>
+        <br>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="SUBMIT" class="submit-btn">
+      </form>
+    </div>
+  </div>
+
+ <div class="container mt-5 mb-5">
+  <p style="color: #703926; text-align: justify;"><strong>Disclaimer: </strong>All training is provided through Zoom. You will need an active Zoom account and an internet connection with minimum 2 Mbps speed.</p>
+ </div>
+
+
+  <div id="fullscreenOverlay" class="fullscreen-overlay">
+  <span id="closeOverlay" class="close-button">&times;</span>
+  <div class="fullscreen-content" id="fullscreenContent"></div>
+</div>
+
+
+<script>
+  document.querySelectorAll('.one-to-one-left a').forEach(function (anchor) {
+  anchor.addEventListener('click', function (event) {
+    event.preventDefault(); // ⛔ Prevent link navigation
+
+    const img = anchor.querySelector('img');
+    const src = anchor.getAttribute('href'); // Use the full image from href
+
+    const fullscreenOverlay = document.getElementById('fullscreenOverlay');
+    const fullscreenContent = document.getElementById('fullscreenContent');
+
+    fullscreenContent.innerHTML = '';
+
+    const fullscreenImg = document.createElement('img');
+    fullscreenImg.src = src;
+    fullscreenImg.alt = img.alt || '';
+
+    fullscreenContent.appendChild(fullscreenImg);
+    fullscreenOverlay.classList.add('active');
+  });
+});
+
+document.getElementById('closeOverlay').addEventListener('click', function () {
+  document.getElementById('fullscreenOverlay').classList.remove('active');
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>

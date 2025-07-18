@@ -1,0 +1,286 @@
+body {
+    background: #f2f5f8;
+    margin: 0;
+}
+
+.clr {
+    color: #5F727F;
+}
+
+/* Font Family Imports */
+h2,
+p {
+    font-family: "Roboto Slab", serif;
+}
+
+p {
+    font-size: 16px;
+    color: #5F727F;
+}
+
+h1 {
+    font-family: "Oswald", sans-serif;
+}
+
+/* Base styles */
+.circle {
+    width: 150px;
+    /* Adjusted for better responsiveness */
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid gainsboro;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.box {
+    border: 1px double #000;
+    outline: 1px solid gray;
+    outline-offset: -4px;
+}
+
+.center {
+    text-align: center;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    /* Added horizontal padding to center-div */
+    box-sizing: border-box;
+}
+
+.div_1 {
+    max-width: 1170px;
+    padding-bottom: 60px;
+    width: 100%;
+    /* Ensure it takes full width within its container */
+}
+
+.font-weight {
+    font-weight: 300;
+    color: #5F727F;
+    font-size: clamp(1rem, 2vw + 1rem, 1.7625rem);
+    /* Responsive font size */
+}
+
+.custom-margin {
+    margin-top: 40px !important;
+}
+
+/* Timeline specific styles */
+.timeline,
+.timeline2 {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    /* spacing between items */
+    align-items: flex-start;
+    padding-left: 15px;
+    /* Added padding for smaller screens */
+    padding-right: 15px;
+    /* Added padding for smaller screens */
+    box-sizing: border-box;
+}
+
+.timeline2 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Timeline vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 325px;
+    height: calc(100% - 487px);
+    left: 91px;
+    width: 4px;
+    background: #ccc;
+    z-index: 0;
+}
+
+.timeline2::before {
+    content: '';
+    position: absolute;
+    top: 176px;
+    height: calc(100% - 455px);
+    left: 90px;
+    width: 4px;
+    background: #ccc;
+    z-index: 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    /* Ensure item takes full width for flex alignment */
+    gap: 20px;
+    /* Gap between circle and content */
+}
+
+.timeline-item .icon {
+    /* This rule seems unused in your HTML, keeping for reference */
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-item .content {
+    background: #f4f6f7;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 170px);
+    /* Adjust width to account for circle + gap */
+    box-sizing: border-box;
+}
+
+.timeline-item.right .content {
+    width: calc(100% - 170px);
+    /* Maintain width for right-aligned content */
+}
+
+.timeline-item h2 {
+    color: #880000;
+    font-size: clamp(1.1rem, 2vw + 0.5rem, 1.5rem);
+    /* Responsive font size */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* --- IMPORTANT CHANGE HERE --- */
+.timeline-item p {
+    color: #4a4a4a;
+    font-size: clamp(1rem, 2vw + 0.5rem, 1rem);
+    /* Adjusted base font size for better mobile readability */
+    line-height: 1.6;
+}
+
+/* --- END IMPORTANT CHANGE --- */
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+
+    .timeline::before,
+    .timeline2::before {
+        visibility: hidden;
+        /* Hide the vertical line on small screens */
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        /* Stack circle and content vertically */
+        align-items: center;
+        /* Center items for a better flow */
+        margin-left: 0;
+        /* Remove left margin for single column */
+        text-align: center;
+        /* Center text within content on small screens */
+    }
+
+    .timeline-item .circle {
+        margin-right: 0;
+        /* Remove right margin when stacked */
+        margin-bottom: 20px;
+        /* Add space below circle */
+    }
+
+    .timeline-item .content {
+        width: 100%;
+        /* Make content take full width */
+        padding: 20px;
+        /* Adjust padding for smaller screens */
+    }
+
+    /* Adjust the image and text section at the bottom for small screens */
+    .div_1[style*="flex-direction: row"] {
+        /* Targeting the specific flex container */
+        flex-direction: column;
+        /* Stack items vertically */
+        gap: 30px;
+        /* Maintain gap between stacked items */
+    }
+
+    .div_1[style*="flex-direction: row"]>div {
+        width: 100%;
+        /* Each div takes full width */
+    }
+
+    .div_1[style*="font-size: 34px"] {
+        /* Adjust font size for the concluding text */
+        font-size: clamp(1rem, 2.5vw + 0.5rem, 2.125rem) !important;
+        /* Make it responsive */
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .div_1.box {
+        font-size: clamp(0.9rem, 1.8vw + 0.5rem, 1.5rem) !important;
+        /* Responsive font for blockquote */
+        padding: 30px;
+        /* Adjust padding for smaller screens */
+    }
+
+    .center-div[style*="padding: 60px 80px;"] {
+        padding: 30px 15px !important;
+        /* Adjust padding for the quote section */
+    }
+}
+
+.justify {
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .justify {
+        text-align: justify
+    }
+}
+
+blockquote {
+    color: #5F727F;
+    font-size: 24px;
+    font-weight: 100;
+    padding: 60px 80px;
+    opacity: 0.7;
+
+    border: 1px double rgb(195, 175, 175);
+    outline: 1px solid gainsboro;
+    outline-offset: -4px;
+    margin-left: 21px;
+    margin-right: 21px;
+    font-style: italic;
+    font-family: "Roboto Slab", serif;
+    line-height: 31px;
+
+
+}
+
+.blockquote-img {
+    position: absolute;
+    bottom: 132px;
+    right: 3rem;
+}
