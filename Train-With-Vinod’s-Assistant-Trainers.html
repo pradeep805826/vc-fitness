@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <title>12-minute Daily Workout</title>
+  <!-- <link rel="stylesheet" href="12minute-daily-workout.css"> -->
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto Slab", serif;
+
+    }
+
+    h1,
+    .programs-section h2,
+    .section-wrapper h2,
+    .testimonial-title,
+    .instagram-center-content h2,
+    .fw-bold.text-uppercase,
+    .program-title {
+      font-family: "Oswald", sans-serif;
+    }
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+
+
+    /* heading-banner */
+
+    .heading-banner {
+      background-color: #9e6449;
+
+      width: 100%;
+      max-height: 250px;
+      color: white;
+      margin-bottom: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 21px;
+      padding-right: 21px;
+    }
+
+    .active-page {
+      color: #703926;
+      border-bottom: 5px solid #703926;
+      padding-bottom: 18px;
+    }
+
+    @media(max-width:767px) {
+      .active-page {
+        border: none;
+
+      }
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+
+
+    .text-center {
+      text-align: center;
+
+    }
+
+
+
+    .font1 {
+      font-size: 50px;
+      margin-top: 40px;
+      margin-bottom: 35px;
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+    }
+
+    .font2 {
+      font-size: 36px;
+    }
+
+    @media(max-width:1025px) {
+      .font1 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+
+      .font2 {
+        font-size: 28px;
+      }
+    }
+
+    @media(max-width:426px) {
+      .font1 {
+        font-size: 28px;
+
+      }
+
+
+    }
+
+    i {
+      padding: 0px 12px;
+    }
+
+    .span-on-hover {
+      color: white;
+    }
+
+    .span-on-hover:hover {
+      color: #703926;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+
+
+    /* program-card */
+
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 0.8s ease-out;
+    }
+
+    .animate-on-scroll.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .animate-left-on-scroll {
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: all 0.8s ease-out;
+    }
+
+    .animate-left-on-scroll.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .programs-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      background: #f2f2f2;
+      padding: 2rem;
+    }
+
+    .program-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .program-card img {
+      width: 100%;
+      /* height: 15vw; */
+      object-fit: cover;
+    }
+
+    .program-content {
+      padding: 1rem;
+    }
+
+    .program-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .program-sub {
+      font-size: 1rem;
+      color: #9e6449;
+      margin-bottom: 0.5rem;
+    }
+
+    .program-desc {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    .read-more {
+      color: #9e6449;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .read-more:hover {
+      color: #703926;
+    }
+
+    .image-wrapper {
+      position: relative;
+    }
+
+    .image-wrapper img.program-image {
+      width: 100%;
+      display: block;
+      border-radius: 12px 12px 0 0;
+      /* matches card corners */
+    }
+
+    .icon-overlay {
+      position: absolute;
+      bottom: -20px;
+      /* position halfway over the content section */
+      right: 3rem;
+      width: 48px;
+      height: 48px;
+      padding: 6px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-overlay img {
+      width: 28px;
+      height: 28px;
+    }
+
+
+    @media (max-width: 1024px) {
+      .programs-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .programs-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* .program-card{
+        flex: 1 1 100%;
+      } */
+    }
+
+    @media (min-width: 525px) and (max-width: 768px) {
+      .program-card {
+        height: 500px;
+      }
+    }
+
+
+
+
+    /* programs-section */
+
+    .programs-section {
+
+      background: #fafafa;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .programs-section h2 {
+      font-size: clamp(1rem, 5vw, 2rem);
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .programs-tabs {
+      display: inline-flex;
+      background: #fdf2ec;
+      border-radius: 8px;
+      padding: 0.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .programs-tabs .programs-tab {
+      padding: 0.5rem 1.5rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 6px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .programs-tabs .programs-tab.active {
+      background: #a56448;
+      color: white;
+    }
+
+    .programs-training-container {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .one-to-one-cards {
+      display: flex;
+      gap: 20px;
+    }
+
+    .programs-card {
+      flex: 1 1 45%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .programs-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px 8px 0 0;
+      display: block;
+    }
+
+    .programs-label {
+      background: #a56448;
+      padding: 0.75rem 1rem;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .programs-label .programs-arrow {
+      background: #fff;
+      color: #a56448;
+      padding: 0.25rem 0.5rem;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    /* minimal visibility control handled by JS */
+    .programs-card {
+      display: none;
+    }
+
+    /* optional visual cue for active tab */
+    .programs-active {
+      font-weight: 600;
+      border-bottom: 2px solid;
+    }
+
+    @media (max-width: 768px) {
+      .programs-training-container {
+        flex-direction: column;
+      }
+
+      .programs-card {
+        display: flex;
+        flex-direction: column;
+
+      }
+
+      .one-to-one-cards {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        object-fit: cover;
+        text-align: center;
+      }
+
+      .programs-label {
+        font-size: 1rem;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- heading-banner -->
+  <div class="heading-banner">
+    <div>
+      <h1 class="text-center font1">Train With Vinod’s Assistant Trainers</h1>
+      <div class="text-center" style="margin-bottom: 20px;">
+        <a href="index.html" target="_blank"> <span class="span-on-hover">Home</span></a>
+        <span><i class="fa-solid fa-arrow-right"></i></span>
+        <a href="#" target="_blank"> <span class="span-on-hover">1-On-1 Training</span></a>
+        <span><i class="fa-solid fa-arrow-right"></i></span>
+        <a href="#" target="_blank"><span class="active-page">Train With Vinod’s Assistant Trainers</span></a>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="programs-section">
+
+    <div class="programs-training-container">
+
+      <div class="program-card animate-on-scroll" data-type="online-programs">
+        <div class="image-wrapper">
+          <img class="program-image" src="./images-compress/program-card1.webp" alt="Fat Loss" />
+          <div class="icon-overlay">
+            <img src="./images-compress/Program Icon1.webp" alt="Program Icon" />
+          </div>
+        </div>
+        <div class="program-content">
+          <div class="program-sub">VC Fitness</div>
+          <div class="program-title">Yoga</div>
+          <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+
+      <!-- Duplicate and update image/text for each card as needed -->
+      <div class="program-card animate-on-scroll" data-type="online-programs">
+        <div class="image-wrapper">
+          <img class="program-image" src="./images-compress/program-card2.webp" alt="One to One" />
+          <div class="icon-overlay">
+            <img src="./images-compress/Program Icon2.webp" alt="Program Icon" />
+          </div>
+        </div>
+        <div class="program-content">
+          <div class="program-sub">VC Fitness</div>
+          <div class="program-title">Pilates</div>
+          <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+
+      <!-- Add other cards similarly -->
+      <div class="program-card animate-on-scroll" data-type="online-programs">
+        <div class="image-wrapper">
+          <img class="program-image" src="./images-compress/program-card3.webp" alt="One to One" />
+          <div class="icon-overlay">
+            <img src="./images-compress/Program Icon3.webp" alt="Program Icon" />
+          </div>
+        </div>
+        <div class="program-content">
+          <div class="program-sub">VC Fitness</div>
+          <div class="program-title">kickboxing </div>
+          <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="program-card animate-on-scroll" data-type="online-programs">
+        <div class="image-wrapper">
+          <img class="program-image" src="./images-compress/program-card4.webp" alt="One to One" />
+          <div class="icon-overlay">
+            <img src="./images-compress/Program Icon4.webp" alt="Program Icon" />
+          </div>
+        </div>
+        <div class="program-content">
+          <div class="program-sub">VC Fitness</div>
+          <div class="program-title">Cardio & Healthy Training</div>
+          <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="program-card animate-on-scroll" data-type="online-programs">
+        <div class="image-wrapper">
+          <img class="program-image" src="./images-compress/program-card5.webp" alt="One to One" />
+          <div class="icon-overlay">
+            <img src="./images-compress/Program Icon5.webp" alt="Program Icon" />
+          </div>
+        </div>
+        <div class="program-content">
+          <div class="program-sub">VC Fitness</div>
+          <div class="program-title">Online Training House </div>
+          <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+      <div class="program-card animate-on-scroll" data-type="online-programs">
+        <div class="image-wrapper">
+          <img class="program-image" src="./images-compress/program-card6.webp" alt="One to One" />
+          <div class="icon-overlay">
+            <img src="./images-compress/Program Icon6.webp" alt="Program Icon" />
+          </div>
+        </div>
+        <div class="program-content">
+          <div class="program-sub">VC Fitness</div>
+          <div class="program-title">Weight Training</div>
+          <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show'); // Remove class when out of view
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      observer.observe(el);
+    });
+
+    document.querySelectorAll('.animate-left-on-scroll').forEach((el) => {
+      observer.observe(el);
+    });
+
+    const zoomObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show'); // Re-trigger when scrolling back
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    document.querySelectorAll('.image-zoom-on-scroll').forEach((el) => {
+      zoomObserver.observe(el);
+    });
+
+
+  </script>
+
+
+</body>
+
+</html>
