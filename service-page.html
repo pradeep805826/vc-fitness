@@ -331,12 +331,11 @@
 
 
 
+    
     /* program-card */
-   /* program-card */
     .programs-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      justify-content: flex-start;
       gap: 1.5rem;
       background: #f2f2f2;
       padding: 2rem;
@@ -345,21 +344,21 @@
     .program-card {
       background: #fff;
       border-radius: 12px;
+      width: 350px;
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
-      max-width: 400px;
     }
 
     .program-card:hover {
       transform: translateY(-5px);
     }
 
-    .program-card img {
+    /* .program-card img {
       width: 100%;
-      /* height: 15vw; */
+      height: 15vw;
       object-fit: cover;
-    }
+    } */
 
     .program-content {
       padding: 1rem;
@@ -378,7 +377,7 @@
     }
 
     .program-desc {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #555;
       margin-bottom: 0.8rem;
     }
@@ -393,35 +392,21 @@
     .read-more:hover{
       color: #703926;
     }
-    .image-wrapper {
-  position: relative;
-}
-
-.image-wrapper img.program-image {
+    
+.image-wrapper{
   width: 100%;
   display: block;
-  border-radius: 12px 12px 0 0; /* matches card corners */
+  object-fit: contain;
 }
 
-.icon-overlay {
-  position: absolute;
-  bottom: -20px; /* position halfway over the content section */
-  right: 3rem;
-  width: 48px;
-  height: 48px;
-  padding: 6px;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.icon-overlay img {
-  width: 28px;
-  height: 28px;
-}
 
+.program-image {
+  width: 100%;
+  height: 250px;
+  object-fit: contain; /* Entire image stays visible */
+  border-radius: 12px 12px 0 0;
+  display: block;
+}
 
     @media (max-width: 1024px) {
       .programs-container {
@@ -433,6 +418,10 @@
       .programs-container {
         display: flex;
         flex-direction: column;
+      }
+
+      .online-training-container{
+        justify-content: center;
       }
       /* .program-card{
         flex: 1 1 100%;
@@ -512,20 +501,13 @@
             background: #a56448;
             padding: 0.75rem 1rem;
             color: #fff;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-radius: 0 0 8px 8px;
         }
-    .programs-label a{
-  text-decoration: none;
-  color: #fff;
-}
-    .programs-label span:hover{
-  color: #703926;
-}
 
         .programs-label .programs-arrow {
             background: #fff;
@@ -544,24 +526,16 @@
                 flex-direction: column;
             }
 
-             .programs-card {
-                display: flex;
-                flex-direction: column;
-                
+            .programs-card {
+                flex: 1 1 100%;
             }
 
             .one-to-one-cards{
               display: flex;
               flex-direction: column;
-              width: 100%;
-              object-fit: cover;
-              text-align: center;
-            }
-            .programs-label{
-              font-size: 1rem;
-              width: 100%;
             }
         }
+
 
 
         /* results-section */
@@ -1353,93 +1327,77 @@
                 </div>
             </div> -->
 
-           <div class="d-flex justify-content-center gap-3 flex-wrap">
+           
+            <div class="d-flex online-training-container gap-3 flex-wrap">
             <div class="program-card animate-on-scroll" data-type="online-programs">
-      <div class="image-wrapper">
-        <img class="program-image" src="./images-compress/program-card1.webp" alt="Fat Loss" />
-        <div class="icon-overlay">
-          <img src="./images-compress/Program Icon1.webp" alt="Program Icon" />
+              <div class="image-wrapper">
+        <img class="program-image" src="./images-compress/weight_managmen_newt.webp" alt="Fat Loss" />
         </div>
-      </div>
       <div class="program-content">
         <div class="program-sub">VC Fitness</div>
-        <div class="program-title">Yoga</div>
-        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        <div class="program-title">1 WEEK 1.5kg FAT LOSS PROGRAM</div>
+        <div class="program-desc">₹500.00</div>
         <a href="#" class="read-more">Read More</a>
       </div>
     </div>
 
 
     <!-- Duplicate and update image/text for each card as needed -->
-    <div class="program-card animate-on-scroll" data-type="online-programs">
-      <div class="image-wrapper">
-        <img class="program-image" src="./images-compress/program-card2.webp" alt="One to One" />
-        <div class="icon-overlay">
-          <img src="./images-compress/Program Icon2.webp" alt="Program Icon" />
-        </div>
-      </div>
-      <div class="program-content">
-        <div class="program-sub">VC Fitness</div>
-        <div class="program-title">Pilates</div>
-        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
-        <a href="#" class="read-more">Read More</a>
-      </div>
+     <div class="program-card animate-on-scroll" data-type="online-programs">
+  <a href="./onlineprogrammmes/12miinute-daily-workout.html" class="text-decoration-none text-black">
+    <div class="image-wrapper">
+    <img class="program-image" src="./images-compress/12-minute-daily-workout-no-equipment.webp" alt="One to One" />
     </div>
-
+    <div class="program-content">
+      <div class="program-sub">VC Fitness</div>
+      <div class="program-title">12-minute Daily Workout (No Equipment)</div>
+      <div class="program-desc">₹999.00</div>
+      <span class="read-more">Read More</span>
+    </div>
+  </a>
+</div>
   
     <!-- Add other cards similarly -->
    <div class="program-card animate-on-scroll" data-type="online-programs">
-      <div class="image-wrapper">
-        <img class="program-image" src="./images-compress/program-card3.webp" alt="One to One" />
-        <div class="icon-overlay">
-          <img src="./images-compress/Program Icon3.webp" alt="Program Icon" />
+     <div class="image-wrapper">
+        <img class="program-image" src="./images-compress/Vinod-Channa-Beginners-Exercise.webp" alt="One to One" />
         </div>
-      </div>
       <div class="program-content">
         <div class="program-sub">VC Fitness</div>
-        <div class="program-title">kickboxing </div>
-        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        <div class="program-title">Beginner program </div>
+        <div class="program-desc">₹500.00</div>
         <a href="#" class="read-more">Read More</a>
       </div>
     </div>
 
    <div class="program-card animate-on-scroll" data-type="online-programs">
-      <div class="image-wrapper">
-        <img class="program-image" src="./images-compress/program-card4.webp" alt="One to One" />
-        <div class="icon-overlay">
-          <img src="./images-compress/Program Icon4.webp" alt="Program Icon" />
+     <div class="image-wrapper">
+        <img class="program-image" src="./images-compress/leg.webp" alt="One to One" />
         </div>
-      </div>
       <div class="program-content">
         <div class="program-sub">VC Fitness</div>
-        <div class="program-title">Cardio & Healthy Training</div>
-        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        <div class="program-title">Legs workout (Part 1)</div>
+        <div class="program-desc">₹500.00</div>
         <a href="#" class="read-more">Read More</a>
       </div>
     </div>
 
     <div class="program-card animate-on-scroll" data-type="online-programs">
-      <div class="image-wrapper">
-        <img class="program-image" src="./images-compress/program-card5.webp" alt="One to One" />
-        <div class="icon-overlay">
-          <img src="./images-compress/Program Icon5.webp" alt="Program Icon" />
+       <div class="image-wrapper">
+        <img class="program-image" src="./images-compress/leg.webp" alt="One to One" />
         </div>
-      </div>
       <div class="program-content">
         <div class="program-sub">VC Fitness</div>
-        <div class="program-title">Online Training House </div>
-        <div class="program-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        <div class="program-title">Legs workout (Part 2)</div>
+        <div class="program-desc">₹500.00</div>
         <a href="#" class="read-more">Read More</a>
       </div>
     </div>
 
     <div class="program-card animate-on-scroll" data-type="online-programs">
-      <div class="image-wrapper">
+       <div class="image-wrapper">
         <img class="program-image" src="./images-compress/program-card6.webp" alt="One to One" />
-        <div class="icon-overlay">
-          <img src="./images-compress/Program Icon6.webp" alt="Program Icon" />
         </div>
-      </div>
       <div class="program-content">
         <div class="program-sub">VC Fitness</div>
         <div class="program-title">Weight Training</div>
@@ -1447,7 +1405,7 @@
         <a href="#" class="read-more">Read More</a>
       </div>
     </div>
-           </div>
+    </div>
         </div>
     </section>
 
