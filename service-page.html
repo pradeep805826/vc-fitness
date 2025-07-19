@@ -336,6 +336,7 @@
     .programs-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      justify-content: flex-start;
       gap: 1.5rem;
       background: #f2f2f2;
       padding: 2rem;
@@ -448,7 +449,7 @@
 .programs-section {
             
             background: #fafafa;
-            padding: 2rem;
+            padding-top: 2rem;
             text-align: center;
         }
 
@@ -538,6 +539,10 @@
         /* optional visual cue for active tab */
         .programs-active{font-weight:600;border-bottom:2px solid;}
         @media (max-width: 768px) {
+            .programs-section{
+               padding: 2rem;
+            }
+
             .programs-training-container {
                 flex-direction: column;
             }
