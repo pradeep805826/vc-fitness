@@ -375,6 +375,64 @@
     .blog-fitness-card a {
       text-decoration: none;
     }
+    
+    /* Carousel button positioning */
+.carousel-btn-left{
+    background-color: #6c757d;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+ }    
+
+ .carousel-btn-right{
+    background-color: #6c757d;
+    color: white;
+    position: absolute;
+    top: 50%;
+     transform: translateY(-50%);
+    align-items: center;
+    width: 30px;
+    height: 30px;
+ }
+
+/* .carousel-btn-left:hover,
+.carousel-btn-right:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+} */
+
+ #myth-busters, #fat-loss, #nutrition-blogs{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+   scroll-snap-type: x mandatory;
+}
+
+/* Ensure proper card sizing */
+.blog-card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+
 
     @media (max-width: 480px) {
       .blog-fitness-overlay {
@@ -469,6 +527,8 @@
       font-size: 0.9rem;
       /* margin-top: 20px !important; */
     }
+
+
     
     .animate-on-scroll {
       opacity: 0;
@@ -678,78 +738,136 @@
     /* blog-article-section */
 
     .blog-section-wrapper {
-      background: linear-gradient(to top, #fff7f3, #e6fcf8);
-      padding: 3rem
-    }
+  background: linear-gradient(to top, #fff7f3, #e6fcf8);
+  padding: 3rem; 
+  overflow-x: hidden;
+}
 
-    .blog-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      /* max-width: 1200px; */
-      margin: 0 auto;
+.blog-section-wrapper-view-all{
+  background: linear-gradient(to top, #fff7f3, #e6fcf8);
+  display: none;
+}
+
+.blog-section {
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  margin: 0 auto;
+}
+
+.blog-section-view-all{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+/* Carousel container styles */
+
+/* Container styles */
+.myth-busters,
+.fat-loss-blogs,
+.nutrition-blogs {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 15px;
+  padding: 10px 0;
+  /* scroll-padding-left: 60px; Matches your margin-left */
+}
 
 
-    }
 
-    .blog-card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      overflow: hidden;
-      flex: 1 1 calc(100% - 2rem);
-      /* mobile default */
-      max-width: calc(100% - 2rem);
-      display: flex;
-      flex-direction: column;
-    }
-    
-     .blog-card:hover {
-      transform: translateY(-5px);
-    }
-    .blog-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+/* Blog card sizing */
+.blog-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  margin: 0 5px; /* Small margin between cards */
+  flex-shrink: 0;
+}
 
-    .blog-card-body {
-      padding: 1rem;
-    }
+/* Mobile */
+@media (max-width: 767px) {
+  .blog-card {
+    width: calc(100vw - 80px) !important; /* Account for margins */
+  }
+  .myth-busters-container, .fat-loss-container, .nutrition-container{
+    overflow: visible !important;
+  }
+  .carousel-btn-left{
+    left: -40px;
+  }
+  .carousel-btn-right{
+    right: -40px;
+  }
+}
 
-    .blog-card-body h3 {
-      font-size: 1rem;
-      margin: 0 0 0.5rem;
-    }
+/* Desktop */
+@media (min-width: 768px) {
+  .blog-card {
+    width: calc((100vw - 180px) / 3) !important; /* Account for margins and gaps */
+  }
+}
 
-    .blog-card-body small {
-      color: #777;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
+/* Tab styles */
+.blog-fitness-card.active {
+  border: 2px solid #007bff; /* Highlight active tab */
+}
 
-    .blog-card-body p {
-      font-size: 0.9rem;
-      color: #333;
-      margin-bottom: 0;
-    }
+/* Wrap for each carousel section */
+/* .myth-busters,
+.fat-loss-blogs,
+.nutrition-blogs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+} */
 
-    /* Tablet */
-    @media (min-width: 600px) {
-      .blog-card {
-        flex: 1 1 calc(50% - 2rem);
-        max-width: calc(50% - 2rem);
-      }
-    }
+/* Ensure full visibility */
+/* .blog-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 300px;
+  margin-right: 1rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+} */
 
-    /* Desktop */
-    @media (min-width: 1024px) {
-      .blog-card {
-        flex: 1 1 calc(33.333% - 2rem);
-        max-width: calc(33.333% - 2rem);
-      }
-    }
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: auto;
+}
+
+.blog-card-body {
+  padding: 1rem;
+}
+
+.blog-card-body h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.blog-card-body small {
+  color: #777;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.blog-card-body p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0;
+}
 
     .view-all-btn {
       background: #8c4a32;
@@ -770,6 +888,13 @@
     .view-all-btn:hover {
       background: #703926;
     }
+    
+    /* @media (max-width: 767px) {
+  .blog-card {
+    margin-right: 12px;
+    width: 260px;
+  }
+} */
 
     /* footer-custom */
 
@@ -1110,35 +1235,269 @@
 
   <!-- blog-fitness-section -->
 
+ 
   <section class="blog-fitness-section">
 <h2 class="featured-title">CATEGORIES</h2>
-    <div class="blog-fitness-card animate-on-scroll">
-      <a href="myth-busters.html" target="_blank">
+    <button class="blog-fitness-card animate-on-scroll" data-tab="myth-busters">
         <img src="./images-compress/Myth Busters.webp" alt="Myth Busters" />
         <div class="blog-fitness-overlay">Myth Busters</div>
-      </a>
-    </div>
-
-    <div class="blog-fitness-card animate-on-scroll">
-      <a href="fat-loss.html" target="_blank">
+    </button>
+    <button class="blog-fitness-card animate-on-scroll" data-tab="fat-loss">
         <img src="./images-compress/Fat Loss.webp" alt="Fat Loss" />
         <div class="blog-fitness-overlay">Fat Loss</div>
-      </a>
-    </div>
+    </button>
 
-    <div class="blog-fitness-card animate-on-scroll">
-      <a href="nutrition.html" target="_blank">
+    <button class="blog-fitness-card animate-on-scroll" data-tab="nutrition-blogs">
         <img src="./images-compress/Nutrition.webp" alt="Nutrition" />
         <div class="blog-fitness-overlay">Nutrition</div>
-      </a>
-    </div>
+    </button>
 
   </section>
 
 
   <!-- blog-article-section  -->
-  <section class="blog-section-wrapper">
-    <div class="blog-section">
+<section class="blog-section-wrapper">
+  <div class="blog-section">
+
+    <!-- myth busters blogs  -->
+    <div class="position-relative overflow-hidden animate-left-on-scroll myth-busters-container">
+      <div class="myth-busters d-flex flex-nowrap overflow-hidden gap-3 ms-lg-5 me-lg-5" id="myth-busters" style="scroll-behavior: smooth;">
+        <!-- Card 1 -->
+        <div class="blog-card myth-busters-card" data-type="myth-busters">
+          <img src="./images-compress/blog-article-img1.webp" alt="Article 1" />
+          <div class="blog-card-body">
+            <h3>Empty Stomach Cardio - Yes OR No??</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="blog-card myth-busters-card" data-type="myth-busters">
+          <img src="./images-compress/blog-article-img2.webp" alt="Article 2" />
+          <div class="blog-card-body">
+            <h3>Muscle Confusion: Real OR Hype?</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="blog-card myth-busters-card" data-type="myth-busters">
+          <img src="./images-compress/blog-article-img3.webp" alt="Article 3" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="blog-card myth-busters-card" data-type="myth-busters">
+          <img src="./images-compress/blog-article-img4.webp" alt="Article 4" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="blog-card myth-busters-card" data-type="myth-busters">
+          <img src="./images-compress/blog-article-img5.webp" alt="Article 5" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 6-->
+        <div class="blog-card myth-busters-card" data-type="myth-busters">
+          <img src="./images-compress/blog-article-img6.webp" alt="Article 6" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <button id="prevBtn-myth" class="carousel-control-prev carousel-btn-left" type="button">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button id="nextBtn-myth" class="carousel-control-next carousel-btn-right" type="button">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>    
+    </div>
+
+    <!-- fat loss blogs  -->
+    <div class="position-relative overflow-hidden animate-left-on-scroll fat-loss-container">
+      <div class="fat-loss-blogs d-flex flex-nowrap overflow-hidden gap-3 ms-lg-5 me-lg-5" id="fat-loss" style="scroll-behavior: smooth;">
+        <!-- Card 1 -->
+        <div class="blog-card fat-loss-card" data-type="fat-loss">
+          <img src="./images-compress/blog-article-img1.webp" alt="Article 1" />
+          <div class="blog-card-body">
+            <h3>Empty Stomach Cardio – Yes OR No??</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="blog-card fat-loss-card" data-type="fat-loss">
+          <img src="./images-compress/blog-article-img2.webp" alt="Article 2" />
+          <div class="blog-card-body">
+            <h3>Muscle Confusion: Real OR Hype?</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="blog-card fat-loss-card" data-type="fat-loss">
+          <img src="./images-compress/blog-article-img3.webp" alt="Article 3" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="blog-card fat-loss-card" data-type="fat-loss">
+          <img src="./images-compress/blog-article-img4.webp" alt="Article 4" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="blog-card fat-loss-card" data-type="fat-loss">
+          <img src="./images-compress/blog-article-img5.webp" alt="Article 5" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 6-->
+        <div class="blog-card fat-loss-card" data-type="fat-loss">
+          <img src="./images-compress/blog-article-img6.webp" alt="Article 6" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <button id="prevBtn-fat" class="carousel-control-prev carousel-btn-left" type="button">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button id="nextBtn-fat" class="carousel-control-next carousel-btn-right" type="button">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- nutrition blogs  -->
+    <div class="position-relative overflow-hidden animate-left-on-scroll nutrition-container">
+      <div class="nutrition-blogs d-flex flex-nowrap overflow-hidden gap-3 ms-lg-5 me-lg-5" id="nutrition-blogs" style="scroll-behavior: smooth;">
+        <!-- Card 1 -->
+        <div class="blog-card nutrition-card" data-type="nutrition-blogs">
+          <img src="./images-compress/blog-article-img1.webp" alt="Article 1" />
+          <div class="blog-card-body">
+            <h3>Empty Stomach Cardio – Yes OR No??</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="blog-card nutrition-card" data-type="nutrition-blogs">
+          <img src="./images-compress/blog-article-img2.webp" alt="Article 2" />
+          <div class="blog-card-body">
+            <h3>Muscle Confusion: Real OR Hype?</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="blog-card nutrition-card" data-type="nutrition-blogs">
+          <img src="./images-compress/blog-article-img3.webp" alt="Article 3" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="blog-card nutrition-card" data-type="nutrition-blogs">
+          <img src="./images-compress/blog-article-img4.webp" alt="Article 4" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="blog-card nutrition-card" data-type="nutrition-blogs">
+          <img src="./images-compress/blog-article-img5.webp" alt="Article 5" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Card 6-->
+        <div class="blog-card nutrition-card" data-type="nutrition-blogs">
+          <img src="./images-compress/blog-article-img6.webp" alt="Article 6" />
+          <div class="blog-card-body">
+            <h3>Role Of Genetics In Muscle Building</h3>
+            <small>Akshay Chopra // Fitness // 26 mins read</small>
+            <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <button id="prevBtn-nutrition" class="carousel-control-prev carousel-btn-left" type="button">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button id="nextBtn-nutrition" class="carousel-control-next carousel-btn-right" type="button">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- View All Button -->
+  <a href="#" class="view-all-btn-link" onclick="viewAllBlogs()"><button class="view-all-btn">View All</button></a>
+</section>
+
+
+<section class="blog-section-wrapper-view-all ps-5">
+    <div class="blog-section-view-all">
       <!-- Card 1 -->
       <div class="blog-card animate-left-on-scroll">
         <img src="./images-compress/blog-article-img1.webp" alt="Article 1" />
@@ -1173,7 +1532,7 @@
       </div>
 
       <!-- Card 4 -->
-      <div class="blog-card animate-on-scroll">
+      <div class="blog-card animate-left-on-scroll">
         <img src="./images-compress/blog-article-img4.webp" alt="Article 4" />
         <div class="blog-card-body">
           <h3>Role Of Genetics In Muscle Building</h3>
@@ -1183,7 +1542,7 @@
         </div>
       </div>
       <!-- Card 5 -->
-      <div class="blog-card animate-on-scroll">
+      <div class="blog-card animate-left-on-scroll">
         <img src="./images-compress/blog-article-img5.webp" alt="Article 5" />
         <div class="blog-card-body">
           <h3>Role Of Genetics In Muscle Building</h3>
@@ -1194,7 +1553,7 @@
       </div>
 
       <!-- Card 6-->
-      <div class="blog-card animate-on-scroll">
+      <div class="blog-card animate-left-on-scroll">
         <img src="./images-compress/blog-article-img6.webp" alt="Article 6" />
         <div class="blog-card-body">
           <h3>Role Of Genetics In Muscle Building</h3>
@@ -1207,8 +1566,256 @@
     </div>
 
     <!-- View All Button -->
-  <a href="#" class="view-all-btn-link"><button class="view-all-btn">View All</button></a>
+  <a href="#" class="view-all-btn-link" onclick="viewLessBlogs()"><button class="view-all-btn">View less</button></a>
+  <br>
  </section>
+
+
+<!-- javascript for view all blogs  -->
+ <script>
+  function viewAllBlogs() {
+    var blogContainerAll = document.querySelector(".blog-section-wrapper-view-all");
+    var blogContainer = document.querySelector(".blog-section-wrapper");
+
+    blogContainer.style.display = "none";
+    blogContainerAll.style.display = "flex";
+    blogContainerAll.style.flexDirection = "column";
+
+    setTimeout(() => {
+    blogContainerAll.scrollIntoView({ behavior: "smooth" });
+  }, 50);
+  }
+
+  function viewLessBlogs() {
+    var blogContainerAll = document.querySelector(".blog-section-wrapper-view-all");
+    var blogContainer = document.querySelector(".blog-section-wrapper");
+
+    blogContainer.style.display = "block";
+    blogContainerAll.style.display = "none";
+
+    setTimeout(() => {
+    blogContainer.scrollIntoView({ behavior: "smooth" });
+  }, 50);
+  }
+</script>
+
+
+
+<!-- carousel items script  -->
+<script>
+// Main carousel initialization function
+function initCarousel(containerId, nextBtnId, prevBtnId) {
+  const container = document.getElementById(containerId);
+  const cards = container.querySelectorAll('.blog-card');
+  const nextBtn = document.getElementById(nextBtnId);
+  const prevBtn = document.getElementById(prevBtnId);
+  let currentIndex = 0;
+  let autoScroll;
+  let isScrolling = false;
+
+  function getItemsPerPage() {
+    return window.innerWidth < 768 ? 1 : 3;
+  }
+
+  function calculateCardWidth() {
+    if (cards.length === 0) return 0;
+    const card = cards[0];
+    const cardStyle = getComputedStyle(card);
+    const gap = 12; // 3 * 4px (gap-3 = 12px)
+    return card.offsetWidth + gap;
+  }
+
+  function updateButtons() {
+    // Always show both buttons for infinite scroll effect
+    prevBtn.style.display = 'block';
+    nextBtn.style.display = 'block';
+  }
+
+  function scrollToIndex(index, instant = false) {
+    if (isScrolling || cards.length === 0) return;
+    isScrolling = true;
+    
+    const itemsPerPage = getItemsPerPage();
+    const cardWidth = calculateCardWidth();
+    const maxIndex = Math.max(0, cards.length - itemsPerPage);
+    
+    // Handle infinite scroll logic
+    let targetIndex = index;
+    if (index < 0) {
+      targetIndex = maxIndex;
+    } else if (index > maxIndex) {
+      targetIndex = 0;
+    }
+    
+    currentIndex = targetIndex;
+    
+    // Calculate scroll position
+    const scrollPosition = currentIndex * cardWidth;
+    
+    container.scrollTo({
+      left: scrollPosition,
+      behavior: instant ? 'auto' : 'smooth'
+    });
+    
+    setTimeout(() => {
+      isScrolling = false;
+      updateButtons();
+    }, 500);
+  }
+
+  function scrollNext() {
+    const itemsPerPage = getItemsPerPage();
+    const maxIndex = Math.max(0, cards.length - itemsPerPage);
+    
+    if (currentIndex >= maxIndex) {
+      // If at the end, go to the beginning
+      currentIndex = 0;
+      scrollToIndex(currentIndex);
+    } else {
+      scrollToIndex(currentIndex + 1);
+    }
+  }
+
+  function scrollPrev() {
+    const itemsPerPage = getItemsPerPage();
+    const maxIndex = Math.max(0, cards.length - itemsPerPage);
+    
+    if (currentIndex <= 0) {
+      // If at the beginning, go to the end
+      currentIndex = maxIndex;
+      scrollToIndex(currentIndex);
+    } else {
+      scrollToIndex(currentIndex - 1);
+    }
+  }
+
+  function initializeCarousel() {
+    const itemsPerPage = getItemsPerPage();
+    
+    // Set proper card sizing
+    cards.forEach(card => {
+      card.style.flex = '0 0 auto';
+      if (window.innerWidth < 768) {
+        // Mobile: 1 card visible
+        card.style.width = 'calc(100% - 12px)'; // Account for gap
+      } else {
+        // Desktop: 3 cards visible
+        card.style.width = `calc(${100/3}% - 8px)`; // Account for gap
+      }
+    });
+    
+    // Force layout recalculation
+    container.style.display = 'none';
+    container.offsetHeight; // Trigger reflow
+    container.style.display = 'flex';
+    
+    // Scroll to start position
+    setTimeout(() => {
+      container.scrollLeft = 0;
+      currentIndex = 0;
+      updateButtons();
+    }, 50);
+  }
+
+  // Event listeners
+  nextBtn.addEventListener('click', scrollNext);
+  prevBtn.addEventListener('click', scrollPrev);
+
+  // Auto-scroll controls
+  container.addEventListener('mouseenter', () => clearInterval(autoScroll));
+  container.addEventListener('mouseleave', () => {
+    autoScroll = setInterval(scrollNext, 2500);
+  });
+  autoScroll = setInterval(scrollNext, 2500);
+
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      initializeCarousel();
+      updateButtons();
+    }, 100);
+  });
+
+  // Initialize everything
+  initializeCarousel();
+  updateButtons();
+
+  return { 
+    reset: function() {
+      initializeCarousel();
+    }
+  };
+}
+
+// Tab switching functionality
+function setupTabs() {
+  const tabButtons = document.querySelectorAll('.blog-fitness-card');
+  const carousels = {
+    'myth-busters': initCarousel('myth-busters', 'nextBtn-myth', 'prevBtn-myth'),
+    'fat-loss': initCarousel('fat-loss', 'nextBtn-fat', 'prevBtn-fat'),
+    'nutrition-blogs': initCarousel('nutrition-blogs', 'nextBtn-nutrition', 'prevBtn-nutrition')
+  };
+
+  function activateTab(tabType) {
+    // Remove active class from all buttons
+    tabButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    // Add active class to clicked button
+    const activeButton = document.querySelector(`.blog-fitness-card[data-tab="${tabType}"]`);
+    if (activeButton) {
+      activeButton.classList.add('active');
+    }
+
+    // Show/hide carousel containers
+    Object.keys(carousels).forEach(key => {
+      const carouselContainer = document.getElementById(key).parentElement;
+      const isActive = key === tabType;
+      
+      if (isActive) {
+        carouselContainer.style.display = 'block';
+        setTimeout(() => {
+          carousels[key].reset();
+        }, 50);
+      } else {
+        carouselContainer.style.display = 'none';
+      }
+    });
+  }
+
+  // Event listeners
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const tabType = button.dataset.tab;
+      window.location.hash = tabType;
+      activateTab(tabType);
+    });
+  });
+
+  // Initial setup
+  const initialHash = window.location.hash.replace('#', '');
+  if (initialHash && carousels[initialHash]) {
+    activateTab(initialHash);
+  } else {
+    activateTab('myth-busters');
+  }
+
+  window.addEventListener('hashchange', () => {
+    const hash = window.location.hash.replace('#', '');
+    if (carousels[hash]) {
+      activateTab(hash);
+    }
+  });
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(setupTabs, 100);
+});
+</script>
 
 <!-- featured-section -->
 
