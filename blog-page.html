@@ -1724,9 +1724,9 @@ function initCarousel(containerId, nextBtnId, prevBtnId) {
   // Auto-scroll controls
   container.addEventListener('mouseenter', () => clearInterval(autoScroll));
   container.addEventListener('mouseleave', () => {
-    autoScroll = setInterval(scrollNext, 2500);
+    autoScroll = setInterval(scrollNext, 5000);
   });
-  autoScroll = setInterval(scrollNext, 2500);
+  autoScroll = setInterval(scrollNext, 5000);
 
   // Handle window resize
   let resizeTimeout;
