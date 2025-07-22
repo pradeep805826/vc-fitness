@@ -743,10 +743,7 @@
   overflow-x: hidden;
 }
 
-.blog-section-wrapper-view-all{
-  background: linear-gradient(to top, #fff7f3, #e6fcf8);
-  display: none;
-}
+
 
 .blog-section {
   display: flex;
@@ -755,12 +752,6 @@
   margin: 0 auto;
 }
 
-.blog-section-view-all{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
 /* Carousel container styles */
 
 /* Container styles */
@@ -869,25 +860,7 @@
   margin-bottom: 0;
 }
 
-    .view-all-btn {
-      background: #8c4a32;
-      color: #fff;
-      border: none;
-      padding: 0.7rem 2rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      margin: 4rem auto 0;
-      display: block;
-    }
-    .view-all-btn-link{
-      text-decoration: none;
-
-    }
-
-    .view-all-btn:hover {
-      background: #703926;
-    }
+    
     
     /* @media (max-width: 767px) {
   .blog-card {
@@ -1491,112 +1464,13 @@
   </div>
   
   <!-- View All Button -->
-  <a href="#" class="view-all-btn-link" onclick="viewAllBlogs()"><button class="view-all-btn">View All</button></a>
+<!--   <a href="#" class="view-all-btn-link" onclick="viewAllBlogs()"><button class="view-all-btn">View All</button></a> -->
 </section>
 
 
-<section class="blog-section-wrapper-view-all ps-5">
-    <div class="blog-section-view-all">
-      <!-- Card 1 -->
-      <div class="blog-card animate-left-on-scroll">
-        <img src="./images-compress/blog-article-img1.webp" alt="Article 1" />
-        <div class="blog-card-body">
-          <h3>Empty Stomach Cardio – Yes OR No??</h3>
-          <small>Akshay Chopra // Fitness // 26 mins read</small>
-          <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
-          <a href="#" class="read-more">Read More</a>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="blog-card animate-left-on-scroll">
-        <img src="./images-compress/blog-article-img2.webp" alt="Article 2" />
-        <div class="blog-card-body">
-          <h3>Muscle Confusion: Real OR Hype?</h3>
-          <small>Akshay Chopra // Fitness // 26 mins read</small>
-          <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
-          <a href="#" class="read-more">Read More</a>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="blog-card animate-left-on-scroll">
-        <img src="./images-compress/blog-article-img3.webp" alt="Article 3" />
-        <div class="blog-card-body">
-          <h3>Role Of Genetics In Muscle Building</h3>
-          <small>Akshay Chopra // Fitness // 26 mins read</small>
-          <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
-          <a href="#" class="read-more">Read More</a>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="blog-card animate-left-on-scroll">
-        <img src="./images-compress/blog-article-img4.webp" alt="Article 4" />
-        <div class="blog-card-body">
-          <h3>Role Of Genetics In Muscle Building</h3>
-          <small>Akshay Chopra // Fitness // 26 mins read</small>
-          <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
-          <a href="#" class="read-more">Read More</a>
-        </div>
-      </div>
-      <!-- Card 5 -->
-      <div class="blog-card animate-left-on-scroll">
-        <img src="./images-compress/blog-article-img5.webp" alt="Article 5" />
-        <div class="blog-card-body">
-          <h3>Role Of Genetics In Muscle Building</h3>
-          <small>Akshay Chopra // Fitness // 26 mins read</small>
-          <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
-          <a href="#" class="read-more">Read More</a>
-        </div>
-      </div>
-
-      <!-- Card 6-->
-      <div class="blog-card animate-left-on-scroll">
-        <img src="./images-compress/blog-article-img6.webp" alt="Article 6" />
-        <div class="blog-card-body">
-          <h3>Role Of Genetics In Muscle Building</h3>
-          <small>Akshay Chopra // Fitness // 26 mins read</small>
-          <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
-          <a href="#" class="read-more">Read More</a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- View All Button -->
-  <a href="#" class="view-all-btn-link" onclick="viewLessBlogs()"><button class="view-all-btn">View less</button></a>
-  <br>
- </section>
 
 
-<!-- javascript for view all blogs  -->
- <script>
-  function viewAllBlogs() {
-    var blogContainerAll = document.querySelector(".blog-section-wrapper-view-all");
-    var blogContainer = document.querySelector(".blog-section-wrapper");
 
-    blogContainer.style.display = "none";
-    blogContainerAll.style.display = "flex";
-    blogContainerAll.style.flexDirection = "column";
-
-    setTimeout(() => {
-    blogContainerAll.scrollIntoView({ behavior: "smooth" });
-  }, 50);
-  }
-
-  function viewLessBlogs() {
-    var blogContainerAll = document.querySelector(".blog-section-wrapper-view-all");
-    var blogContainer = document.querySelector(".blog-section-wrapper");
-
-    blogContainer.style.display = "block";
-    blogContainerAll.style.display = "none";
-
-    setTimeout(() => {
-    blogContainer.scrollIntoView({ behavior: "smooth" });
-  }, 50);
-  }
-</script>
 
 
 
