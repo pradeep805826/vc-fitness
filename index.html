@@ -2818,7 +2818,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       const carouselElement = document.querySelector('#carouselExampleAutoplaying');
       const carousel = new bootstrap.Carousel(carouselElement, {
-        interval: 5000,
+        interval: 7000,
         ride: 'carousel',
         pause: false
       });
@@ -2827,7 +2827,7 @@
     document.querySelectorAll('.subtitle').forEach(subtitle => {
       const words = subtitle.textContent.trim().split(' ');
       subtitle.innerHTML = words.map((word, i) =>
-        `<span class="word" style="animation-delay:${0.4 + i * 0.1}s">${word}</span>`
+        `<span class="word" style="animation-delay:${0.6 + i * 0.1}s">${word}</span>`
       ).join(' ');
     });
 
@@ -2871,7 +2871,7 @@
         dynamic and holistic fitness experts.
       </div>
 
-      <a href="./story.html" class="btn-feature">Meet Vinod Channa</a>
+      <a href="./about-us/meet.html" class="btn-feature">Meet Vinod Channa</a>
     </div>
   </section>
 
