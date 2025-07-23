@@ -1653,133 +1653,157 @@
     /* testimonial-section */
 
 
-    .testimonial-section {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #fff;
-    }
+      .testimonial-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+  }
 
-    .testimonial-title {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 30px;
-      font-family: "Oswald", sans-serif;
-    }
-
-    .testimonial-slider {
-      padding: 40px 20px;
-      background-color: #fff;
-    }
-
-    .testimonial-card {
-      width: 100%;
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    .testimonial-card a {
-      text-decoration: none;
-      color: black;
-    }
-
-    .testimonial-indicators {
-      margin-bottom: 60px !important;
-    }
-
-    .testimonial-card img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 18px;
-    }
-
-    .zoom-effect:hover {
-      transform: scale(1.2) !important;
-      transition: transform 0.3s ease !important;
-    }
-
-    .testimonial-card h4 {
-      font-family: "Oswald", sans-serif;
-      font-weight: bold;
-    }
-
-    .testimonial-card h4:hover {
-      color: #703926;
-    }
-
-    .stars {
-      color: orange;
-      font-size: 18px;
-    }
+  .testimonial-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: "Oswald", sans-serif;
+  }
 
 
+  .testimonial-slider {
+  padding: 40px 20px;
+  background-color: #fff;
+}
 
-    /* Mobile - 2 cards per slide */
-    @media (max-width: 767px) {
-      .testimonial-card {
-        width: 50%;
-      }
-    }
+.testimonial-card {
+  /* width: 25%; */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
 
-    /* Desktop - show 4 cards at once (static layout) */
-    @media (min-width: 768px) {
-      .testimonial-carousel-inner {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-      }
+.testimonial-card a{
+    text-decoration: none;
+    color: black;
+}
 
-      .testimonial-slide {
-        width: 35% !important;
-      }
+.testimonial-indicators{
+  margin-bottom: 60px !important;
+}
+.testimonial-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 18px;
+}
 
-      .testimonial-carousel-item {
-        display: flex !important;
-        flex: auto;
-      }
+.zoom-effect:hover {
+    transform: scale(1.2) !important;
+    transition: transform 0.3s ease !important;
+  }
 
-      /* .slide-2-testimonial{
-    justify-content: flex-start;
-  } */
-      .testimonial-card {
-        max-width: 35%;
-      }
+.testimonial-card h4 {
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+}
 
-      /* Hide indicators on desktop */
-      .carousel-indicators {
-        display: none;
-      }
-    }
+.testimonial-card h4:hover {
+  color: #703926;
+}
 
-    @media(max-width: 350px) {
-      .testimonial-card {
-        width: 50%;
-      }
+.stars {
+  color: orange;
+  font-size: 18px;
+}
 
-      .testimonial-slide {
-        width: 90% !important;
-      }
 
-      .testimonial-slider {
-        padding-right: 0px !important;
-      }
 
-      .testimonial-card img {
-        width: 70px;
-        height: 70px;
-      }
+/* Mobile - 2 cards per slide */
+@media (max-width: 767px) {
+  .testimonial-card {
+    width: 50%;
+  }
 
-      .testimonial-card h4 {
-        font-size: 0.8rem;
-      }
+}
 
-      .testimonial-card p {
-        font-size: 0.5rem;
-      }
-    }
 
+/* Desktop - show 4 cards at once (static layout) */
+@media (min-width: 768px) {
+  .testimonial-carousel-inner {
+    margin-left:100px;
+    padding-bottom: 20px;
+  display: flex;
+  gap: 150px;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  /* scrollbar-width: none !important;      Firefox */
+  /* -ms-overflow-style: none;              IE and Edge */
+}
+.testimonial-carousel-inner::-webkit-scrollbar {
+  height: 5px; /* slimmer horizontal scrollbar */
+  width: 5px;
+}
+.testimonial-carousel-inner::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+.testimonial-carousel-inner::-webkit-scrollbar-track {
+  background: transparent;
+}
+   
+  
+  .testimonial-carousel-item {
+    display: flex !important;
+    flex-direction: row;
+    padding-left:0px !important;
+    margin-left:0px !important;
+    flex: 1;
+   
+    width:45% !important;
+  }
+  
+  .slide-2-testimonial{
+    margin-left:350px !important;
+  }
+  .testimonial-card {
+    width: 20%;
+  }
+
+  /* Hide indicators on desktop */
+  .carousel-indicators {
+    display: none;
+  }
+}
+
+@media(min-width:768px) and (max-width: 900px){
+  .testimonial-carousel-inner{
+    gap:30px;
+    margin-left:0px;
+  }
+  .testimonial-card{
+    width:25%;
+  }
+}
+@media(max-width: 350px){
+  .testimonial-card{
+    width: 50%;
+  }
+  .testimonial-slide{
+    width: 90% !important;
+  }
+  .testimonial-slider{
+    padding-right: 0px !important;
+  }
+  .testimonial-card img{
+    width: 70px;
+    height: 70px;
+  }
+  .testimonial-card h4{
+    font-size: 0.8rem;
+  }
+  .testimonial-card p{
+    font-size: 0.5rem;
+  }
+}
+    
     /* video-section */
 
 
@@ -3308,84 +3332,109 @@
 
   <!-- testimonial-section -->
   <section class="testimonial-section">
-    <h2 class="testimonial-title">OUR CLIENTS</h2>
+  <h2 class="testimonial-title">OUR CLIENTS</h2>
 
-    <!-- Slider Container -->
-    <div id="carouselExampleAutoplaying" class="carousel slide testimonial-slider" data-bs-ride="carousel">
-      <div class="carousel-indicators testimonial-indicators">
-        <button type="button" data-bs-target=".testimonial-slider" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target=".testimonial-slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      </div>
+  
+  <!-- Slider Container -->
+  <div id="carouselExampleAutoplaying" class="carousel slide testimonial-slider" data-bs-ride="carousel">
+  <div class="carousel-indicators testimonial-indicators">
+    <button type="button" data-bs-target=".testimonial-slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target=".testimonial-slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target=".testimonial-slider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
 
-      <div class="carousel-inner testimonial-carousel-inner">
-        <!-- Slide 1 -->
-        <div class="carousel-item active testimonial-carousel-item ">
-          <div class="d-flex flex-row flex-wrap justify-content-evenly testimonial-slide">
-            <!-- Card 1 -->
-            <div class="testimonial-card animate-on-scroll">
-              <a href="john-abraham.html">
-                <img src="./images-compress/clint-img3.webp" alt="Client 1" class="zoom-effect image-zoom-on-scroll" />
-                <h4>JOHN ABRAHAM</h4>
-                <p>Vinod is not only a trainer but more of a friend</p>
-                <div class="stars">★★★★★</div>
-              </a>
-            </div>
-            <!-- Card 2 -->
-            <div class="testimonial-card animate-on-scroll">
-              <a href="shilpa-shetty.html">
-                <img src="./images-compress/clint-img2.webp" alt="Client 2" class="zoom-effect image-zoom-on-scroll" />
-                <h4>SHILPA SHETTY</h4>
-                <p>Vinod Channa you are the reason I am so fit.</p>
-                <div class="stars">★★★★★</div>
-              </a>
-            </div>
-          </div>
+  <div class="carousel-inner testimonial-carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active testimonial-carousel-item">
+      <!-- <div class="d-flex flex-row testimonial-slide-mob"> -->
+        <!-- Card 1 -->
+        <div class="testimonial-card animate-on-scroll">
+          <a href="john-abraham.html">
+            <img src="./images-compress/clint-img3.webp" alt="Client 1" class="zoom-effect image-zoom-on-scroll" />
+            <h4>JOHN ABRAHAM</h4>
+            <p>Vinod is not only a trainer but more of a friend</p>
+            <div class="stars">★★★★★</div>
+          </a>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item testimonial-carousel-item slide-2-testimonial animate-on-scroll">
-          <div class="d-flex flex-row flex-wrap justify-content-evenly testimonial-slide">
-            <!-- Card 3 -->
-            <div class="testimonial-card animate-on-scroll">
-              <a href="harshvardhan-rane.html">
-                <img src="./images-compress/harshvarndhan-rane-thegem-person.webp" alt="Client 3"
-                  class="zoom-effect image-zoom-on-scroll" />
-                <h4>HARSHVARDHAN RANE</h4>
-                <p>I am now addicted to Vinod's workout</p>
-                <div class="stars">★★★★★</div>
-              </a>
-            </div>
-            <!-- Card 4 -->
-            <div class="testimonial-card animate-on-scroll">
-              <a href="sayeesha.html">
-                <img src="./images-compress/sayeesha-saigal.webp" alt="Client 4"
-                  class="zoom-effect image-zoom-on-scroll" />
-                <h4>SAYEESHA SAIGAL</h4>
-                <p>I can confidently say Vinod Channa is one of the best trainer.</p>
-                <div class="stars">★★★★★</div>
-              </a>
-            </div>
-          </div>
+        <!-- Card 2 -->
+        <div class="testimonial-card animate-on-scroll">
+          <a href="shilpa-shetty.html">
+            <img src="./images-compress/clint-img2.webp" alt="Client 2" class="zoom-effect image-zoom-on-scroll"/>
+            <h4>SHILPA SHETTY</h4>
+            <p>Vinod Channa you are the reason I am so fit.</p>
+            <div class="stars">★★★★★</div>
+          </a>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
 
+    <!-- Slide 2 -->
+    <div class="carousel-item testimonial-carousel-item slide-2-testimonial animate-on-scroll">
+      <!-- <div class="d-flex flex-row testimonial-slide-mob"> -->
+        <!-- Card 3 -->
+        <div class="testimonial-card animate-on-scroll">
+          <a href="harshvardhan-rane.html">
+            <img src="./images-compress/harshvarndhan-rane-thegem-person.webp" alt="Client 3" class="zoom-effect image-zoom-on-scroll" />
+            <h4>HARSHVARDHAN RANE</h4>
+            <p>I am now addicted to Vinod's workout</p>
+            <div class="stars">★★★★★</div>
+          </a>
+        </div>
 
-  </section>
+        <!-- Card 4 -->
+        <div class="testimonial-card animate-on-scroll">
+          <a href="sayeesha.html">
+            <img src="./images-compress/sayeesha-saigal.webp" alt="Client 4" class="zoom-effect image-zoom-on-scroll" />
+            <h4>SAYEESHA SAIGAL</h4>
+            <p>I can confidently say Vinod Channa is one of the best trainer.</p>
+            <div class="stars">★★★★★</div>
+          </a>
+        </div>
+      <!-- </div> -->
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item testimonial-carousel-item slide-2-testimonial animate-on-scroll">
+      <!-- <div class="d-flex flex-row testimonial-slide-mob"> -->
+        <!-- Card 5 -->
+        <div class="testimonial-card">
+          <a href="harshvardhan-rane.html">
+            <img src="./images-compress/harshvarndhan-rane-thegem-person.webp" alt="Client 3" class="zoom-effect image-zoom-on-scroll" />
+            <h4>HARSHVARDHAN RANE</h4>
+            <p>I am now addicted to Vinod's workout</p>
+            <div class="stars">★★★★★</div>
+          </a>
+        </div>
+        <!-- Card 6 -->
+        <div class="testimonial-card animate-on-scroll">
+          <a href="sayeesha.html">
+            <img src="./images-compress/sayeesha-saigal.webp" alt="Client 4" class="zoom-effect image-zoom-on-scroll" />
+            <h4>SAYEESHA SAIGAL</h4>
+            <p>I can confidently say Vinod Channa is one of the best trainer.</p>
+            <div class="stars">★★★★★</div>
+          </a>
+        </div>
+      <!-- </div> -->
+    </div>
+
+  </div>
+</div>
+
+  
+</section>
 
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const carousel = document.querySelector(".testimonial-slider");
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".testimonial-slider");
 
-      if (window.innerWidth >= 768 && carousel) {
-        const bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
-        bsCarousel.pause(); // disables auto sliding
-        carousel.classList.remove("slide"); // disables transition effect
-      }
-    });
-  </script>
+  if (window.innerWidth >= 768 && carousel) {
+    const bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
+    bsCarousel.pause(); // disables auto sliding
+    carousel.classList.remove("slide"); // disables transition effect
+  }
+});
+</script>
 
 
 
@@ -3687,6 +3736,46 @@
     });
   </script>
 
+<!--   javascript for testimonial slider -->
+  <script>
+  function groupTestimonialCardsForMobile() {
+    const isMobile = window.innerWidth <= 768;
+  
+    document.querySelectorAll('.testimonial-carousel-item').forEach(item => {
+      // Flatten any previous mobile wrappers
+      const existingWrappers = item.querySelectorAll('.testimonial-slide-mob');
+      existingWrappers.forEach(wrapper => {
+        while (wrapper.firstChild) {
+          item.insertBefore(wrapper.firstChild, wrapper);
+        }
+        wrapper.remove();
+      });
+  
+      // Group for mobile view
+      if (isMobile) {
+        const cards = Array.from(item.querySelectorAll('.testimonial-card'));
+        for (let i = 0; i < cards.length; i += 2) {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'testimonial-slide-mob';
+          wrapper.style.display = 'flex';
+          wrapper.style.flexDirection = 'row';
+          wrapper.style.gap = '16px'; // Optional styling
+          for (let j = 0; j < 2 && (i + j) < cards.length; j++) {
+            wrapper.appendChild(cards[i + j]);
+          }
+          item.appendChild(wrapper);
+        }
+      }
+    });
+  }
+  
+  window.addEventListener('DOMContentLoaded', groupTestimonialCardsForMobile);
+  window.addEventListener('resize', () => {
+    // Debounce to reduce performance hits
+    clearTimeout(window.__testimonialResizeTimer);
+    window.__testimonialResizeTimer = setTimeout(groupTestimonialCardsForMobile, 150);
+  });
+  </script>
 </body>
 
 </html>
