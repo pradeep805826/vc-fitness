@@ -299,7 +299,7 @@
 }
 
   .service-Banner h1 {
-    font-size: clamp(0.6rem, 4vw, 2.3rem); /* responsive scaling */
+    font-size: 2rem; /* responsive scaling */
     font-weight: bold;
     color: white;
     margin: 0;
@@ -311,7 +311,7 @@
     padding: 8px 16px;
     border-radius: 4px;
     margin-top: 1rem;
-    font-size: clamp(0.3rem, 1.5vw, 0.9rem); /* responsive scaling */
+    font-size: 1.2rem; /* responsive scaling */
     display: inline-block;
   }
   .breadcrumb:hover{
@@ -444,7 +444,7 @@
         }
 
         .programs-section h2 {
-            font-size: clamp(1rem, 5vw, 2rem);
+            font-size: 2rem;
             font-weight: bold;
             margin-bottom: 1rem;
         }
@@ -534,7 +534,7 @@
             .programs-training-container {
                 flex-direction: column;
             }
-
+             
             .programs-card {
                 flex: 1 1 100%;
             }
@@ -559,7 +559,7 @@
   text-align: center;
 }
 .results-section h2 {
-  font-size: clamp(1rem, 5vw, 2rem);
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
@@ -567,10 +567,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 3rem;
 }
 .results-section .card {
-  flex: 1 1 calc(33.333% - 1.5rem); /* 3 cards per row on large screens */
+  padding: 10px;
+  flex: 1 1 calc(33.333% - 6rem); /* 3 cards per row on large screens */
   background: #fdf2f2;
   border: 2px solid #955b50;
   border-radius: 8px;
@@ -603,11 +604,21 @@
 .results-section .images {
   display: flex;
   width: 100%;
+  height: fit-content;
+  align-items: flex-end; /* Align images to the bottom */
+  justify-content: center;
+  background: #fff;
+  gap: 0;
+  overflow: hidden;
 }
 .results-section .images img {
   width: 50%;
-  object-fit: cover;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain; /* Show full image, no cropping */
   border-right: 1px solid #955b50;
+  background: #fff;
+  display: block;
 }
 .results-section .images img:last-child {
   border-right: none;
@@ -615,6 +626,7 @@
 .programs-arrows{
   text-decoration: none;
 }
+
 
 /* Responsive: 2 columns on tablets */
 @media (max-width: 1024px) {
@@ -626,6 +638,20 @@
 @media (max-width: 600px) {
   .results-section .card {
     flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .results-section .images {
+    height: 350px; /* or whatever fits your mobile design */
+    width: 100%;
+  }
+  .results-section .images img{
+    width: 100%;
+    object-fit: initial !important;
+  }
+  .results-section .card-grid{
+    display: block;
   }
 }
 
@@ -1492,12 +1518,18 @@
 
 <!-- results-section -->
 
-<section class="results-section">
+<section class="results-section pb-5">
   <div class="section-wrapper">
     <h2>MAXIMUM RESULTS IN MINIMUM TIME</h2>
-    <div class="card-grid animate-left-on-scroll">
+    <div id="resultsSectionCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators testimonial-indicators" style="position: absolute; bottom:-100px;">
+        <button type="button" data-bs-target="#resultsSectionCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#resultsSectionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#resultsSectionCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+    <div class="card-grid carousel-inner animate-left-on-scroll">
       <!-- Card 1 -->
-      <div class="card">
+      <div class="card carousel-item active me-md-0">
         <div class="result-header">
           <div>
             <h3>50 Weeks</h3>
@@ -1511,7 +1543,7 @@
         </div>
       </div>
       <!-- Card 2 -->
-      <div class="card">
+      <div class="card carousel-item me-md-0">
         <div class="result-header">
           <div>
             <h3>50 Weeks</h3>
@@ -1525,7 +1557,7 @@
         </div>
       </div>
       <!-- Card 3 -->
-      <div class="card">
+      <div class="card carousel-item me-md-0">
         <div class="result-header">
           <div>
             <h3>50 Weeks</h3>
@@ -1539,8 +1571,46 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </section>
+
+<!-- javascript for not showing carousel in desktop -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("resultsSectionCarousel");
+    const indicators = carousel?.querySelector(".carousel-indicators");
+    const items = carousel?.querySelectorAll(".carousel-item");
+
+    function handleCarouselDisplay() {
+      if (!carousel) return;
+      if (window.innerWidth >= 768) {
+        // Desktop: show all cards statically
+        carousel.classList.remove("slide");
+        carousel.removeAttribute("data-bs-ride");
+        if (indicators) indicators.style.display = "none";
+        items?.forEach(item => {
+          item.classList.add("active"); // All cards visible
+        });
+      } else {
+        // Mobile: enable carousel
+        carousel.classList.add("slide");
+        carousel.setAttribute("data-bs-ride", "carousel");
+        if (indicators) indicators.style.display = "";
+        items?.forEach((item, idx) => {
+          if (idx === 0) {
+            item.classList.add("active");
+          } else {
+            item.classList.remove("active");
+          }
+        });
+      }
+    }
+
+    handleCarouselDisplay();
+    window.addEventListener("resize", handleCarouselDisplay);
+  });
+  </script>
 
 
 
