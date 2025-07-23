@@ -702,8 +702,7 @@
 
    /* testimonial-section */
 
-
-     .testimonial-section {
+ .testimonial-section {
     text-align: center;
     padding: 40px 20px;
     background-color: #fff;
@@ -716,13 +715,14 @@
     font-family: "Oswald", sans-serif;
   }
 
-   .testimonial-slider {
+
+  .testimonial-slider {
   padding: 40px 20px;
   background-color: #fff;
 }
 
 .testimonial-card {
-  width: 100%;
+  /* width: 25%; */
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
@@ -731,28 +731,6 @@
 .testimonial-card a{
     text-decoration: none;
     color: black;
-}
-.carousel-indicators{
-    position: absolute;
-    bottom: -60px;
-  }
-
-  .carousel-indicators [data-bs-target] {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #555;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-  border: none;
-  margin: 0 5px;
-  position: relative;
-  z-index: 1;
-}
-
-.carousel-indicators .active {
-  opacity: 1;
-  background-color: #000;
 }
 
 .testimonial-indicators{
@@ -792,40 +770,50 @@
   .testimonial-card {
     width: 50%;
   }
-  .testimonial-carousel-item {
-  display: none;
-  position: relative;
-  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+
 }
 
-.carousel-item.active {
-  display: block;
-}
-}
 
 /* Desktop - show 4 cards at once (static layout) */
 @media (min-width: 768px) {
   .testimonial-carousel-inner {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
+    margin-left:100px;
+    padding-bottom: 20px;
+  display: flex;
+  gap: 150px;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  /* scrollbar-width: none !important;      Firefox */
+  /* -ms-overflow-style: none;              IE and Edge */
+}
+.testimonial-carousel-inner::-webkit-scrollbar {
+  height: 5px; /* slimmer horizontal scrollbar */
+  width: 5px;
+}
+.testimonial-carousel-inner::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+.testimonial-carousel-inner::-webkit-scrollbar-track {
+  background: transparent;
+}
    
+  
   .testimonial-carousel-item {
     display: flex !important;
-    flex: auto;
+    flex-direction: row;
+    padding-left:0px !important;
+    margin-left:0px !important;
+    flex: 1;
+   
+    width:45% !important;
   }
   
-  .testimonial-slide{
-   width: 35% !important;
+  .slide-2-testimonial{
+    margin-left:350px !important;
   }
-  
-  
-  /* .slide-2-testimonial{
-    justify-content: flex-start;
-  } */
   .testimonial-card {
-    max-width: 35%;
+    width: 20%;
   }
 
   /* Hide indicators on desktop */
@@ -834,6 +822,15 @@
   }
 }
 
+@media(min-width:768px) and (max-width: 900px){
+  .testimonial-carousel-inner{
+    gap:30px;
+    margin-left:0px;
+  }
+  .testimonial-card{
+    width:25%;
+  }
+}
 @media(max-width: 350px){
   .testimonial-card{
     width: 50%;
@@ -1564,16 +1561,20 @@
   <!-- testimonial-section -->
 <section class="testimonial-section">
   <h2 class="testimonial-title">OUR CLIENTS</h2>
-<div id="carouselExampleAutoplaying" class="carousel slide testimonial-slider" data-bs-ride="carousel">
+
+  
+  <!-- Slider Container -->
+  <div id="carouselExampleAutoplaying" class="carousel slide testimonial-slider" data-bs-ride="carousel">
   <div class="carousel-indicators testimonial-indicators">
     <button type="button" data-bs-target=".testimonial-slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target=".testimonial-slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target=".testimonial-slider" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
 
   <div class="carousel-inner testimonial-carousel-inner">
     <!-- Slide 1 -->
-    <div class="carousel-item active testimonial-carousel-item ">
-      <div class="d-flex flex-row flex-wrap justify-content-evenly testimonial-slide">
+    <div class="carousel-item active testimonial-carousel-item">
+      <!-- <div class="d-flex flex-row testimonial-slide-mob"> -->
         <!-- Card 1 -->
         <div class="testimonial-card animate-on-scroll">
           <a href="john-abraham.html">
@@ -1592,12 +1593,12 @@
             <div class="stars">★★★★★</div>
           </a>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
 
     <!-- Slide 2 -->
     <div class="carousel-item testimonial-carousel-item slide-2-testimonial animate-on-scroll">
-      <div class="d-flex flex-row flex-wrap justify-content-evenly testimonial-slide">
+      <!-- <div class="d-flex flex-row testimonial-slide-mob"> -->
         <!-- Card 3 -->
         <div class="testimonial-card animate-on-scroll">
           <a href="harshvardhan-rane.html">
@@ -1607,6 +1608,7 @@
             <div class="stars">★★★★★</div>
           </a>
         </div>
+
         <!-- Card 4 -->
         <div class="testimonial-card animate-on-scroll">
           <a href="sayeesha.html">
@@ -1616,8 +1618,33 @@
             <div class="stars">★★★★★</div>
           </a>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item testimonial-carousel-item slide-2-testimonial animate-on-scroll">
+      <!-- <div class="d-flex flex-row testimonial-slide-mob"> -->
+        <!-- Card 5 -->
+        <div class="testimonial-card">
+          <a href="harshvardhan-rane.html">
+            <img src="./images-compress/harshvarndhan-rane-thegem-person.webp" alt="Client 3" class="zoom-effect image-zoom-on-scroll" />
+            <h4>HARSHVARDHAN RANE</h4>
+            <p>I am now addicted to Vinod's workout</p>
+            <div class="stars">★★★★★</div>
+          </a>
+        </div>
+        <!-- Card 6 -->
+        <div class="testimonial-card animate-on-scroll">
+          <a href="sayeesha.html">
+            <img src="./images-compress/sayeesha-saigal.webp" alt="Client 4" class="zoom-effect image-zoom-on-scroll" />
+            <h4>SAYEESHA SAIGAL</h4>
+            <p>I can confidently say Vinod Channa is one of the best trainer.</p>
+            <div class="stars">★★★★★</div>
+          </a>
+        </div>
+      <!-- </div> -->
+    </div>
+
   </div>
 </div>
 
@@ -1872,6 +1899,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   </script>
 
+<!--   javascript for testimonial slider  -->
+  <script>
+  function groupTestimonialCardsForMobile() {
+    const isMobile = window.innerWidth <= 768;
+  
+    document.querySelectorAll('.testimonial-carousel-item').forEach(item => {
+      // Flatten any previous mobile wrappers
+      const existingWrappers = item.querySelectorAll('.testimonial-slide-mob');
+      existingWrappers.forEach(wrapper => {
+        while (wrapper.firstChild) {
+          item.insertBefore(wrapper.firstChild, wrapper);
+        }
+        wrapper.remove();
+      });
+  
+      // Group for mobile view
+      if (isMobile) {
+        const cards = Array.from(item.querySelectorAll('.testimonial-card'));
+        for (let i = 0; i < cards.length; i += 2) {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'testimonial-slide-mob';
+          wrapper.style.display = 'flex';
+          wrapper.style.flexDirection = 'row';
+          wrapper.style.gap = '16px'; // Optional styling
+          for (let j = 0; j < 2 && (i + j) < cards.length; j++) {
+            wrapper.appendChild(cards[i + j]);
+          }
+          item.appendChild(wrapper);
+        }
+      }
+    });
+  }
+  
+  window.addEventListener('DOMContentLoaded', groupTestimonialCardsForMobile);
+  window.addEventListener('resize', () => {
+    // Debounce to reduce performance hits
+    clearTimeout(window.__testimonialResizeTimer);
+    window.__testimonialResizeTimer = setTimeout(groupTestimonialCardsForMobile, 150);
+  });
+  </script>
 </body>
 
 </html>
