@@ -1141,7 +1141,7 @@
     @media (max-width: 768px) and (min-width:350px) {
       .highlight-box {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: repeat(2, 1fr); */
         /* 2 columns */
         gap: 1.5rem;
         justify-items: center;
@@ -2438,8 +2438,55 @@
         border-bottom: 1px solid #6c757d;
 
       }
+      
+    }
+      .show-hide-first-highliths{
+        display: block;
 
     }
+     .show-hide-first-highliths2{
+        display: none;
+
+    }
+     @media (max-width: 769px){
+         .show-hide-first-highliths{
+        display: none;
+
+    }
+     .show-hide-first-highliths2{
+        display: block;
+
+    }
+     }
+ 
+ /* slider */
+ @media (max-width: 769px){
+  
+ .brands-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+}
+
+.brands {
+  display: flex;
+  width: max-content;
+  animation: slideLeft 10s linear infinite;
+  
+
+    background: linear-gradient(to bottom, #fff0f0, #e6f5f3);
+
+}
+
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
   </style>
 </head>
 
@@ -2903,8 +2950,10 @@
 
   <!-- highlight-section -->
 
-  <hr class="highlight-section-line">
-  <section class="highlight-section">
+    <!-- highlight-section -->
+
+  <hr class="highlight-section-line show-hide-first-highliths" >
+  <section class="highlight-section show-hide-first-highliths" >
     <h2 class="highlight-title">HIGHLIGHT</h2>
     <div class="highlight-box">
       <div class="highlight-item highlight-item-1">
@@ -2919,22 +2968,96 @@
         <p>Transformed Lives</p>
       </div>
 
-      <div class="highlight-item highlight-item-3">
+      <div class="highlight-item highlight-item-2">
         <img src="./images-compress/Trained Celebrities.webp" alt="Trained Celebrities" />
         <h3>50+</h3>
         <p>Trained Celebrities</p>
       </div>
 
-      <div class="highlight-item highlight-item-4">
+      <div class="highlight-item highlight-item-2">
         <img src="./images-compress/Most Certified Expert.webp" alt="Most Certified Expert" />
         <p>India's Most Certified<br>Fitness Expert</p>
       </div>
 
-      <div class="highlight-item highlight-item-5">
+        <div class="highlight-item highlight-item-5">
         <img src="./images-compress/15+_different_techniques.webp" alt="Most Certified Expert" />
         <h3>15+</h3>
         <p> Different <br>Fitness Techniques</p>
       </div>
+
+    </div>
+    <hr class="highlight-section-line">
+  </section>
+
+  <!-- highlight for phones -->
+    <hr class="highlight-section-line show-hide-first-highliths2">
+  <section class="highlight-section show-hide-first-highliths2">
+    <h2 class="highlight-title">HIGHLIGHT</h2>
+    <div class="highlight-box">
+       <div class="brands-wrapper">
+                   <div class="brands"> 
+
+
+      <div class="highlight-item highlight-item-1">
+        <img src="./images-compress/Experience Icon.webp" alt="Experience Icon" />
+        <h3>25+</h3>
+        <p>Years Of Experience</p>
+      </div>
+
+      <div class="highlight-item highlight-item-1">
+        <img src="./images-compress/Transformed Lives.webp" alt="Transformed Lives" />
+        <h3>1000+</h3>
+        <p>Transformed Lives</p>
+      </div>
+
+      <div class="highlight-item highlight-item-2">
+        <img src="./images-compress/Trained Celebrities.webp" alt="Trained Celebrities" />
+        <h3>50+</h3>
+        <p>Trained Celebrities</p>
+      </div>
+
+      <div class="highlight-item highlight-item-2">
+        <img src="./images-compress/Most Certified Expert.webp" alt="Most Certified Expert" />
+        <p>India's Most Certified<br>Fitness Expert</p>
+      </div>
+
+        <div class="highlight-item highlight-item-5">
+        <img src="./images-compress/15+_different_techniques.webp" alt="Most Certified Expert" />
+        <h3>15+</h3>
+        <p> Different <br>Fitness Techniques</p>
+      </div>
+
+
+      <!-- loop -->
+        <div class="highlight-item highlight-item-1">
+        <img src="./images-compress/Experience Icon.webp" alt="Experience Icon" />
+        <h3>25+</h3>
+        <p>Years Of Experience</p>
+      </div>
+
+      <div class="highlight-item highlight-item-1">
+        <img src="./images-compress/Transformed Lives.webp" alt="Transformed Lives" />
+        <h3>1000+</h3>
+        <p>Transformed Lives</p>
+      </div>
+
+      <div class="highlight-item highlight-item-2">
+        <img src="./images-compress/Trained Celebrities.webp" alt="Trained Celebrities" />
+        <h3>50+</h3>
+        <p>Trained Celebrities</p>
+      </div>
+
+      <div class="highlight-item highlight-item-2">
+        <img src="./images-compress/Most Certified Expert.webp" alt="Most Certified Expert" />
+        <p>India's Most Certified<br>Fitness Expert</p>
+      </div>
+
+        <div class="highlight-item highlight-item-5">
+        <img src="./images-compress/15+_different_techniques.webp" alt="Most Certified Expert" />
+        <h3>15+</h3>
+        <p> Different <br>Fitness Techniques</p>
+      </div>
+      </div></div>
     </div>
     <hr class="highlight-section-line">
   </section>
@@ -3777,5 +3900,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   </script>
 </body>
-
 </html>
