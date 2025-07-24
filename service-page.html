@@ -761,9 +761,33 @@
     color: black;
 }
 
+.carousel-indicators{
+    position: absolute;
+    bottom: -60px;
+  }
+
+  .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #555;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  border: none;
+  margin: 0 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-indicators .active {
+  opacity: 1;
+  background-color: #000;
+}
+
 .testimonial-indicators{
   margin-bottom: 60px !important;
 }
+    
 .testimonial-card img {
   width: 120px;
   height: 120px;
