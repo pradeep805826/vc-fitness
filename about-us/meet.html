@@ -8,9 +8,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap"
         rel="stylesheet">
-        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">    
 
-    <title>Meet</title>
+    <title>Meet Vinod Channa</title>
     <style>
         .flex-container {
             max-width: 1170px;
@@ -28,6 +28,166 @@
             /* font-size: 30px; */
             /* background-image: url(images/imgi_7_fat_ka_dushman.webp); */
         }
+
+.techniques-section-wrapper {
+  background: linear-gradient(to top, #fff7f3, #e6fcf8);
+  padding: 2rem; 
+  overflow-x: hidden;
+  width: 100%;
+}
+
+
+.techniques-section {
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  margin: 0 auto;
+}
+ /* Carousel button positioning */
+.carousel-btn-left{
+    background-color: #6c757d;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+ }    
+
+ .carousel-btn-right{
+    background-color: #6c757d;
+    color: white;
+    position: absolute;
+    top: 50%;
+     transform: translateY(-50%);
+    align-items: center;
+    width: 30px;
+    height: 30px;
+ }
+
+ #techniques{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+   scroll-snap-type: x mandatory;
+}
+ /* Container styles */
+.techniques {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 15px;
+  padding: 10px 0;
+  /* scroll-padding-left: 60px; Matches your margin-left */
+}
+
+
+
+/* techniques card sizing */
+.techniques-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  margin: 0 5px; /* Small margin between cards */
+  flex-shrink: 0;
+}
+.techniques-card img{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.read-more{
+    text-decoration: none;
+    color: #8c4a32;
+}
+.read-more:hover{
+    color: #703926;
+}
+/* Mobile */
+@media (max-width: 767px) {
+  .techniques-card {
+    width: calc(100vw - 80px) !important; /* Account for margins */
+  }
+  .techniques-container{
+    overflow: visible !important;
+  }
+  .carousel-btn-left{
+    left: -40px;
+  }
+  .carousel-btn-right{
+    right: -40px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .techniques-card {
+    width: calc((100vw - 180px) / 3) !important; /* Account for margins and gaps */
+  }
+}
+
+/* Tab styles */
+.techniques-fitness-card.active {
+  border: 2px solid #007bff; /* Highlight active tab */
+}
+
+
+.techniques-card:hover {
+  transform: translateY(-5px);
+}
+
+.techniques-card img {
+  width: 100%;
+  height: auto;
+}
+
+.techniques-card-body {
+  padding: 1rem;
+}
+
+.techniques-card-body h3 {
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem;
+}
+
+.techniques-card-body small {
+  color: #777;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.techniques-card-body p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0;
+}
+
+    .view-all-btn {
+      background: #8c4a32;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin: 4rem auto 0;
+      display: block;
+    }
+    .view-all-btn-link{
+      text-decoration: none;
+
+    }
+
+    .view-all-btn:hover {
+      background: #703926;
+    }
+    
+    /* @media (max-width: 767px) {
+  .techniques-card {
+    margin-right: 12px;
+    width: 260px;
+  }
+} */
     </style>
 </head>
 
@@ -115,21 +275,268 @@
             </div>
 
         </div>
-        <div style=" max-height: 485px; padding-left: 21px; padding-right: 21px;  " class="width-change">
-            <img class="fade-in" style="width: 100%; height: 100%;" src="images/meet3.webp" alt="meet3.webp">
-
-        </div>
-
-        <!-- blockquote -->
-         <blockquote>
-             <em >His composure, passionate approach and no-frills manner of guidance gradually make his clients mindful of
-                 their satisfied unhealthy habits and drive them to work towards one goal of achieving fitness at any cost.
-                 Vinod Channa’s study of each individual body structure rather than providing mass training has helped him
-                 distinguish and known as Personal trainer more than a Gym Instructor. His focus and dedication towards one
-                 individual at a time makes him the most sought-after trainer of today’s times.</em>
-         </blockquote>
+        
+        
+        
         
     </div>
+
+
+<section class="techniques-section-wrapper mb-5 p-5">
+            
+    <h1 style="font-family: 'Oswald',sans-serif; text-align: center;" class="pb-4">TECHNIQUES</h1>
+    <div class="techniques-section" style="font-family:'Roboto',sans-serif;">
+      <!-- techniquess  -->
+    <div class="position-relative overflow-hidden animate-left-on-scroll techniques-container">
+    <div class="techniques d-flex flex-nowrap overflow-hidden gap-3 ms-lg-5 me-lg-5" id="techniques" style="scroll-behavior: smooth;">
+    <!-- Card 1 -->
+    <div class="techniques-card">
+    <img src="images/blog-article-img1.webp" alt="Article 1" />
+    <div class="techniques-card-body">
+      <h3>BodyBuilding</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img2.webp" alt="Article 2" />
+    <div class="techniques-card-body">
+      <h3>Animal Flow Workout (internatonal cert)</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img3.webp" alt="Article 3" />
+    <div class="techniques-card-body">
+      <h3>Gymnastics</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img4.webp" alt="Article 4" />
+    <div class="techniques-card-body">
+      <h3>Cross Fit Training</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+  <!-- Card 5 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img5.webp" alt="Article 5" />
+    <div class="techniques-card-body">
+      <h3>Tabatta</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 6-->
+  <div class="techniques-card">
+    <img src="images/blog-article-img6.webp" alt="Article 06" />
+    <div class="techniques-card-body">
+      <h3>Weight Training</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img1.webp" alt="Article 07" />
+    <div class="techniques-card-body">
+      <h3>Parkour</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img2.webp" alt="Technique 08" />
+    <div class="techniques-card-body">
+      <h3>Kalaripayattu </h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 9 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img3.webp" alt="Article 09" />
+    <div class="techniques-card-body">
+      <h3>Callisthenic Exercise</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 10 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img4.webp" alt="Article 10" />
+    <div class="techniques-card-body">
+      <h3>Pillates (international certification from USA)</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+  <!-- Card 11 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img5.webp" alt="Article 11" />
+    <div class="techniques-card-body">
+      <h3>Sports Conditioning Workout</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 12-->
+  <div class="techniques-card">
+    <img src="images/blog-article-img6.webp" alt="Article 12" />
+    <div class="techniques-card-body">
+      <h3>Balance Training</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 13 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img1.webp" alt="Article 13" />
+    <div class="techniques-card-body">
+      <h3>Functional Training</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 14 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img2.webp" alt="Article 14" />
+    <div class="techniques-card-body">
+      <h3>TRX Band Training</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 15 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img3.webp" alt="Article 15" />
+    <div class="techniques-card-body">
+      <h3>Bosu Ball Workout</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 16 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img4.webp" alt="Article 16" />
+    <div class="techniques-card-body">
+      <h3>Advanced Yoga</h3>
+      <small>Akshay Chopra // Fitness // 26 mins read</small>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+  <!-- Card 17 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img5.webp" alt="Article 17" />
+    <div class="techniques-card-body">
+      <h3>Kickboxing</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 18-->
+  <div class="techniques-card">
+    <img src="images/blog-article-img6.webp" alt="Article 18" />
+    <div class="techniques-card-body">
+      <h3>Karla Katti</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+  
+  <!-- Card 19 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img5.webp" alt="Article 19" />
+    <div class="techniques-card-body">
+      <h3>Kettle bell training</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 20-->
+  <div class="techniques-card">
+    <img src="images/blog-article-img6.webp" alt="Article 20" />
+    <div class="techniques-card-body">
+      <h3>Stick mobility (international certification from USA)</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Card 21 -->
+  <div class="techniques-card">
+    <img src="images/blog-article-img1.webp" alt="Article 21" />
+    <div class="techniques-card-body">
+      <h3>Traditional Indian martial art (LATHI or stick fighting)</h3>
+      <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Do Eiusmod Tempor...</p>
+      <br>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+</div>
+<!-- Controls -->
+<button id="prevBtn-technique" class="carousel-control-prev carousel-btn-left" type="button">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+</button>
+<button id="nextBtn-technique" class="carousel-control-next carousel-btn-right" type="button">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+</button>    
+</div>
+</div>
+</section>
+
+<!-- blockquote -->
+<blockquote class="container" style="margin-bottom: 100px;">
+    <em >His composure, passionate approach and no-frills manner of guidance gradually make his clients mindful of
+        their satisfied unhealthy habits and drive them to work towards one goal of achieving fitness at any cost.
+        Vinod Channa’s study of each individual body structure rather than providing mass training has helped him
+        distinguish and known as Personal trainer more than a Gym Instructor. His focus and dedication towards one
+        individual at a time makes him the most sought-after trainer of today’s times.</em>
+</blockquote>
 
 <!-- script file here for animation -->
  <script >
@@ -151,6 +558,167 @@ images.forEach(img => {
 });
 
  </script>
+
+
+
+<!-- carousel items script  -->
+<script>
+    // Main carousel initialization function
+    function initCarousel(containerId, nextBtnId, prevBtnId) {
+      const container = document.getElementById("techniques");
+      const cards = container.querySelectorAll('.techniques-card');
+      const nextBtn = document.getElementById("nextBtn-technique");
+      const prevBtn = document.getElementById("prevBtn-technique");
+      let currentIndex = 0;
+      let autoScroll;
+      let isScrolling = false;
+    
+      function getItemsPerPage() {
+        return window.innerWidth < 768 ? 1 : 3;
+      }
+    
+      function calculateCardWidth() {
+        if (cards.length === 0) return 0;
+        const card = cards[0];
+        const cardStyle = getComputedStyle(card);
+        const gap = 12; // 3 * 4px (gap-3 = 12px)
+        return card.offsetWidth + gap;
+      }
+    
+      function updateButtons() {
+        // Always show both buttons for infinite scroll effect
+        prevBtn.style.display = 'block';
+        nextBtn.style.display = 'block';
+      }
+    
+      function scrollToIndex(index, instant = false) {
+        if (isScrolling || cards.length === 0) return;
+        isScrolling = true;
+        
+        const itemsPerPage = getItemsPerPage();
+        const cardWidth = calculateCardWidth();
+        const maxIndex = Math.max(0, cards.length - itemsPerPage);
+        
+        // Handle infinite scroll logic
+        let targetIndex = index;
+        if (index < 0) {
+          targetIndex = maxIndex;
+        } else if (index > maxIndex) {
+          targetIndex = 0;
+        }
+        
+        currentIndex = targetIndex;
+        
+        // Calculate scroll position
+        const scrollPosition = currentIndex * cardWidth;
+        
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: instant ? 'auto' : 'smooth'
+        });
+        
+        setTimeout(() => {
+          isScrolling = false;
+          updateButtons();
+        }, 500);
+      }
+    
+      function scrollNext() {
+        const itemsPerPage = getItemsPerPage();
+        const maxIndex = Math.max(0, cards.length - itemsPerPage);
+        
+        if (currentIndex >= maxIndex) {
+          // If at the end, go to the beginning
+          currentIndex = 0;
+          scrollToIndex(currentIndex);
+        } else {
+          scrollToIndex(currentIndex + 1);
+        }
+      }
+    
+      function scrollPrev() {
+        const itemsPerPage = getItemsPerPage();
+        const maxIndex = Math.max(0, cards.length - itemsPerPage);
+        
+        if (currentIndex <= 0) {
+          // If at the beginning, go to the end
+          currentIndex = maxIndex;
+          scrollToIndex(currentIndex);
+        } else {
+          scrollToIndex(currentIndex - 1);
+        }
+      }
+    
+      function initializeCarousel() {
+        const itemsPerPage = getItemsPerPage();
+        
+        // Set proper card sizing
+        cards.forEach(card => {
+          card.style.flex = '0 0 auto';
+          if (window.innerWidth < 768) {
+            // Mobile: 1 card visible
+            card.style.width = 'calc(100% - 12px)'; // Account for gap
+          } else {
+            // Desktop: 3 cards visible
+            card.style.width = `calc(${100/3}% - 8px)`; // Account for gap
+          }
+        });
+        
+        // Force layout recalculation
+        container.style.display = 'none';
+        container.offsetHeight; // Trigger reflow
+        container.style.display = 'flex';
+        
+        // Scroll to start position
+        setTimeout(() => {
+          container.scrollLeft = 0;
+          currentIndex = 0;
+          updateButtons();
+        }, 500);
+      }
+    
+      // Event listeners
+      nextBtn.addEventListener('click', scrollNext);
+      prevBtn.addEventListener('click', scrollPrev);
+    
+      // Auto-scroll controls
+      container.addEventListener('mouseenter', () => clearInterval(autoScroll));
+      container.addEventListener('mouseleave', () => {
+        autoScroll = setInterval(scrollNext, 2500);
+      });
+      autoScroll = setInterval(scrollNext, 2500);
+    
+      // Handle window resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          initializeCarousel();
+          updateButtons();
+        }, 100);
+      });
+    
+      // Initialize everything
+      initializeCarousel();
+      updateButtons();
+    
+      return { 
+        reset: function() {
+          initializeCarousel();
+        }
+      };
+    }
+    
+    </script>
+
+<script>
+  // Initialize the 'techniques' carousel after DOM and function are loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    initCarousel('techniques', 'nextBtn-technique', 'prevBtn-technique');
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 
 </html>
