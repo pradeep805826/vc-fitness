@@ -456,7 +456,47 @@
             padding: 0.2rem;
             margin-bottom: 2rem;
         }
-         
+         /* filters styles  */
+        .online-programs-class {
+           position: relative;
+           z-index: 10;
+        }
+        
+        .filter-dropdown, .btn-members-only{
+          background-color: #9E6449;
+          color: white;
+          width: 180px;
+          height: 50px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .filter-dropdown:hover, .btn-members-only:hover{
+          background-color: #703926;
+          color: white;
+        }
+        .filter-dropdown-items li{
+          width: 180px;
+        }
+        .dropdown-menu{
+          padding-top:0px;
+          padding-bottom:0px;
+        }
+
+        .filter-dropdown-items .dropdown-item:hover,
+        .filter-dropdown-items .dropdown-item:focus {
+          background: linear-gradient(to bottom, #FEE7DC, #FEF5F0) !important;
+          color: #703926 !important;
+        }
+         @media(max-width: 768px){
+          .online-training-container{
+            width: 100%;
+          }
+          .online-programs-class{
+            justify-content: center;
+          }
+         }
+    
         .programs-tabs .programs-tab {
             padding: 0.5rem 1.5rem;
             background: transparent;
@@ -1430,7 +1470,45 @@
 
            
             <div class="d-flex online-training-container gap-3 flex-wrap">
-            <div class="program-card animate-on-scroll" data-type="online-programs">
+                   <!--  filters  -->
+             <div class="container-fluid online-programs-class gap-3 flex-wrap animate-on-scroll mb-5" data-type="online-programs">
+                <!-- duration dropdown  -->
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle filter-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-default="Duration">
+                    Duration
+                  </button>
+                  <ul class="dropdown-menu filter-dropdown-items">
+                    <li><a class="dropdown-item" href="#" data-duration="5-10">5-10 minutes</a></li>
+                    <li><a class="dropdown-item" href="#" data-duration="10-15">10-15 minutes</a></li>
+                    <li><a class="dropdown-item" href="#" data-duration="25+">25+ minutes</a></li>
+                  </ul>
+                </div>
+
+                <!-- type dropdown  -->
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle filter-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-default="Type">
+                    Type
+                  </button>
+                  <ul class="dropdown-menu filter-dropdown-items">
+                    <li><a class="dropdown-item" href="#" data-programtype="core">Core</a></li>
+                    <li><a class="dropdown-item" href="#" data-programtype="full-body">Full Body</a></li>
+                    <li><a class="dropdown-item" href="#" data-programtype="with-equipments">With Equipments</a></li>
+                    <li><a class="dropdown-item" href="#" data-programtype="fat-loss">Fat Loss</a></li>
+                  </ul>
+                </div>
+
+                <!-- members only programmes  -->
+                 <a class="btn btn-members-only text-white text-decoration-none"> *Members Only* Programs</a>
+                 <!-- Only program cards with data-members="true" will be shown for members only programs -->
+                 <a href="#" class=" btn text-decoration-none btn-members-only text-white ">Show all</a>
+                 <a href="#" class=" btn btn-members-only text-decoration-none text-white">Reset Filters</a>
+              </div>
+
+
+
+
+            <!--  cards starting -->
+            <div class="program-card animate-on-scroll" data-type="online-programs" data-duration="5-10" data-programtype="fat-loss" data-members="true">
               <div class="image-wrapper">
         <img class="program-image" src="./images-compress/weight_managmen_newt.webp" alt="Fat Loss" />
         </div>
@@ -1444,7 +1522,7 @@
 
 
     <!-- Duplicate and update image/text for each card as needed -->
-     <div class="program-card animate-on-scroll" data-type="online-programs">
+     <div class="program-card animate-on-scroll" data-type="online-programs" data-duration="10-15" data-programtype="core" data-members="true">
   <a href="./onlineprogrammmes/12miinute-daily-workout.html" class="text-decoration-none text-black">
     <div class="image-wrapper">
     <img class="program-image" src="./images-compress/12-minute-daily-workout-no-equipment.webp" alt="One to One" />
@@ -1459,7 +1537,7 @@
 </div>
   
     <!-- Add other cards similarly -->
-   <div class="program-card animate-on-scroll" data-type="online-programs">
+   <div class="program-card animate-on-scroll" data-type="online-programs" data-duration="25+" data-programtype="full-body" data-members="true">
      <div class="image-wrapper">
         <img class="program-image" src="./images-compress/Vinod-Channa-Beginners-Exercise.webp" alt="One to One" />
         </div>
@@ -1471,7 +1549,7 @@
       </div>
     </div>
 
-   <div class="program-card animate-on-scroll" data-type="online-programs">
+   <div class="program-card animate-on-scroll" data-type="online-programs" data-duration="5-10" data-programtype="fat-loss" data-members="true">
      <div class="image-wrapper">
         <img class="program-image" src="./images-compress/leg.webp" alt="One to One" />
         </div>
@@ -1483,7 +1561,7 @@
       </div>
     </div>
 
-    <div class="program-card animate-on-scroll" data-type="online-programs">
+    <div class="program-card animate-on-scroll" data-type="online-programs" data-duration="10-15" data-programtype="fat-loss" data-members="true">
        <div class="image-wrapper">
         <img class="program-image" src="./images-compress/leg.webp" alt="One to One" />
         </div>
@@ -1495,7 +1573,7 @@
       </div>
     </div>
 
-    <div class="program-card animate-on-scroll" data-type="online-programs">
+    <div class="program-card animate-on-scroll" data-type="online-programs" data-duration="25+" data-programtype="fat-loss full-body" data-members="true">
        <div class="image-wrapper">
         <img class="program-image" src="./images-compress/program-card6.webp" alt="One to One" />
         </div>
@@ -1555,7 +1633,7 @@
   // On page load
   document.addEventListener("DOMContentLoaded", () => {
     const tabButtons = document.querySelectorAll(".programs-tab");
-    const allCards = document.querySelectorAll(".programs-card, .program-card");
+    const allCards = document.querySelectorAll(".programs-card, .program-card,.online-programs-class");
 
     // Tab click handler
     tabButtons.forEach(button => {
@@ -1575,11 +1653,36 @@
             card.style.display = "none";
           }
         });
+
+        // Show/hide online-programs-class filter bar
+        const filterBar = document.querySelector('.online-programs-class');
+        if (filterBar) {
+          if (selectedTab != 'online-programs') {
+            filterBar.style.display = 'none';
+          } else {
+            filterBar.style.display = 'flex';
+          }
+        }
       });
     });
 
     // Default tab: Optional (shows "one-to-one" tab on load)
     tabButtons[0].click();
+  });
+
+  // Tab switching logic to show/hide online-programs-class as well
+  document.querySelectorAll('.programs-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var type = tab.getAttribute('data-tab');
+      // Hide all program cards and the filter bar
+      document.querySelectorAll('.programs-card, .program-card, .online-programs-class').forEach(function(card) {
+        card.style.display = 'none';
+      });
+      // Show only matching
+      document.querySelectorAll('[data-type="' + type + '"]').forEach(function(card) {
+        card.style.display = '';
+      });
+    });
   });
 </script>
 
@@ -2185,6 +2288,75 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (!valid) e.preventDefault();
   });
+</script>
+
+<!--  Online Programs filter logic -->
+<script>
+(function() {
+  let selectedDuration = '';
+  let selectedType = '';
+
+  // Duration filter
+  document.querySelectorAll('.online-programs-class .filter-dropdown-items .dropdown-item[data-duration]').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      selectedDuration = this.getAttribute('data-duration');
+      filterOnlinePrograms();
+      this.closest('.dropdown').querySelector('.dropdown-toggle').textContent = this.textContent;
+    });
+  });
+
+  // Type filter
+  document.querySelectorAll('.online-programs-class .filter-dropdown-items .dropdown-item[data-programtype]').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      selectedType = this.getAttribute('data-programtype');
+      filterOnlinePrograms();
+      this.closest('.dropdown').querySelector('.dropdown-toggle').textContent = this.textContent;
+    });
+  });
+
+  // Show all and Reset Filters buttons
+  document.querySelectorAll('.online-programs-class .btn-members-only').forEach(btn => {
+    const btnText = btn.textContent.trim().toLowerCase();
+    if (btnText.includes('show all') || btnText.includes('reset')) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        selectedDuration = '';
+        selectedType = '';
+        document.querySelectorAll('.online-programs-class .dropdown-toggle').forEach(btn => btn.textContent = btn.getAttribute('data-default'));
+        filterOnlinePrograms();
+      });
+    } else if (btnText.includes('members only')) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Show only members-only program cards
+        document.querySelectorAll('.program-card[data-type="online-programs"]').forEach(card => {
+          if (card.getAttribute('data-members') === 'true') {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        // Optionally reset dropdowns
+        document.querySelectorAll('.online-programs-class .dropdown-toggle').forEach(btn => btn.textContent = btn.getAttribute('data-default'));
+        selectedDuration = '';
+        selectedType = '';
+      });
+    }
+  });
+
+  function filterOnlinePrograms() {
+    document.querySelectorAll('.program-card[data-type="online-programs"]').forEach(card => {
+      const cardDuration = card.getAttribute('data-duration') || '';
+      const cardType = card.getAttribute('data-programtype') || '';
+      let show = true;
+      if (selectedDuration && cardDuration !== selectedDuration) show = false;
+      if (selectedType && !cardType.split(' ').includes(selectedType)) show = false;
+      card.style.display = show ? 'block' : 'none';
+    });
+  }
+})();
 </script>
   
 </body>
