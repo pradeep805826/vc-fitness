@@ -2,6 +2,9 @@ body {
     background: #f2f5f8;
     margin: 0;
 }
+html,body{  
+        overflow-x: hidden;
+}
 
 .clr {
     color: #5F727F;
@@ -221,6 +224,7 @@ h1 {
         flex-direction: column;
         /* Stack items vertically */
         gap: 30px;
+        
         /* Maintain gap between stacked items */
     }
 
@@ -284,3 +288,32 @@ blockquote {
     bottom: 132px;
     right: 3rem;
 }
+.title-h5{
+        font-size: 18px;
+    color: #5F727F;
+    font-weight: 200;
+    line-height: 31px;
+    text-decoration: none solid rgb(95, 114, 127);
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease-out;
+  }
+
+    .animate-on-scroll.show {
+      opacity: 1;
+      transform: translateX(0);
+     }
+
+    .animate-left-on-scroll {
+     opacity: 0;
+     transform: translateX(-100px);
+     transition: all 0.8s ease-out;
+    }
+
+    .animate-left-on-scroll.show {
+     opacity: 1;
+     transform: translateX(0);
+    }
