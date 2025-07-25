@@ -2183,7 +2183,7 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
 
 
-  <!-- Train With Vinod Channa Modal -->
+ <!-- Train With Vinod Channa Modal -->
   <div class="modal fade" id="vinodChannaModal" tabindex="-1" aria-labelledby="vinodChannaModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -2191,11 +2191,22 @@ document.addEventListener("DOMContentLoaded", function () {
           <h5 class="modal-title" id="vinodChannaModalLabel" style="font-family:Oswald,sans-serif;">Train With Vinod Channa</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form style="font-family: Oswald, sans-serif;">
+        <form style="font-family: Oswald, sans-serif;" action="checkout.html" method="post">
           <div class="modal-body">
             <div class="mb-3">
               <label for="vcName" class="form-label">Name</label>
               <input type="text" class="form-control" id="vcName" name="name" placeholder="Enter your name"  required>
+            </div>
+            <div class="mb-3 d-flex gap-3">
+              <label for="vcGender" class="form-label">Gender</label>
+              <input type="radio" name="gender" id="male" value="Male">
+              <label for="male">Male</label>
+              <input type="radio" name="gender" id="female" value="Female">
+              <label for="female">Female</label>
+            </div>
+            <div class="mb-3">
+              <label for="vcAge" class="form-label">Age</label>
+              <input type="age" class="form-control" name="age" id="age" placeholder="Enter your age">
             </div>
             <div class="mb-3">
               <label for="vcEmail" class="form-label">Email</label>
@@ -2205,13 +2216,23 @@ document.addEventListener("DOMContentLoaded", function () {
               <label for="vcPhone" class="form-label">Phone</label>
               <input type="tel" class="form-control" id="vcPhone" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{10,15}">
             </div>
-            <div class="mb-3">
+            <div class="mb-3" id="typesOfServiceGroup">
+              <label class="form-label">Types of Service</label>
+              <div class="dropdown w-100">
+                <button class="btn dropdown-toggle form-dropdown-toggle d-flex justify-content-between align-items-center w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select...
+                </button>
+                <ul class="dropdown-menu form-dropdown  w-100">
+                  <li><a class="dropdown-item" href="#">Personal Training</a></li>
+                  <li><a class="dropdown-item" href="#">Consultation</a></li>
+                  <li><a class="dropdown-item" href="#">Group Training</a></li>
+                  <li><a class="dropdown-item" href="#">Professional Corporate Training</a></li>
+                </ul>
+              </div>
+              <input type="hidden" name="typesOfService" id="typesOfServiceInput">
+            </div>
+            <div class="mb-3" id="trainingSessionsGroup">
               <label class="form-label">Training Sessions</label>
-              <!-- <select class="form-select form-dropdown" name="training_session" required>
-                <option value="">Select...</option>
-                <option value="online">Online</option>
-                <option value="offline">Offline</option>
-              </select> -->
               <div class="dropdown w-100">
                 <button class="btn dropdown-toggle form-dropdown-toggle d-flex justify-content-between align-items-center w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Select...
@@ -2221,14 +2242,10 @@ document.addEventListener("DOMContentLoaded", function () {
                   <li><a class="dropdown-item" href="#">Offline</a></li>
                 </ul>
               </div>
+              <input type="hidden" name="trainingSession" id="trainingSessionInput">
             </div>
-            <div class="mb-3">
+            <div class="mb-3" id="consultationGroup">
               <label class="form-label">Consultation</label>
-              <!-- <select class="form-select form-dropdown" name="consultation" required>
-                <option value="">Select...</option>
-                <option value="online">Online</option>
-                <option value="offline">Offline</option>
-              </select> -->
               <div class="dropdown w-100">
                 <button class="btn dropdown-toggle form-dropdown-toggle w-100 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Select...
@@ -2238,6 +2255,38 @@ document.addEventListener("DOMContentLoaded", function () {
                   <li><a class="dropdown-item" href="#">Offline</a></li>
                 </ul>
               </div>
+              <input type="hidden" name="consultationType" id="consultationTypeInput">
+            </div>
+            <div class="mb-3" id="groupTraining">
+              <label for="groupTrainingDetails" class="form-label">Group Training details</label>
+              <input type="text" class="form-control" id="groupTrainingDetails" name="groupTrainingDetails" placeholder="Enter your Group details" required>
+              <span>Note: Minimum of 5 members are compulsory for group training.</span>
+            </div>
+            <div class="mb-3" id="groupTrainingGroup">
+              <label class="form-label">Select Mode</label>
+              <div class="dropdown w-100">
+                <button class="btn dropdown-toggle form-dropdown-toggle w-100 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select...
+                </button>
+                <ul class="dropdown-menu form-dropdown w-100">
+                  <li><a class="dropdown-item" href="#">Online</a></li>
+                  <li><a class="dropdown-item" href="#">Offline</a></li>
+                </ul>
+              </div>
+              <input type="hidden" name="groupTrainingMode" id="groupTrainingModeInput">
+            </div>
+            <div class="mb-3" id="professionalCorporateTrainingGroup">
+              <label class="form-label">Select Mode</label>
+              <div class="dropdown w-100">
+                <button class="btn dropdown-toggle form-dropdown-toggle w-100 d-flex justify-content-between align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select...
+                </button>
+                <ul class="dropdown-menu form-dropdown w-100">
+                  <li><a class="dropdown-item" href="#">Online</a></li>
+                  <li><a class="dropdown-item" href="#">Offline</a></li>
+                </ul>
+              </div>
+              <input type="hidden" name="professionalCorporateTrainingMode" id="professionalCorporateTrainingModeInput">
             </div>
           </div>
           <div class="modal-footer">
@@ -2250,44 +2299,93 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 
 <script>
-  // For both custom dropdowns in the modal
-  document.querySelectorAll('.form-dropdown').forEach(function(menu) {
-    menu.addEventListener('click', function(e) {
-      if (e.target.classList.contains('dropdown-item')) {
-        e.preventDefault();
-        // Find the button for this dropdown
-        var dropdown = menu.closest('.dropdown');
-        var button = dropdown.querySelector('.dropdown-toggle');
-        button.textContent = e.target.textContent;
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the relevant dropdowns and groups
+  const trainingSessionsGroup = document.getElementById('trainingSessionsGroup');
+  const consultationGroup = document.getElementById('consultationGroup');
+  const groupTrainingGroup = document.getElementById('groupTrainingGroup');
+  const groupTraining = document.getElementById('groupTraining');
+  const professionalCorporateTrainingGroup = document.getElementById('professionalCorporateTrainingGroup');
 
-        // Find or create a hidden input to store the value
-        var inputName = button.closest('.mb-3').querySelector('label').textContent.toLowerCase().includes('training') ? 'training_session' : 'consultation';
-        var hidden = dropdown.querySelector('input[type=hidden]');
-        if (!hidden) {
-          hidden = document.createElement('input');
-          hidden.type = 'hidden';
-          hidden.name = inputName;
-          dropdown.appendChild(hidden);
-        }
-        hidden.value = e.target.textContent;
+  // Hide all by default
+  if (trainingSessionsGroup) trainingSessionsGroup.classList.add('hide');
+  if (consultationGroup) consultationGroup.classList.add('hide');
+  if (groupTrainingGroup) groupTrainingGroup.classList.add('hide');
+  if (groupTraining) groupTraining.classList.add('hide');
+  if (professionalCorporateTrainingGroup) professionalCorporateTrainingGroup.classList.add('hide');
+
+  // Listen for selection in Types of Service
+  document.querySelectorAll('#typesOfServiceGroup .dropdown-menu.form-dropdown li a').forEach(function(item) {
+    item.addEventListener('click', function() {
+      // Remove 'active' from all items
+      document.querySelectorAll('#typesOfServiceGroup .dropdown-menu.form-dropdown li a').forEach(function(i) {
+        i.classList.remove('active');
+      });
+      // Add 'active' to the clicked item
+      this.classList.add('active');
+
+      // Update the dropdown button text
+      const dropdown = this.closest('.dropdown');
+      const button = dropdown.querySelector('.dropdown-toggle');
+      button.textContent = this.textContent;
+      // Update hidden input for Types of Service
+      document.getElementById('typesOfServiceInput').value = this.textContent;
+
+      const selected = this.textContent.trim();
+      // Hide all first
+      if (trainingSessionsGroup) trainingSessionsGroup.classList.add('hide');
+      if (consultationGroup) consultationGroup.classList.add('hide');
+      if (groupTrainingGroup) groupTrainingGroup.classList.add('hide');
+      if (groupTraining) groupTraining.classList.add('hide');
+      if (professionalCorporateTrainingGroup) professionalCorporateTrainingGroup.classList.add('hide');
+
+      if (selected === 'Personal Training') {
+        trainingSessionsGroup.classList.remove('hide');
+      } else if (selected === 'Consultation') {
+        consultationGroup.classList.remove('hide');
+      } else if (selected === 'Group Training') {
+        groupTrainingGroup.classList.remove('hide');
+        groupTraining.classList.remove('hide');
+      } else if (selected === 'Professional Corporate Training') {
+        professionalCorporateTrainingGroup.classList.remove('hide');
       }
     });
   });
 
-  // Form validation to require dropdowns
-  document.querySelector('#vinodChannaModal form').addEventListener('submit', function(e) {
-    var training = this.querySelector('input[name="training_session"]');
-    var consultation = this.querySelector('input[name="consultation"]');
-    var valid = true;
-    if (!training || !training.value) {
-      valid = false;
-      alert('Please select a Training Session.');
-    } else if (!consultation || !consultation.value) {
-      valid = false;
-      alert('Please select a Consultation type.');
-    }
-    if (!valid) e.preventDefault();
+  // Update button text and hidden input for all other dropdowns in the modal
+  document.querySelectorAll('#trainingSessionsGroup .dropdown-menu.form-dropdown li a').forEach(function(item) {
+    item.addEventListener('click', function() {
+      const dropdown = this.closest('.dropdown');
+      const button = dropdown.querySelector('.dropdown-toggle');
+      button.textContent = this.textContent;
+      document.getElementById('trainingSessionInput').value = this.textContent;
+    });
   });
+  document.querySelectorAll('#consultationGroup .dropdown-menu.form-dropdown li a').forEach(function(item) {
+    item.addEventListener('click', function() {
+      const dropdown = this.closest('.dropdown');
+      const button = dropdown.querySelector('.dropdown-toggle');
+      button.textContent = this.textContent;
+      document.getElementById('consultationTypeInput').value = this.textContent;
+    });
+  });
+  document.querySelectorAll('#groupTrainingGroup .dropdown-menu.form-dropdown li a').forEach(function(item) {
+    item.addEventListener('click', function() {
+      const dropdown = this.closest('.dropdown');
+      const button = dropdown.querySelector('.dropdown-toggle');
+      button.textContent = this.textContent;
+      document.getElementById('groupTrainingModeInput').value = this.textContent;
+    });
+  });
+  document.querySelectorAll('#professionalCorporateTrainingGroup .dropdown-menu.form-dropdown li a').forEach(function(item) {
+    item.addEventListener('click', function() {
+      const dropdown = this.closest('.dropdown');
+      const button = dropdown.querySelector('.dropdown-toggle');
+      button.textContent = this.textContent;
+      document.getElementById('professionalCorporateTrainingModeInput').value = this.textContent;
+    });
+  });
+});
 </script>
 
 <!--  Online Programs filter logic -->
