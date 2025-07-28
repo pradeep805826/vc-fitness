@@ -342,7 +342,7 @@ img.animate {
   transform: scale(1);
 }
 
-.button {
+.button-tab {
   position: relative;
   display: inline-block;
   text-align: center;
@@ -364,7 +364,7 @@ img.animate {
 
 }
 
-.button:hover {
+.button-tab:hover {
   background-color: #703926;
   color: #ffffff
 }
@@ -444,7 +444,7 @@ img.animate {
     flex-direction: column;
   }
 
-  .clients, .button {
+  .clients, .button-tab {
     width: 100%;
   }
 
