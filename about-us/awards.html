@@ -2,144 +2,498 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="awards.css">
-    <title>awards for vinod channa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="awards.css">
+  <title>awards for vinod channa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <div style=" max-width: 1072px; margin: 0 auto; margin-bottom: 100px; ">
-        <img class="awards-banner-img fade-in" src="images/awardspage-banner.webp" alt="iamge not loading">
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+
+      <!-- Mobile: Toggler | Centered Logo | Contact Button -->
+      <div class="mobile-header d-lg-none w-100">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Centered Logo -->
+        <a class="navbar-brand navbar-logo-center" href="#">
+          <img src="./images-compress/VC Fitness Logo.webp" alt="VC Fitness Logo">
+        </a>
+
+        <a href="#" class="btn btn-contact">Contact Us</a>
+      </div>
+
+      <!-- Desktop View -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <!-- Left Logo -->
+        <a class="navbar-brand d-none d-lg-block" href="#">
+          <img src="./images-compress/VC Fitness Logo.webp" alt="VC Fitness Logo">
+        </a>
+
+        <!-- Menu Center -->
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item custom-dropdown">
+          <a class="nav-link" href="./service-page.html">Services</a>
+          <ul class="dropdown-menu">
+          <li class="nav-dropdown-border"><a href="#one-to-one-section" class="dropdown-color">1-On-1 Training</a></li>
+          <li class="nav-dropdown-border"><a href="#online-programs" class="dropdown-color">Online Programs</a></li>
+         </ul>
+         </li>
+          <li class="nav-item custom-dropdown">
+          <a class="nav-link" href="./About-Us-page.html">About Us</a>
+          <ul class="dropdown-menu">
+          <li class="nav-dropdown-border"><a href="./meet-vinod.html" class="dropdown-color">Meet Vinod Channa</a></li>
+          <li class="nav-dropdown-border"><a href="./story.html" class="dropdown-color">Vinod Channa Story</a></li>
+          <li class="nav-dropdown-border"><a href="./mantra.html" class="dropdown-color">Vinod Channa's Mantra</a></li>
+          <li class="nav-dropdown-border"><a href="./awards.html" class="dropdown-color">Awards</a></li>
+         </ul>
+         </li>
+          <li class="nav-item"><a class="nav-link" href="./blog-page.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="./Media-page.html">Media</a></li>
+           <li class="nav-item"><a class="nav-link" href="https://pages.razorpay.com/vinodchanna">Online Payment</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Log In/Sign Up</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#">Store</a></li> -->
+        </ul>
+
+        <!-- Contact Us Desktop -->
+        <div class="d-none d-lg-block">
+          <a href="./Contact-Us.html" class="btn btn-contact">Contact Us</a>
+        </div>
+      </div>
+
     </div>
-    <!-- <div class="height"></div> -->
-    <div class="flex-div" >
+  </nav>
 
-<!-- 1st trophy -->
-        <div  class="  img-div-parent image-zoom-on-scroll image-zoom-on-scroll">
-            <div class="img-div" >
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
-                <img class="awards-banner-img fade-in" src="images/branze.webp" alt="iamge not loading">
-            </div>
-            <div class="title-h5">Mr. Jogeshwari </div>
-            <div class="title-h5">Champion of </div>
-            <div class="title-h5">Champion </div>
+      navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+          // Remove 'active' class from all links
+          navLinks.forEach(l => l.classList.remove("active"));
+          // Add 'active' class to the clicked link
+          this.classList.add("active");
+        });
+      });
+    });
+  </script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      const currentPage = decodeURIComponent(window.location.pathname.split('/').pop());
 
+      navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href').split('/').pop();
+        if (linkHref === currentPage || (currentPage === "" && linkHref === "index.html")) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+
+  <div style=" width: 100%; margin-bottom: 50px; ">
+    <img class="awards-banner-img fade-in" src="images/awardspage-banner.webp" alt="iamge not loading" width="100%">
+  </div>
+  <!-- <div class="height"></div> -->
+  <div class="awards-clents-certifications-navbar mb-5">
+    <button class="button" id="awards-tab">Awards</button>
+    <button class="button" id="clients-tab">Clients</button>
+    <button class="button" id="certifications-tab">Certifications</button>
+  </div>
+
+  <div class="flex-div awards-container" id="awards-content">
+
+    <!-- 1st trophy -->
+    <div class="  img-div-parent image-zoom-on-scroll image-zoom-on-scroll">
+      <div class="img-div">
+
+        <img class="awards-banner-img fade-in" src="images/branze.webp" alt="iamge not loading">
+      </div>
+      <div class="title-h5">Mr. Jogeshwari </div>
+      <div class="title-h5">Champion of </div>
+      <div class="title-h5">Champion </div>
+
+    </div>
+    <!-- 2nd trophy -->
+    <div class="  img-div-parent image-zoom-on-scroll">
+      <div class="img-div">
+
+        <img class="awards-banner-img fade-in" src="images/gold.webp" alt="iamge not loading">
+      </div>
+      <div class="title-h5">Mr. Girgaon </div>
+      <div class="title-h5">Champion of </div>
+      <div class="title-h5">Champion </div>
+
+    </div>
+    <!-- 3rd trophy -->
+    <div class="  img-div-parent image-zoom-on-scroll">
+      <div class="img-div">
+
+        <img class="awards-banner-img fade-in" src="images/branze.webp" alt="iamge not loading">
+      </div>
+      <div class="title-h5">Kamgar Shree </div>
+      <div class="title-h5">Champion of </div>
+      <div class="title-h5">Champion </div>
+
+    </div>
+    <!-- 4th trophy -->
+    <div class="  img-div-parent image-zoom-on-scroll">
+      <div class="img-div">
+
+        <img class="awards-banner-img fade-in" src="images/gold.webp" alt="iamge not loading">
+      </div>
+      <div class="title-h5">R. M. Bhat college </div>
+      <div class="title-h5">Champion of </div>
+      <div class="title-h5">Champion </div>
+
+    </div>
+    <!-- 5th trophy -->
+    <div class="  img-div-parent image-zoom-on-scroll">
+      <div class="img-div">
+
+        <img class="awards-banner-img fade-in" src="images/gold.webp" alt="iamge not loading">
+      </div>
+      <div class="title-h5">Mr. Mumbai Gold </div>
+      <div class="title-h5">Medal 2008 </div>
+
+    </div>
+    <!-- 6th trophy -->
+    <div class="  img-div-parent image-zoom-on-scroll">
+      <div class="img-div">
+
+        <img class="awards-banner-img fade-in" src="images/silver.webp" alt="iamge not loading">
+      </div>
+      <div class="title-h5">Mr. Mumbai Silver </div>
+      <div class="title-h5">Medal ( 2 times ) </div>
+
+    </div><!-- 7th trophy -->
+    <div class="  img-div-parent image-zoom-on-scroll">
+      <div class="img-div">
+
+        <img class="awards-banner-img fade-in" src="images/silver.webp" alt="iamge not loading">
+      </div>
+      <div class="title-h5">Maharashtra Silver </div>
+      <div class="title-h5">Medal ( 2 times )</div>
+
+    </div><!-- 8th trophy -->
+    <div class="  img-div-parent image-zoom-on-scroll">
+      <div class="img-div">
+
+        <img class="awards-banner-img fade-in" src="images/gold.webp" alt="iamge not loading">
+      </div>
+      <div class="title-h5">Novoice Mr. Mumbai</div>
+      <div class="title-h5">Champion of </div>
+      <div class="title-h5">Champion </div>
+
+    </div>
+
+
+  </div>
+  
+
+  <!-- clients -->
+  <div class="clients-category" id="clients-content" style="display:none;">
+    <div class="clients">
+      <h3 class="pb-2">BUSINESS TYCOONS</h3>
+      <p>- Mrs. Neeta Ambani</p>
+      <p>- Mr. Akash Ambani </p>
+      <p>- Ms. Isha Ambani </p>
+      <p>- Mr. Anant Ambani</p>
+      <p>- Mr. Kumar Mangalam Birla (Aditya Birla Groups)</p>
+      <p>- Ms. Ananya Birla</p>
+    </div>
+
+    <div class="clients">
+      <h3 class="pb-2">BOLLYWOOD CELEBRITIES
+</h3>
+<p>- John Abraham</p>
+<p>- Ritesh Deshmukh</p>
+<p>- Genelia Deshmukh</p>
+<p>- Shilpa Shetty</p>
+<p>- Shamita Shetty</p>
+<p>- Ashish Chaudhary</p>
+<p>- Sohail Khan</p>
+<p>- Ayushman Khurana</p>
+<p>- Harman Baweja</p>
+<p>- Abhijit Sawant (Singer)</p>
+<p>- Shekhar Ravjiani</p>
+<p>- Surveen Chawla</p>
+<p>- Vikas Bahl (Phantom Films)</p>
+<p>- Krishika Lulla (Eros international)</p>
+<p>- Harshavardhan Rane</p>
+<p>- Tahir Raj Bhasin</p>
+<p>- Vivek Oberoi</p>
+<p>- Arjun Rampal</p>
+    </div>
+
+    <div class="clients">
+      <h3 class="pb-2">HOTELIERS, INDUSTRIALISTS & BUILDERS</h3>
+      <p>- Mr. Amin Abbagani (5 Spice)</p>
+      <p>- Mr. Mihir Desai (Corrum Hospitallity)</p>
+      <p>- Mr. Naved Shariff (Niton Valve Industries Pvt. Ltd.)</p>
+      <p>- Mr. Vinit Ajgaonkar (Ajgaonkar Builder)</p>
+      <p>- Ms. Smriti Shinde (Daughter of Mr. Sushil Kumar Shinde)</p>
+      <p>- Ms. Poorna Patel (Daughter of Mr. Praful Patel)</p>
+      <p>- Mr. Kiran Kulkarni (MD - Geodisic Software)</p>
+    </div>
+  </div>
+  <!-- certification -->
+  <div class="certifications-list" id="certifications-content" style="display:none;">
+    <div class="all-certifications">
+      <h3 class="pb-2">NUTRITION</h3>
+      <p >- Foundation - ACSM</p>
+      <p>- Weight management - ACSM</p>
+      <p>- Sports Nutrition - ACSM</p>
+      <p>- Clinical Nutrition - ACSM</p>
+    </div>
+  </div>
+
+  <div class="flex-div-last">
+    <!-- bottom images -->
+
+    <div class="  img-div-parent2 image-zoom-on-scroll">
+      <div class="img-div2">
+
+        <img class="awards-banner-img fade-in" src="images/jurymermber.webp" alt="jurymember">
+      </div>
+      <div class="title-h5" style="width: 362px;">Annapoorna Food Retail</div>
+      <div class="title-h5" style="width: 362px;">Awards</div>
+    </div>
+
+
+    <div class=" img-div-parent2 image-zoom-on-scroll">
+      <div class="img-div3">
+
+        <img class="awards-banner-img fade-in" src="images/hffaward.webp" alt="jurymember">
+      </div>
+      <div class="title-h5" style="width: 362px;">Human First Foundation</div>
+      <div class="title-h5" style="width: 362px;">Award</div>
+    </div>
+
+
+    <div class="  img-div-parent2 image-zoom-on-scroll">
+      <div class="img-div2">
+
+        <img class="awards-banner-img fade-in" src="images/certificate.webp" alt="jurymember">
+      </div>
+      <div class="title-h5" style="width: 362px;">FEA Excellent Celebrity</div>
+      <div class="title-h5" style="width: 362px;">Trainer Award</div>
+    </div>
+  </div>
+  
+  
+
+
+   <!-- footer section -->
+  <footer class="footer-custom text-white pt-5 pb-4">
+    <!-- Arrows -->
+    <img src="./images-compress/arrow-left.webp" class="arrow-left" alt="Arrow" />
+    <img src="./images-compress/arrow-right.webp" class="arrow-right" alt="arrow-right" />
+
+    <img src="./images-compress/triangle-arrow-left.webp" class="triangle-arrow-left" alt="triangle-Arrow-left" />
+    <img src="./images-compress/triangle-arrow-right.webp" class="triangle-arrow-right" alt="triangle-arrow-right" />
+
+    <!-- Newsletter -->
+    <div class="container text-center mb-5 newsletter-padding">
+      <h4 class="fw-bold text-uppercase Newsletter-h4">Subscribe to<br>Our Newsletter</h4>
+      <p class="text-muted small gmail-section-line">To Make Your Stay Special And Even More Memorable</p>
+      <div class="d-flex justify-content-center gap_11 flex-wrap mt-3">
+        <input type="email" class="form-control rounded-pill gmail-section py-2 w-auto" placeholder="Email Address" id="emailInput"/>
+        <button class="btn btn-primary rounded-pill gmail-section" onclick="subscribe()">Subscribe</button>
+      </div>
+      <script>
+  function subscribe() {
+    const email = document.getElementById('emailInput').value;
+
+    if (!email) {
+      alert("Please enter your email address.");
+      return;
+    }
+
+    // Simple email validation
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Simulate sending email to backend
+    console.log("Subscribed email:", email);
+
+    // Optionally show a success message
+    alert("Thank you for subscribing!");
+  }
+</script>
+    </div>
+    <hr class="border-line-secondary">
+
+    <!-- Main Footer Content -->
+    <div class="container footer-content">
+      <div class="row gy-4 text-start">
+        <!-- About Us  for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md">
+          <h6 class="fw-bold">About Us</h6>
+          <p class="small text-white-50" style="text-align: justify;">
+            VC Fitness is owned by a celebrity trainer Mr. Vinod Channa. He is also a personal trainer to business
+            tycoons namely Anant Ambani, Nita Ambani, Kumar Mangalam Birla, Ananya Birla etc and many Bollywood
+            celebrities namely John Abraham, Shilpa Shetty Kundra, Harshvardhan Rane, Vivek Oberoi, Arjun Rampal to name
+            a few.
+          </p>
         </div>
-<!-- 2nd trophy -->
-        <div  class="  img-div-parent image-zoom-on-scroll">
-            <div class="img-div" >
-
-                <img class="awards-banner-img fade-in" src="images/gold.webp" alt="iamge not loading">
-            </div>
-            <div class="title-h5">Mr. Girgaon </div>
-            <div class="title-h5">Champion of </div>
-            <div class="title-h5">Champion </div>
-
-        </div> 
-        <!-- 3rd trophy -->
-        <div  class="  img-div-parent image-zoom-on-scroll">
-            <div class="img-div" >
-
-                <img class="awards-banner-img fade-in" src="images/branze.webp" alt="iamge not loading">
-            </div>
-            <div class="title-h5">Kamgar Shree </div>
-            <div class="title-h5">Champion of </div>
-            <div class="title-h5">Champion </div>
-
-        </div>   
-        <!-- 4th trophy -->
-        <div  class="  img-div-parent image-zoom-on-scroll">
-            <div class="img-div" >
-
-                <img class="awards-banner-img fade-in" src="images/gold.webp" alt="iamge not loading">
-            </div>
-            <div class="title-h5">R. M. Bhat college </div>
-            <div class="title-h5">Champion of </div>
-            <div class="title-h5">Champion </div>
-
-        </div> 
-        <!-- 5th trophy -->
-        <div  class="  img-div-parent image-zoom-on-scroll">
-            <div class="img-div" >
-
-                <img class="awards-banner-img fade-in" src="images/gold.webp" alt="iamge not loading">
-            </div>
-            <div class="title-h5">Mr. Mumbai Gold </div>
-            <div class="title-h5">Medal 2008 </div>
-
-        </div>   
-        <!-- 6th trophy -->
-        <div  class="  img-div-parent image-zoom-on-scroll">
-            <div class="img-div" >
-
-                <img class="awards-banner-img fade-in" src="images/silver.webp" alt="iamge not loading">
-            </div>
-            <div class="title-h5">Mr. Mumbai Silver </div>
-            <div class="title-h5">Medal ( 2 times ) </div>
-
-        </div><!-- 7th trophy -->
-        <div  class="  img-div-parent image-zoom-on-scroll">
-            <div class="img-div" >
-
-                <img class="awards-banner-img fade-in" src="images/silver.webp" alt="iamge not loading">
-            </div>
-            <div class="title-h5">Maharashtra Silver </div>
-            <div class="title-h5">Medal ( 2 times )</div>
-
-        </div><!-- 8th trophy -->
-        <div  class="  img-div-parent image-zoom-on-scroll">
-            <div class="img-div" >
-
-                <img class="awards-banner-img fade-in" src="images/gold.webp" alt="iamge not loading">
-            </div>
-            <div class="title-h5">Novoice Mr. Mumbai</div>
-            <div class="title-h5">Champion of </div>
-            <div class="title-h5">Champion </div>
-
+        <!-- Contact  for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md-1">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small text-white-50">
+            Pinnacle House, 5th Floor, 15th Road, P D Hinduja Junction,<br>
+            Bandra West Mumbai, Maharashtra - 400050
+          </p>
+          <p class="small text-white-50">📞 91 9870406617<br>📧 Channa.Vinod@Gmail.Com<br>🌐
+            https://vinodchannafitness.com</p>
         </div>
-        
-
+        <!-- Contact -->
+        <div class="col-md-3 top-padding mobile-col-md-12">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small text-white-50 lh-base">
+            Pinnacle House, 5th Floor, 15th Road, P D Hinduja Junction,<br>
+            Bandra West Mumbai, Maharashtra - 400050
+          </p>
+          <div class="d-flex gap-3 mt-2">
+            <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
         </div>
-            <div class="height"></div>
-
-        <div class="flex-div" >
-            <!-- bottom images -->
-
-            <div  class="  img-div-parent2 image-zoom-on-scroll" >
-            <div class="img-div2" >
-
-                <img class="awards-banner-img fade-in" src="images/jurymermber.webp" alt="jurymember" >
-            </div>
-            <div class="title-h5" style="width: 362px;">Annapoorna Food Retail</div>
-            <div class="title-h5" style="width: 362px;">Awards</div>
-        </div> 
-
-
-<div  class=" img-div-parent2 image-zoom-on-scroll" >
-            <div class="img-div3" >
-
-                <img class="awards-banner-img fade-in" src="images/hffaward.webp" alt="jurymember" >
-            </div>
-            <div class="title-h5" style="width: 362px;">Human First Foundation</div>
-            <div class="title-h5" style="width: 362px;">Award</div>
+        <!-- Useful Links -->
+        <div class="col-md-3 top-padding mobile-col-md-2">
+          <h6 class="fw-bold">Useful Links</h6>
+          <ul class="list-unstyled small text-white-50 useful-links">
+            <li class="pt-2"><a href="./index.html" class="text-white-50 text-decoration-none">VC Fitness</a></li>
+            <li class="pt-2"><a href="./service-page.html" class="text-white-50 text-decoration-none">Vinod Channa Fitness Service</a></li>
+            <li class="pt-2"><a href="#" class="text-white-50 text-decoration-none">Vinod Channa Story</a></li>
+            <li class="pt-2"><a href="Contact-Us.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+            <li class="pt-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+            <li class="pt-2"><a href="term-conditions.html" class="text-white-50 text-decoration-none">Term Conditions</a></li>
+            <li class="pt-2"><a href="./Media-page.html" class="text-white-50 text-decoration-none">Press Releases</a></li>
+          </ul>
         </div>
-
-
-         <div  class="  img-div-parent2 image-zoom-on-scroll" >
-            <div class="img-div2" >
-
-                <img class="awards-banner-img fade-in" src="images/certificate.webp" alt="jurymember" >
-            </div>
-            <div class="title-h5" style="width: 362px;">FEA Excellent Celebrity</div>
-            <div class="title-h5" style="width: 362px;">Trainer Award</div>
-        </div> 
+        <!-- Key Highlights -->
+        <div class="col-md-3 top-padding mobile-col-md-3">
+          <h6 class="fw-bold">Key Highlights</h6>
+          <ul class="list-unstyled small text-white-50 ">
+            <li class="pt-2">Best Celebrity Trainer</li>
+            <li class="pt-2">Vinod Channa Fitness</li>
+            <li class="pt-2">Celebrity Trainer</li>
+            <li class="pt-2">Gym In Bandra</li>
+            <li class="pt-2">Online Coaching Body Transformation</li>
+            <li class="pt-2">Buyback & Exchange Policy</li>
+          </ul>
         </div>
-                <!-- <div class="height"></div> -->
-                    <div class="height"></div>
+        <!-- Useful Links for mobile-->
+        <div class="col-md-3 top-padding mobile-col-md-21 mobile-accordion-section">
+          <div class="buttom-border">
+            <div class="accordion-header-custom" onclick="toggleAccordion(this)">
+              <h6 class="fw-bold mb-0">Useful Links</h6>
+              <span class="footer-toggle-icon">+</span>
+            </div>
+            <div class="accordion-body-custom">
+              <ul class="list-unstyled small text-white-50 mb-0 useful-links">
+                <li class="pt-2"><a href="./index.html" class="text-white-50 text-decoration-none">VC Fitness</a></li>
+                <li class="pt-2"><a href="./service-page.html" class="text-white-50 text-decoration-none">Vinod Channa Fitness Service</a></li>
+                <li class="pt-2"><a href="#" class="text-white-50 text-decoration-none">Vinod Channa Story</a></li>
+                <li class="pt-2"><a href="Contact-Us.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                <li class="pt-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                <li class="pt-2"><a href="term-conditions.html" class="text-white-50 text-decoration-none">Term Conditions</a></li>
+                <li class="pt-2"><a href="./Media-page.html" class="text-white-50 text-decoration-none">Press Releases</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Key Highlights for mobile -->
+        <div class="col-md-3 top-padding mobile-col-md-31 mobile-accordion-section">
+          <div class="buttom-border">
+            <div class="accordion-header-custom" onclick="toggleAccordion(this)">
+              <h6 class="fw-bold mb-0">Key Highlights</h6><span class="footer-toggle-icon">+</span>
+            </div>
+            <div class="accordion-body-custom">
+              <ul class="list-unstyled small text-white-50 mb-0">
+                <li class="pt-2">Best Celebrity Trainer</li>
+                <li class="pt-2">Vinod Channa Fitness</li>
+                <li class="pt-2">Celebrity Trainer</li>
+                <li class="pt-2">Gym In Bandra</li>
+                <li class="pt-2">Online Coaching Body Transformation</li>
+                <li class="pt-2">Buyback & Exchange Policy</li>
+              </ul>
+            </div>
+          </div>
 
-<!-- js file for animation -->
+          <div class="d-flex gap-3 mt-2 mobile-link">
+
+           <a href="https://www.instagram.com/accounts/login/?next=%2Fvinodchanna%2F&source=omni_redirect" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/vinod.channa/" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.youtube.com/@TheVinodChanna" class="text-white-50"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <!-- About Us-->
+        <div class="col-md-3 top-padding mobile-col-md-4">
+          <h6 class="fw-bold">About Us</h6>
+          <p class="small text-white-50 lh-base">
+            VC Fitness is owned by a celebrity trainer Mr. Vinod Channa. He is also a personal trainer to business
+            tycoons namely Anant Ambani, Nita Ambani, Kumar Mangalam Birla, Ananya Birla etc and many Bollywood
+            celebrities namely John Abraham, Shilpa Shetty Kundra, Harshvardhan Rane, Vivek Oberoi, Arjun Rampal to name
+            a few.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="border-line-secondary mt-4">
+
+    <!-- Bottom Bar -->
+    <div class="container d-flex flex-wrap justify-content-between align-items-center small text-white-50">
+      <p class="mb-0">&copy; 2025 VC Fitness All Rights Reserved</p>
+      <div>
+        <a href="privacy-policy.html" class="text-white-50 text-decoration-none me-3">Privacy Policy</a>
+        <a href="term-conditions.html" class="text-white-50 text-decoration-none">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleAccordion(header) {
+      const icon = header.querySelector('.footer-toggle-icon');
+      const body = header.nextElementSibling;
+      const isOpen = body.classList.contains('active');
+
+      // Close all open sections (optional)
+      document.querySelectorAll('.accordion-body-custom').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.footer-toggle-icon').forEach(el => el.innerText = '+');
+
+      // Open the clicked section if it was closed
+      if (!isOpen) {
+        body.classList.add('active');
+        icon.innerText = '-';
+      }
+    }
+  </script>
+
+  <!-- js file for animation -->
   <!-- <script >
     const images = document.querySelectorAll('.fade-in');
 
@@ -160,47 +514,88 @@ images.forEach(img => {
 
   </script> -->
 
-      
-<script>
-     const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      } else {
-        entry.target.classList.remove('show'); // Remove class when out of view
-      }
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show'); // Remove class when out of view
+        }
+      });
+    }, {
+      threshold: 0.2
     });
-  }, {
-    threshold: 0.2
-  });
 
-  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-    observer.observe(el);
-  });
-
-  document.querySelectorAll('.animate-left-on-scroll').forEach((el) => {
-    observer.observe(el);
-  });
-
-  const zoomObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      } else {
-        entry.target.classList.remove('show'); // Re-trigger when scrolling back
-      }
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      observer.observe(el);
     });
-  }, {
-    threshold: 0.3
-  });
 
-  document.querySelectorAll('.image-zoom-on-scroll').forEach((el) => {
-    zoomObserver.observe(el);
-  });
+    document.querySelectorAll('.animate-left-on-scroll').forEach((el) => {
+      observer.observe(el);
+    });
+
+    const zoomObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show'); // Re-trigger when scrolling back
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    document.querySelectorAll('.image-zoom-on-scroll').forEach((el) => {
+      zoomObserver.observe(el);
+    });
   </script>
 
+  <script>
+    // Get tab buttons and content sections
+    const awardsTab = document.getElementById('awards-tab');
+    const clientsTab = document.getElementById('clients-tab');
+    const certificationsTab = document.getElementById('certifications-tab');
 
+    const awardsContent = document.getElementById('awards-content');
+    const clientsContent = document.getElementById('clients-content');
+    const certificationsContent = document.getElementById('certifications-content');
 
+    function showTab(tab) {
+      // Hide all
+      awardsContent.style.display = 'none';
+      clientsContent.style.display = 'none';
+      certificationsContent.style.display = 'none';
+
+      awardsTab.classList.remove('active');
+      clientsTab.classList.remove('active');
+      certificationsTab.classList.remove('active');
+
+      // Show selected
+      if (tab === 'awards') {
+        awardsContent.style.display = 'flex'; // or 'block' if you want
+        awardsTab.classList.add('active');
+      } else if (tab === 'clients') {
+        clientsContent.style.display = 'flex';
+        clientsTab.classList.add('active');
+      } else if (tab === 'certifications') {
+        certificationsContent.style.display = 'flex';
+        certificationsTab.classList.add('active');
+      }
+    }
+
+    // Set up event listeners
+    awardsTab.addEventListener('click', () => showTab('awards'));
+    clientsTab.addEventListener('click', () => showTab('clients'));
+    certificationsTab.addEventListener('click', () => showTab('certifications'));
+
+    // Show awards tab by default
+    showTab('awards');
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 
-</html>
+    </html>
