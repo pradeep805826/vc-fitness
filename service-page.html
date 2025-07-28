@@ -1437,7 +1437,7 @@
 
         <div class="programs-training-container" id="one-to-one-section">
           <div class="one-to-one-cards ">
-           <a href="#" class="programs-arrows" data-bs-toggle="modal" data-bs-target="#vinodChannaModal"> 
+           <a href="#" class="vinod-channa-form" data-bs-toggle="modal" data-bs-target="#vinodChannaModal"> 
              <div class="programs-card animate-on-scroll" data-type="one-to-one">
                 <img src="./images-compress/Training-vinod img1.webp" alt="Train With Vinod Channa" />
                 <div class="programs-label">
@@ -1447,13 +1447,23 @@
             </div>
            </a>
 
-        <a href="./Train-With-Vinod’s-Assistant-Trainers.html" target="_blank" >    <div class="programs-card animate-on-scroll" data-type="one-to-one">
+        <!--<a href="./Train-With-Vinod’s-Assistant-Trainers.html" target="_blank" >    <div class="programs-card animate-on-scroll" data-type="one-to-one">
                 <img src="./images-compress/Training-vinod img2.webp" alt="Train With Vinod's Assistant Trainers" />
                 <div class="programs-label">
                     <span>Train With Vinod’s Assistant Trainers</span>
                     <a href="./Train-With-Vinod’s-Assistant-Trainers.html" class="programs-arrows"><i class="bi bi-arrow-right programs-arrow"></i></a>
                 </div>
             </div></a>
+         -->
+        <div class="programs-card animate-on-scroll" data-type="one-to-one">
+                <img src="./images-compress/Training-vinod img2.webp" alt="Train With Vinod's Assistant Trainers" />
+                <div class="programs-label">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#vinodChannaModal" class="assistant-trainer">Train With Vinod's Assistant Trainers </a>
+                    <a href="./Train-With-Vinod’s-Assistant-Trainers.html" class="programs-arrows"><i class="bi bi-arrow-right programs-arrow"></i></a>
+                </div>
+        </div>
+
+
 
             <!-- <div class="programs-card animate-on-scroll" data-type="one-to-one">-->
             <!--    <img src="./images-compress/Training-vinod img2.webp" alt="Train With Vinod's Assistant Trainers" />-->
@@ -2470,6 +2480,43 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
   
+
+<!-- script for modal title change  -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Modal and title
+  var modal = document.getElementById('vinodChannaModal');
+  var modalTitle = document.querySelector('.modal-title');
+
+  // Set up click for assistant trainer link
+  var assistantTrainerBtn = document.querySelector('.assistant-trainer');
+  if (assistantTrainerBtn) {
+    assistantTrainerBtn.addEventListener('click', function() {
+      if (modalTitle) modalTitle.textContent = "Train With Vinod's Assistant Trainers";
+    });
+  }
+
+  // Set up click for main Vinod Channa button (vinod-channa-form div)
+  var vinodChannaBtn = document.querySelector('.vinod-channa-form');
+  if (vinodChannaBtn) {
+    vinodChannaBtn.addEventListener('click', function() {
+      if (modalTitle) modalTitle.textContent = "Train With Vinod Channa";
+    });
+  }
+
+  // Set up click for all vinod-channa-form links
+  var vinodChannaBtns = document.querySelectorAll('.vinod-channa-form');
+  vinodChannaBtns.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      if (modalTitle) modalTitle.textContent = "Train With Vinod Channa";
+      // Prevent default link behavior if needed
+      e.preventDefault();
+    });
+  });
+});
+</script>
+
+
 </body>
 
 </html>
