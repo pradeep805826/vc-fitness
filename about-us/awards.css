@@ -11,6 +11,77 @@
 
 }
 
+/* celebrity-slider-section*/
+
+  .celebrity-slider {
+  width: 100%;
+  overflow: hidden;
+  padding: 0rem 0rem 2rem 0rem;
+  background-color: #f5fdfc;
+  position: relative;
+}
+.celebrity-slider input {
+  display: none;
+}
+.celebrity-slides-wrapper {
+  width: 400%;
+  display: flex;
+  transition: transform 0.5s ease;
+}
+#slide1:checked ~ .celebrity-slides-wrapper {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .celebrity-slides-wrapper {
+  transform: translateX(-25%);
+}
+#slide3:checked ~ .celebrity-slides-wrapper {
+  transform: translateX(-50%);
+}
+#slide4:checked ~ .celebrity-slides-wrapper {
+  transform: translateX(-75%);
+}
+.celebrity-slide {
+  width: 25%;
+  /* padding: 2rem; */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  /* gap: 2rem; */
+}
+
+.celebrity-slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.celebrity-slider-dots label {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 6px;
+  cursor: pointer;
+}
+#slide1:checked ~ .celebrity-slider-dots label[for='slide1'],
+#slide2:checked ~ .celebrity-slider-dots label[for='slide2'],
+#slide3:checked ~ .celebrity-slider-dots label[for='slide3'],
+#slide4:checked ~ .celebrity-slider-dots label[for='slide4'] {
+  background: #444;
+}
+@media (max-width: 768px) {
+  .celebrity-slide {
+    flex-direction: column;
+    /* padding: 1rem; */
+    gap: 1rem;
+  }
+
+}
+
+
+
+
+
+
 h1, .programs-section h2, .section-wrapper h2, .testimonial-title, .instagram-center-content h2, .fw-bold.text-uppercase {
   font-family: "Oswald", sans-serif;
 }
@@ -22,6 +93,14 @@ html {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+
+
+
+
+
+
+
 
 .navbar-custom {
   background: linear-gradient(to bottom, #FEE7DC, #FEF5F0);
@@ -401,6 +480,7 @@ img.animate {
 
 .clients p, .all-certifications p {
   font-family: 'Roboto', sans-serif;
+  transition: font-size 0s ;
 }
 
 .clients-category p:hover {
@@ -411,6 +491,13 @@ img.animate {
   transition: all 0.3s;
 
 
+}
+.certifications-list p:hover{
+   cursor: pointer;
+  font-size: 18px;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .clients h3, .all-certifications h3 {
