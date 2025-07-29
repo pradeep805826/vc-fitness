@@ -104,10 +104,60 @@
     });
   </script>
 
+  <!-- banner slider -->
 
-  <div style=" width: 100%; margin-bottom: 50px; ">
-    <img class="awards-banner-img fade-in" src="images/awardspage-banner.webp" alt="iamge not loading" width="100%">
+
+   <section class="celebrity-slider animate-on-scroll">
+  <!-- radio inputs -->
+  <input type="radio" name="slider" id="slide1" checked>
+  <input type="radio" name="slider" id="slide2">
+  <input type="radio" name="slider" id="slide3">
+  <input type="radio" name="slider" id="slide4">
+
+  <!-- Slides container -->
+  <div class="celebrity-slides-wrapper">
+    <!-- Slide 1 -->
+    <div class="celebrity-slide">
+       <img class="awards-banner-img fade-in" src="images/awardspage-banner.webp" alt="iamge not loading" width="100%">
+    </div>
+    <!-- Slide 2 -->
+    <div class="celebrity-slide">
+      <img class="awards-banner-img fade-in" src="images/awardspage-banner.webp" alt="iamge not loading" width="100%">
+    </div>
+    <!-- Slide 3 -->
+    <div class="celebrity-slide">
+       <img class="awards-banner-img fade-in" src="images/awardspage-banner.webp" alt="iamge not loading" width="100%">
+    </div>
+    <!-- Slide 4 -->
+    <div class="celebrity-slide">
+      <img class="awards-banner-img fade-in" src="images/awardspage-banner.webp" alt="iamge not loading" width="100%">
+    </div>
   </div>
+
+  <!-- Dots -->
+  <div class="celebrity-slider-dots">
+    <label for="slide1"></label>
+    <label for="slide2"></label>
+    <label for="slide3"></label>
+    <label for="slide4"></label>
+  </div>
+</section>
+  <!-- script for banner slider -->
+
+<script>
+  const slides = ['slide1', 'slide2', 'slide3', 'slide4'];
+  let current = 0;
+  setInterval(() => {
+    current = (current + 1) % slides.length;
+    document.getElementById(slides[current]).checked = true;
+  }, 5000); // 5s per slide
+</script>
+
+
+
+
+
+
   <!-- <div class="height"></div> -->
   <div class="awards-clents-certifications-navbar mb-5">
     <button class="button-tab" id="awards-tab">Awards</button>
@@ -310,7 +360,7 @@
     <!-- Newsletter -->
     <div class="container text-center mb-5 newsletter-padding">
       <h4 class="fw-bold text-uppercase Newsletter-h4">Subscribe to<br>Our Newsletter</h4>
-      <p class="text-muted small gmail-section-line">To Make Your Stay Special And Even More Memorable</p>
+      <p class="text-muted small gmail-section-line"  >To Make Your Stay Special And Even More Memorable</p>
       <div class="d-flex justify-content-center gap_11 flex-wrap mt-3">
         <input type="email" class="form-control rounded-pill gmail-section py-2 w-auto" placeholder="Email Address" id="emailInput"/>
         <button class="btn btn-primary rounded-pill gmail-section" onclick="subscribe()">Subscribe</button>
